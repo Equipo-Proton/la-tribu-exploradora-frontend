@@ -1,6 +1,6 @@
 ## Requirements
 
-<img src="./public/img/contexto-proyecto.png">
+<img src="./src/assets/img/contexto-proyecto.png">
 
 ## Authors
 
