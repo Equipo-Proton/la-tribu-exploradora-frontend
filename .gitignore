@@ -26,3 +26,7 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# ignored mac files
+.DS_Store
+**/.DS_Store
