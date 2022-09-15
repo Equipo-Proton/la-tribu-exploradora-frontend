@@ -23,10 +23,10 @@
   
   
 ## Technologies used in this project
-| Front End | Back End | 
-| :---: | :---: | :---: |
-|VUE 3, Bootstrap. Sass, Tailwind
-Php Laravel 9|
+### FrontEnd 
+  -VUE 3, Bootstrap. Sass, Tailwind
+### BackEnd 
+  -Php Laravel 9|
   
 
 ## Documentation
