@@ -2,7 +2,7 @@
 
 <img src="./src/assets/img/contexto-proyecto.png">
 
-## Project Name: Aña: Añerando la tribu exploradora
+## Project Name: Aña Añerando la tribu exploradora
 
 ## Description
   This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNALÓN) that is a Web Application as a Game to help kids between 3 to 6 six years old to learn words and vocabulary while they are playing a game.
