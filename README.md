@@ -3,7 +3,7 @@
 ## Project Name: Aña añerando la tribu exploradora
 
 ## Description
-  This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNALÓN) that is a Web Application as a Game to help kids between 3 to 6 six years old to learn words and vocabulary while they are playing a game.
+This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNALÓN). A Web Application as a Game to help kids between 3 to 6 six years old to learn words and vocabulary while they are playing a game.
 
 ## Requirementes
 
@@ -19,14 +19,13 @@
 </ul>
 
 
-## Not Functional Requirements
+## The Game
 
 <ul>
-<li>The website must be 'deployed' even if it is under development.</li>
-<li>All requirements and user cases must be tested (acceptance tests).</li>
-<li>Laravel have to be used.</li>
-<li>The sending of the email must be done using a queuing system.</li>
-<li>For the frontend you should use blade components.</li>
+<li>Game consists of numbers and letters.</li>
+<li>Numbers available (0-9). Letters available (A-Z).</li>
+<li>Admin's screen will start the game and users will have to guess the word, moving the letters.</li>
+<li>Admin on his screen will decide correct or wrong and the result will be visual and sound.</li>
 </ul>
 
 
