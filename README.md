@@ -1,6 +1,7 @@
+![](https://media.discordapp.net/attachments/977641039953293362/989212881180565504/unknown.png?width=713&height=124)
+
 ## Requirements
 
-![](https://media.discordapp.net/attachments/977641039953293362/989212881180565504/unknown.png?width=713&height=124)
 <img src="./src/assets/img/contexto-proyecto.png">
 
 ## Project Name: Aña añerando la tribu exploradora
