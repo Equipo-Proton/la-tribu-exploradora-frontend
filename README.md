@@ -70,10 +70,10 @@ This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNA
 
 ## Documentation
 
-- [Dailys](https://docs.google.com/document/d/1liH84SXscXYY4BS_w1ZbWIWB2hXiuaR0V_ZfhH4nhOI/edit?usp=sharing)
-- [Presentation PPTX](https://docs.google.com/presentation/d/1bZ7vdmS8ArI8FaSERe12CAavoOyvut5mb_DrAyleek4/edit?usp=sharing)
-- [Prototype](https://www.figma.com/file/wF99gStSlo5mO8d03M1Tat/Just-Play?node-id=6%3A3)
-- [UserFlow](https://www.figma.com/file/pXnQMlo6iVQSkPrgn6O4bJ/User-Flow-JustPlay?node-id=0%3A1)
+- [Dailys](https://docs.google.com/document/d/1gGHcJYTPoZo_kbkBN_cQCpXgPu5JvurKWr8xd1vH7Lo/edit)
+- [Presentation PPTX](https://docs.google.com/presentation/d/1TiQ86Y-N194oHaoAA1V5erXUQw2_3wZ_YzafjYdXoQs/edit?usp=sharing)
+- [Prototype](https://www.figma.com/file/HCGDAXOHXuOM567hPHBryR/Proyecto-Pedag%C3%B3gico?node-id=111%3A3)
+- [UserFlow](https://www.figma.com/file/R3aFH6bPeETNHazU5k2zO4/Valnal%C3%B3n-User-Flow?node-id=0%3A1)
 
 ## Authors
 
