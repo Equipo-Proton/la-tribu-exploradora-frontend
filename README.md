@@ -2,7 +2,7 @@
 
 <img src="./src/assets/img/contexto-proyecto.png">
 
-## Project Name: Aña Añerando la tribu exploradora
+## Project Name: Aña añerando la tribu exploradora
 
 ## Description
   This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNALÓN) that is a Web Application as a Game to help kids between 3 to 6 six years old to learn words and vocabulary while they are playing a game.
@@ -23,10 +23,13 @@
   
   
 ## Technologies used in this project
-| Front End | Back End | 
-| :---: | :---: | :---: |
-|VUE 3, Bootstrap. Sass, Tailwind
-Php Laravel 9|
+### FrontEnd 
+   -VUE 3 
+   -Bootstrap
+   -Sass
+   -Tailwind
+### BackEnd 
+   -Php Laravel 9
   
 
 ## Documentation
