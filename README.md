@@ -10,13 +10,14 @@
   
   
 ## Visual Design: Sketch, MockUp and Prototype
-
+### 1.Loading Page
 ![Loading Page](https://user-images.githubusercontent.com/104347185/190474172-6546d20b-67a3-42fb-96e6-ed1d8542af75.png)
-
+### 2.Login for users View
 ![Login Page](https://user-images.githubusercontent.com/104347185/190474183-87d80ad8-016f-48f2-a1b0-83f71e243761.png)
-
+### 3.Students play View
 ![Keyboard Screnn](https://user-images.githubusercontent.com/104347185/190477618-49362f4f-371f-4594-b231-82d2a453f386.png)
-
+### 4.Choice of games for students, Teacher's view
+![Teacher Panel Administration](https://user-images.githubusercontent.com/104347185/190479045-a97d25c4-c60f-4b3d-96e6-621a966776ef.png)
 
 
 
