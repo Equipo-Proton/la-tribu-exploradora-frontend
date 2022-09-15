@@ -15,25 +15,18 @@
 
 ![Login Page](https://user-images.githubusercontent.com/104347185/190474183-87d80ad8-016f-48f2-a1b0-83f71e243761.png)
 
+![Keyboard Screnn](https://user-images.githubusercontent.com/104347185/190477618-49362f4f-371f-4594-b231-82d2a453f386.png)
 
 
 
-
-
-
-## How to Install and Run the Project
-
-
-## How to Use the Project
-  *Captures and views descriptions
 
   
   
 ## Technologies used in this project
-### FrontEnd 
-  -VUE 3, Bootstrap. Sass, Tailwind
-### BackEnd 
-  -Php Laravel 9|
+| Front End | Back End | 
+| :---: | :---: | :---: |
+|VUE 3, Bootstrap. Sass, Tailwind
+Php Laravel 9|
   
 
 ## Documentation
