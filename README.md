@@ -20,6 +20,13 @@
 
 
 
+
+## How to Install and Run the Project
+
+
+## How to Use the Project
+  *Captures and views descriptions
+
   
   
 ## Technologies used in this project
