@@ -1,3 +1,5 @@
+
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --base-color-blue:  #6CCBF4;
@@ -17,7 +19,7 @@
   --background-color-blue:  #B4E4FF ;
   --background-color-green: #B5FFC5;
 
-  --font-family-primary: 'Montserrat Alternates', sans-serif;;
+  --font-family-primary: 'Montserrat Alternates', sans-serif;
   --font-family-secondary: font-family: 'Raleway', sans-serif;
   --font-family-letters: 'Dancing Script', cursive;
 
