@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "EditTeacher",
+  name: "EditStudent",
   data() {
     return {
       showModal: false,
@@ -47,7 +47,7 @@ export default {
     </div>
   </div>
 
-  <button id="editTeacher" @click="showModal = true">Editar</button>
+  <button id="editStudent" @click="showModal = true">Editar</button>
 </template>
 
 <style scoped>
@@ -75,7 +75,7 @@ export default {
   flex-direction: column;
 }
 
-#editTeacher {
+#editStudent {
   background-color: var(--base-color-blue);
 }
 

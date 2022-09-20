@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "EditTeacher",
+  name: "CreateStudent",
   data() {
     return {
       showModal: false,
@@ -10,36 +10,19 @@ export default {
 </script>
 
 <template>
+
   <div class="modal-overlay" v-if="showModal">
     <div class="form-camp">
       <label for="email"><b>Email</b></label>
-      <input
-        type="text"
-        placeholder="Enter Email"
-        name="email"
-        id="email"
-        required
-      />
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
     </div>
     <div class="form-camp">
       <label for="psw"><b>Password</b></label>
-      <input
-        type="password"
-        placeholder="Enter Password"
-        name="psw"
-        id="psw"
-        required
-      />
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
     </div>
     <div class="form-camp">
       <label for="prefix"><b>Prefijo</b></label>
-      <input
-        type="text"
-        placeholder="Enter prefix"
-        name="prefix"
-        id="prefix"
-        required
-      />
+      <input type="text" placeholder="Enter prefix" name="prefix" id="prefix" required>
     </div>
     <div class="modal-buttons">
       <button class="accept-button" @click="showModal = false">Aceptar</button>
@@ -47,7 +30,7 @@ export default {
     </div>
   </div>
 
-  <button id="editTeacher" @click="showModal = true">Editar</button>
+  <button id="newStudent" @click="showModal = true">Añadir Alumno</button>
 </template>
 
 <style scoped>
@@ -75,12 +58,16 @@ export default {
   flex-direction: column;
 }
 
-#editTeacher {
-  background-color: var(--base-color-blue);
+#newStudent {
+  background-color: var(--base-color-green);
+  color: var(--font-color);
+  margin: auto;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 button,
-.teacherName {
+.StudentName {
   border: none;
   border-radius: 2vh;
   height: 7vh;

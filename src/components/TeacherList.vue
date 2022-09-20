@@ -1,17 +1,17 @@
 import { RouterView } from 'vue-router';
 <script setup>
-import CreateTeacher from './modals/CreateTeacher.vue';
-
-
+import EditTeacher from "./modals/EditTeacher.vue";
+import CreateTeacher from "./modals/CreateTeacher.vue";
+import ConfirmDeleteTeacher from "./modals/ConfirmDeleteTeacher.vue";
 </script>
 <template>
   <main>
-    <h3>Estudiantes</h3>
+    <h3>Profesores</h3>
     <div class="teachersBox">
       <div id="userManagement">
         <div class="teacherName">Nombre</div>
-        <div><button id="editTeacher">Editar</button></div>
-        <div><button id="deleteTeacher">Eliminar</button></div>
+        <div><EditTeacher></EditTeacher></div>
+        <div><ConfirmDeleteTeacher></ConfirmDeleteTeacher></div>
       </div>
     </div>
     <CreateTeacher></CreateTeacher>
@@ -57,7 +57,7 @@ button,
 }
 
 #deleteTeacher {
-  background-color: var(--color-warning)
+  background-color: var(--color-warning);
 }
 
 #newTeacher {
@@ -66,6 +66,5 @@ button,
   margin: auto;
   margin-top: 3vh;
   margin-bottom: 3vh;
-
 }
 </style>
