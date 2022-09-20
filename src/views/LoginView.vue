@@ -4,16 +4,10 @@
 </script>
 <template>
   <header>
-    <h1>Este es lugar de la zona de Registro</h1>
+    <h1>Este es el lugar del Formulario de login</h1>
   </header>
   <main>
     <LoginForm/>
   </main>
 
 </template>
-
-<style scoped>
-
-
-  
-</style>
