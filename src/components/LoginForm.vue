@@ -1,6 +1,10 @@
+<script>
+    
+</script>
+
 <template>
     <div class="loginForm">
-        <h1>Welcome to the login User</h1>
+        <h1>Registrate o logeate</h1>
     </div>
     <div class="d-flex justify-content-center align-items-center mt-5">
 
@@ -58,4 +62,8 @@
         </div>
     </div>
 </template>
+
+<style>
+    @import "../assets/loginForm.css";
+</style>
   

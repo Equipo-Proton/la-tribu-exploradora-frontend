@@ -5,7 +5,6 @@
 <template>
   <header>
     <h1>Este es el lugar del Formulario de login</h1>
-    
   </header>
   <main>
     <LoginForm/>
