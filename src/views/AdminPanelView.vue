@@ -9,7 +9,6 @@ import TeacherList from "../components/TeacherList.vue";
   <main>
     <GameList />
     <TeacherList />
-    
   </main>
   <RouterView />
 </template>
