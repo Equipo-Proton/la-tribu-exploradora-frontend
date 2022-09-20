@@ -1,8 +1,14 @@
+<script setup>
+  import { RouterLink, RouterView } from 'vue-router'
+  import LoginForm from '../components/LoginForm.vue'
+</script>
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <header>
+    <h1>Este es lugar de la zona de Registro</h1>
+  </header>
+
 </template>
+
 
 <style>
 @media (min-width: 1024px) {
@@ -15,4 +21,3 @@
 </style>
 
 
-<h1>Initial Branch Message</h1>
