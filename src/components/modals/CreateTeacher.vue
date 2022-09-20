@@ -1,64 +1,94 @@
 <script>
 export default {
   name: "CreateTeacher",
-  props: {
-    visble: Boolean,
-    variant: String,
-  },
   data() {
     return {
-      OpenClose: this.visible,
+      showModal: false,
     };
-  },
-  methods: {
-    OpenCloseFun() {
-      this.OpenClose = false;
-    },
-  },
-  watch: {
-    visible: function (newVal, oldVal) {
-      this.OpenClose = newVal;
-      console.log("new" + newVal + "==" + oldVal);
-    },
   },
 };
 </script>
 
 <template>
-  <div>
-    <!-- Modal -->
-    <div
-      v-if="OpenClose"
-      class="modal fade show"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-modal="true"
-      role="dialog"
-      style="display: block"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              @click="OpenCloseFun()"
-              class="btn-close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <slot>REEEEE</slot>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              @click="OpenCloseFun()"
-              :class="'btn btn-' + variant"
-            >
-              {{ $t("Close") }}
-            </button>
-          </div>
-        </div>
-      </div>
+
+  <div class="modal-overlay" v-if="showModal">
+    <div class="form-camp">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    </div>
+    <div class="form-camp">
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    </div>
+    <div class="form-camp">
+      <label for="prefix"><b>Prefijo</b></label>
+      <input type="text" placeholder="Enter prefix" name="prefix" id="prefix" required>
+    </div>
+    <div class="modal-buttons">
+      <button class="accept-button" @click="showModal = false">Aceptar</button>
+      <button class="cancel-button" @click="showModal = false">Cancelar</button>
     </div>
   </div>
+
+  <button id="newTeacher" @click="showModal = true">Añadir profe</button>
 </template>
+
+<style scoped>
+.modal-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  bottom: 0;
+  right: 10%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #a5a2a9;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 3vh;
+  padding: 5vh;
+  z-index: 100;
+}
+
+.form-camp {
+  display: flex;
+  flex-direction: column;
+}
+
+#newTeacher {
+  background-color: var(--base-color-green);
+  color: var(--font-color);
+  margin: auto;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+button,
+.teacherName {
+  border: none;
+  border-radius: 2vh;
+  height: 7vh;
+  padding: 2vw;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 2.5vh;
+}
+
+.cancel-button {
+  background-color: var(--base-color-orange);
+}
+
+.accept-button {
+  background-color: var(--base-color-blue);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+</style>
