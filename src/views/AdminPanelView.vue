@@ -4,15 +4,12 @@ import GameList from "../components/GameList.vue";
 import TeacherList from "../components/TeacherList.vue";
 </script>
 <template>
+  <Header></Header>
   <main>
-    <Header />
     <GameList />
     <TeacherList />
   </main>
 </template>
 
 <style scoped>
-main {
-  background-color: var(--background-color-blue);
-}
 </style>
