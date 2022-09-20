@@ -8,7 +8,7 @@
     <div id="appTitle">La Tribu Exploradora</div>
     <div id="user">
       <div><p>user</p></div>
-      <div><img src="../assets/icons/iconUser.svg" /></div>
+      <div><RouterLink to="/"><img src="../assets/icons/iconUser.svg" /></RouterLink></div>
       <div><button id="logout">Salir</button></div>
     </div>
   </main>
@@ -20,15 +20,20 @@
 main #header {
   background-color: var(--base-color-purple);
   width: 100%;
-  height: 10vh;
+  height: 15vh;
   justify-content: space-around;
 }
-#header,
-#user {
+
+img #logo {
+  width: 100%;
+  height: 95%;
+}
+#header, #user {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 #appTitle {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 700;
