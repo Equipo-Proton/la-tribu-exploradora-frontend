@@ -2,11 +2,11 @@
 
 <template>
   <header>
-    <div id="logo">
+    <div class="logo">
       <img src="../assets/logo.svg" />
     </div>
-    <div id="appTitle">La Tribu Exploradora</div>
-    <div id="user">
+    <div class="appTitle">La Tribu Exploradora</div>
+    <div class="user">
       <div>
         <p>user</p>
       </div>
@@ -30,22 +30,21 @@ img #logo {
   width: 100%;
   height: 95%;
 }
-#header, #user {
 header,
-#user {
+.user {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-#appTitle {
+.appTitle {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 700;
   font-size: 3vh;
   color: var(--base-color-orange);
 }
 
-#user p,
+.user p,
 #logout {
   color: var(--base-color-white);
   font-family: "Raleway", sans-serif;
@@ -53,7 +52,7 @@ header,
   font-size: 1.5vh;
 }
 
-#user div {
+.user div {
   margin: 0 0.5vw 0 0.5vw;
 }
 
