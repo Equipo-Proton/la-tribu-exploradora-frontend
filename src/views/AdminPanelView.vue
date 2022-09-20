@@ -7,15 +7,25 @@ import TeacherList from "../components/TeacherList.vue";
 <template>
   <Header />
   <main>
-    <h1>HOLA</h1>
     <GameList />
     <TeacherList />
+    
   </main>
   <RouterView />
 </template>
 
 <style scoped>
+
 main {
-  background-color: black;
+  width:100%;
+  height: 100vh;
+  background-color: var(--background-color-blue);
+  display: flex;
+  justify-content: space-around;
+  padding: 4vh;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: bold;
+  color: var(--font-color);
 }
 </style>
+
