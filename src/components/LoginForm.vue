@@ -70,31 +70,23 @@
               placeholder="Name"
             />
 
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Email"
-            />
+                        <input type="text" name="" class="form-control" placeholder="Email">
 
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Phone"
-            />
+                        <input type="text" name="" class="form-control" placeholder="Phone">
 
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Password"
-            />
+                        <input type="text" name="" class="form-control" placeholder="Password">
 
-            <button class="btn btn-dark btn-block">Signup</button>
-          </div>
-        </div>
-      </div>
+                        <button class="btn btn-dark btn-block">Signup</button>
+                        
+
+                    </div>
+
+
+
+                </div>
+                
+            </div>
+            
     </div>
   </div>
 </template>

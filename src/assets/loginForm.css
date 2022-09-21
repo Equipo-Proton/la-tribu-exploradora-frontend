@@ -8,6 +8,8 @@ body{
 
   width: 400px;
   border:none;
+  text-align: center;
+  align-items: center;
 
 }
 
@@ -47,13 +49,13 @@ body{
 
 .nav-pills .nav-link {
     border-radius: 0px;
-        border-bottom: 1px solid #0d6efd40;
+        border-bottom: 1px solid #8abbff70;
 
 }
 
 .nav-item{
       display: table-cell;
-       background: #0d6efd2e;
+       background: #8abbff70;
 }
 
 
