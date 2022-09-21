@@ -13,10 +13,10 @@
 
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item text-center">
-                <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Login</a>
+                <a class="nav-link btr" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Alumno</a>
                 </li>
                 <li class="nav-item text-center">
-                <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a>
+                <a class="nav-link active btl" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profesor</a>
                 </li>
             
             </ul>
@@ -39,16 +39,10 @@
                 
 
                     <div class="form px-4">
-
+                        <a>Quien eres?</a>
                         <input type="text" name="" class="form-control" placeholder="Name">
 
-                        <input type="text" name="" class="form-control" placeholder="Email">
-
-                        <input type="text" name="" class="form-control" placeholder="Phone">
-
-                        <input type="text" name="" class="form-control" placeholder="Password">
-
-                        <button class="btn btn-dark btn-block">Signup</button>
+                        <button class="btn btn-dark btn-block">Entrar</button>
                         
 
                     </div>
