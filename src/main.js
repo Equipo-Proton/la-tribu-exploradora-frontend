@@ -8,7 +8,6 @@ import router from "./router";
 import "./assets/main.css";
 import "./assets/bootstrap.min.css";
 import "./assets/bootstrap.bundle.min.js";
-import axios from "axios";
 
 const app = createApp(App);
 
