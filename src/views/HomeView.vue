@@ -1,7 +1,19 @@
-<script setup></script>
+<script setup>
+  import { RouterLink, RouterView } from "vue-router";
+import RegisterForm from "../components/RegisterForm.vue";
+
+</script>
 
 <template>
-  <main></main>
+  <main>
+    <RegisterForm />
+  </main>
+
+<RouterView />
 </template>
 
-<style></style>
+<style scoped>
+ main {
+  background-color: var(--background-color-blue);
+ }
+</style>
