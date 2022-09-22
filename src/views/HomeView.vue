@@ -1,7 +1,6 @@
 <script setup>
-  import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView } from "vue-router";
 import RegisterForm from "../components/RegisterForm.vue";
-
 </script>
 
 <template>
@@ -9,11 +8,11 @@ import RegisterForm from "../components/RegisterForm.vue";
     <RegisterForm />
   </main>
 
-<RouterView />
+  <RouterView />
 </template>
 
 <style scoped>
- main {
+main {
   background-color: var(--background-color-blue);
- }
+}
 </style>

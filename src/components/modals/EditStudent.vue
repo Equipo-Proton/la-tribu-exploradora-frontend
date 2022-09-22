@@ -12,6 +12,16 @@ export default {
 <template>
   <div class="modal-overlay" v-if="showModal">
     <div class="form-camp">
+      <label for="name"><b>Nombre</b></label>
+      <input
+        type="text"
+        placeholder="Enter user name"
+        name="name"
+        id="name"
+        required
+      />
+    </div>
+    <div class="form-camp">
       <label for="email"><b>Email</b></label>
       <input
         type="text"
@@ -28,16 +38,6 @@ export default {
         placeholder="Enter Password"
         name="psw"
         id="psw"
-        required
-      />
-    </div>
-    <div class="form-camp">
-      <label for="prefix"><b>Prefijo</b></label>
-      <input
-        type="text"
-        placeholder="Enter prefix"
-        name="prefix"
-        id="prefix"
         required
       />
     </div>

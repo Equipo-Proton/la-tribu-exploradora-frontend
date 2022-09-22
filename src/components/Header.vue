@@ -1,13 +1,10 @@
-<script setup>
-    import { RouterLink, RouterView } from "vue-router";
-</script>
-
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <header>
     <div class="logo">
       <img src="../assets/logo.svg" />
     </div>
-    <div class="appTitle">La Tribu Exploradora</div>
+    <div class="appTitle">AÑA: añerando, la Tribu Exploradora</div>
     <div class="user">
       <div>
         <p>user</p>

@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 import Header from "../components/Header.vue";
 import GameList from "../components/GameList.vue";
 import TeacherList from "../components/TeacherList.vue";
@@ -7,10 +7,8 @@ import TeacherList from "../components/TeacherList.vue";
 <template>
   <Header />
   <main>
-
     <GameList />
     <TeacherList />
-
   </main>
   <RouterView />
 </template>
@@ -23,9 +21,8 @@ main {
   display: flex;
   justify-content: space-around;
   padding: 4vh;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: bold;
   color: var(--font-color);
 }
 </style>
-

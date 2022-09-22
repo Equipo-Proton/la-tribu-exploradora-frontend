@@ -4,7 +4,6 @@ import HomeView from "./views/HomeView.vue";
 </script>
 
 <template>
-   
   <RouterView />
 </template>
 
@@ -39,5 +38,4 @@ nav a {
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
 }
-
 </style>

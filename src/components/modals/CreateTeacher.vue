@@ -10,19 +10,46 @@ export default {
 </script>
 
 <template>
-
   <div class="modal-overlay" v-if="showModal">
     <div class="form-camp">
+      <label for="name"><b>Nombre</b></label>
+      <input
+        type="text"
+        placeholder="Enter user name"
+        name="name"
+        id="name"
+        required
+      />
+    </div>
+    <div class="form-camp">
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      <input
+        type="text"
+        placeholder="Enter Email"
+        name="email"
+        id="email"
+        required
+      />
     </div>
     <div class="form-camp">
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      <input
+        type="password"
+        placeholder="Enter Password"
+        name="psw"
+        id="psw"
+        required
+      />
     </div>
     <div class="form-camp">
-      <label for="prefix"><b>Prefijo</b></label>
-      <input type="text" placeholder="Enter prefix" name="prefix" id="prefix" required>
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input
+        type="password"
+        placeholder="Repeat Password"
+        name="psw-repeat"
+        id="psw-repeat"
+        required
+      />
     </div>
     <div class="modal-buttons">
       <button class="accept-button" @click="showModal = false">Aceptar</button>
