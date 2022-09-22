@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import Axios from "axios";
+import axios from "axios";
 
 import App from "./App.vue";
 import router from "./router";
@@ -13,7 +13,8 @@ const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
-app.config.globalProperties.$http = Axios;
-/* axios.defaults.baseURL = 'https://api.example.com'; */
+
+app.config.globalProperties.$http = axios;
+axios.defaults.baseURL = "http://localhost:8000/api/";
 
 app.mount("#app");
