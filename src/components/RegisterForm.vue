@@ -110,6 +110,6 @@ $fuction(){
   </div>
 </template>
 
-<style>
+<style scoped>
 @import "../assets/registerForm.css";
 </style>

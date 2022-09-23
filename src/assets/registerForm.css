@@ -31,9 +31,9 @@ body {
 }
 
 .btn-dark {
-    color: #fff;
-    background-color: var(--base-color-orange);
-    border-color: #000000;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    background-color:rgb(3, 255, 129);
     width: 120px;
 
 }
