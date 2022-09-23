@@ -1,3 +1,4 @@
+/*
 $(document).ready(function () {
     $("#forgetBtn").click(function () {
         $("#dTab li:eq(2) a").tab("show");
@@ -10,3 +11,4 @@ $(document).ready(function () {
         $(".tab-content").find("#pane2").addClass("active in");
     });
 });
+*/

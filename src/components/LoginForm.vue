@@ -2,7 +2,7 @@
 
 <template>
   <div class="loginForm">
-    <h1>Registrate o logeate</h1>
+    <h1>Logeate como Alumno o Registrate como Profesor</h1>
   </div>
   <div class="d-flex justify-content-center align-items-center mt-5">
     <div class="card">

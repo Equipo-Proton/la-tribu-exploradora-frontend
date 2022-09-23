@@ -1,6 +1,7 @@
 <script setup>
   import { RouterLink, RouterView } from 'vue-router'
   import RegisterForm from '../components/RegisterForm.vue'
+  import ButtonsForm from '../components/ButtonsForm.vue';
 </script>
 <template>
   <header>
@@ -8,6 +9,7 @@
   </header>
   <main>
     <RegisterForm/>
+    <ButtonsForm/>
   </main>
 </template>
 
