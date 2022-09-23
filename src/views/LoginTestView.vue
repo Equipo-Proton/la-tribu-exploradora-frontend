@@ -24,6 +24,18 @@ export default {
             "token",
             response.data.access_token
           )}`;
+          if (
+            response.data.user.isAdmin === 0 &&
+            response.data.user.superAdmin === 0
+          ) {
+            this.$router.push("/");
+          }
+          if (
+            response.data.user.isAdmin === 1 &&
+            response.data.user.superAdmin === 0
+          ) {
+            this.$router.push("/adminPanelView");
+          }
           console.log(response);
         })
         .then((e) => {

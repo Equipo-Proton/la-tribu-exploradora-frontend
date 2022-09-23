@@ -13,6 +13,7 @@ export default {
   },
   methods: {
     register() {
+      let token = localStorage.getItem("token");
       let data = {
         name: this.form.name,
         email: this.form.email,
@@ -20,11 +21,14 @@ export default {
         password_confirmation: this.form.password_confirmation,
       };
       this.$http
-        .post("teacher/register", data)
+        .post({
+          url: "teacher/register",
+          headers: {
+            Authorization: `bearer ${token}`,
+          },
+          data,
+        })
         .then((response) => {
-          this.$http.defaults.headers.common[
-            "Authorization"
-          ] = `bearer ${localStorage.getItem("token")}`;
           console.log(response);
           console.log(response.data);
         })
