@@ -12,7 +12,7 @@
 .ButtonLeft {
     background-color: var(--base-color-purple);
     font-size: 25px;
-    border: 1px solid;
+    border: 0px;
     border-radius: 9px 9px 9px 9px;
     border-color: black;
     padding: auto;
@@ -21,7 +21,7 @@
 .ButtonRight {
     background-color: var(--base-color-purple);
     font-size: 25px;
-    border: 1px solid;
+    border: 0px;
     border-radius: 9px 9px 9px 9px;
     border-color: black;
     margin: 6px;
