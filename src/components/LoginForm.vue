@@ -1,37 +1,9 @@
 <script></script>
 
 <template>
-  <div class="loginForm">
-    <h1>Logeate como Alumno o Registrate como Profesor</h1>
-  </div>
+  
   <div class="d-flex justify-content-center align-items-center mt-5">
     <div class="card">
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item text-center">
-          <a
-            class="nav-link active btl"
-            id="pills-home-tab"
-            data-toggle="pill"
-            href="#pills-home"
-            role="tab"
-            aria-controls="pills-home"
-            aria-selected="true"
-            >Login</a
-          >
-        </li>
-        <li class="nav-item text-center">
-          <a
-            class="nav-link btr"
-            id="pills-profile-tab"
-            data-toggle="pill"
-            href="#pills-profile"
-            role="tab"
-            aria-controls="pills-profile"
-            aria-selected="false"
-            >Signup</a
-          >
-        </li>
-      </ul>
       <div class="tab-content" id="pills-tabContent">
         <div
           class="tab-pane fade show active"
@@ -40,20 +12,21 @@
           aria-labelledby="pills-home-tab"
         >
           <div class="form px-4 pt-5">
+            <a>Quien eres?</a>
             <input
               type="text"
               name=""
               class="form-control"
-              placeholder="Email or Phone"
+              placeholder="E-mail"
             />
-
+            <a>Contrasena</a>
             <input
               type="text"
               name=""
               class="form-control"
-              placeholder="Password"
+              placeholder="Contrasena"
             />
-            <button class="btn btn-dark btn-block">Login</button>
+            <button class="btn btn-dark btn-block">Entrar</button>
           </div>
         </div>
         <div
@@ -100,5 +73,5 @@
 </template>
 
 <style>
-@import "../assets/loginForm.css";
+@import "../assets/registerFormTeachers.css";
 </style>
