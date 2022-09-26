@@ -19,27 +19,12 @@ const router = createRouter({
     {
       path: "/panel",
       name: "administrationpanel",
-      meta: {
-        requiresAuth: true,
-      },
-      component: () => import("../views/AdminPanelView.vue"),
-    },
-    // vista de panel de administración
-    {
-      path: "/panel",
-      name: "administrationpanel",
-      meta: {
-        requiresAuth: true,
-      },
       component: () => import("../views/AdminPanelView.vue"),
     },
     // vista de prueba simulando la pantalla de espera de los alumnos
     {
       path: "/childs",
       name: "rutadeprueba",
-      meta: {
-        requiresAuth: true,
-      },
       component: () => import("../views/RutaEspera.vue"),
     },
   ],

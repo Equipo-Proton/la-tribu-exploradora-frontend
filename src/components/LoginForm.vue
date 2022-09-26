@@ -14,21 +14,12 @@ export default {
   methods: {
     async login() {
       const response = await apiAuth.getLogin(this.form);
-      console.log(response.data.access_token);
-      console.log(response.data.user);
 
-      if (response.data.access_token) {
-        localStorage.setItem("token", response.data.access_token);
+      const token = response.data.access_token;
 
-        if (
-          response.data.user.isAdmin === 1 ||
-          response.data.user.superAdmin === 1
-        ) {
-          this.$router.push("/adminPanelView");
-        }
+      localStorage.setItem("token", token);
 
-        this.$router.push("/childs");
-      }
+      this.$router.push("/panel");
     },
   },
 };
@@ -45,23 +36,29 @@ export default {
           aria-labelledby="pills-home-tab"
         >
           <div class="form px-4 pt-5">
-            <a>Quien eres?</a>
+            <label for="email">Quien eres?</label>
             <input
+              id="email"
               type="email"
               name=""
               class="form-control"
               placeholder="E-mail"
               v-model="form.email"
             />
-            <a>Contrasena</a>
+            <label for="password">Quien eres?</label>
             <input
+              id="password"
               type="text"
               name=""
               class="form-control"
               placeholder="Contrasena"
               v-model="form.password"
             />
-            <button class="btn btn-dark btn-block" v-on:click="login">
+            <button
+              class="btn btn-dark btn-block"
+              type="submit"
+              v-on:click="login"
+            >
               Entrar
             </button>
           </div>

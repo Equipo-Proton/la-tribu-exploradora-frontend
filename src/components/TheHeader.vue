@@ -1,5 +1,5 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-<script>
+<script setup>
 /* import { api } from "../services/apiAuth.js";
 
 export default {
@@ -31,7 +31,7 @@ export default {
 </template>
 
 <style scoped>
-@import "../../src/assets/main.css";
+@import "../assets/main.css";
 
 header {
   background-color: var(--base-color-purple);
