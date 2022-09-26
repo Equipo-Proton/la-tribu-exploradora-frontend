@@ -1,4 +1,19 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<script>
+/* import { api } from "../services/apiAuth.js";
+
+export default {
+  methods: {
+    async logout() {
+      await api.getLogout();
+      console.log("Logged out");
+
+      localStorage.removeItem("token");
+    },
+  }, */
+
+</script>
+
 <template>
   <header>
     <div class="logo">

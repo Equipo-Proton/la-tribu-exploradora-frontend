@@ -14,7 +14,8 @@ const app = createApp(App);
 app.use(createPinia());
 app.use(router);
 
-app.config.globalProperties.$http = axios;
-axios.defaults.baseURL = "http://localhost:8000/api/";
+axios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem(
+  "token"
+)}`;
 
 app.mount("#app");
