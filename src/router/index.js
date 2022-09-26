@@ -6,11 +6,14 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => import("../views/HomeView.vue"),
+      component: () => import("../views/LoginView.vue"),
     },
     {
       path: "/adminPanelView",
       name: "adminPanel",
+      meta: {
+        requiresAuth: true,
+      },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -25,14 +28,6 @@ const router = createRouter({
       component: () => import("../views/AdminPanelView.vue"),
     },
     {
-      path: "/login",
-      name: "login",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/LoginView.vue"),
-    },
-    {
       path: "/RegisterView.vue",
       name: "Register",
       // route level code-splitting
@@ -41,20 +36,15 @@ const router = createRouter({
       component: () => import("../views/RegisterView.vue"),
     },
     {
-      path: "/registertestview",
-      name: "RegisterTestView",
+      path: "/childs",
+      name: "RutaEspera",
+      meta: {
+        requiresAuth: true,
+      },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import("../views/RegisterTestView.vue"),
-    },
-    {
-      path: "/logintestview",
-      name: "LoginTestView",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/LoginTestView.vue"),
+      component: () => import("../views/RutaEspera.vue"),
     },
   ],
 });
