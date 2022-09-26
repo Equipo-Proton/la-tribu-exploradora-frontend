@@ -31,7 +31,7 @@
 
 .flex-parent {
     display: flex;
-    top:60px
+    top: 330px;
 
 }
 
