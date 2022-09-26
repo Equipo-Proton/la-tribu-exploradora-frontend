@@ -10,7 +10,7 @@
 
 <style scoped>
 .ButtonLeft {
-    background-color: var(--base-color-purple);
+    background-color: cornflowerblue;
     font-size: 25px;
     border: 0px;
     border-radius: 9px 9px 9px 9px;
