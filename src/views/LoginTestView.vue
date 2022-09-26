@@ -15,10 +15,9 @@ export default {
     async login() {
       const response = await api.getLogin(this.form);
       console.log(response.data.access_token);
+      console.log(response.data.user);
 
       localStorage.setItem("token", response.data.access_token);
-
-      this.$router.push("/adminpanelview");
     },
   },
 };
