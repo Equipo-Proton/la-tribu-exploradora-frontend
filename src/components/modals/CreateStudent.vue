@@ -1,13 +1,29 @@
 <script>
-export default {
-  name: "CreateStudent",
-  data() {
-    return {
-      showModal: false,
-    };
-  },
-};
-</script>
+  import { apiUsers } from "../../services/apiUsers.js";
+  
+  export default {
+    name: "CreateStudent",
+  
+    data() {
+      return {
+        showModal: false,
+        form: {
+          name: "",
+          email: "",
+          password: "",
+          password_confirmation: "",
+        },
+      };
+    },
+  
+    methods: {
+      async register() {
+        const response = await apiUsers.registerUser(this.form);
+        console.log(response);
+      },
+    },
+  };
+  </script>
 
 <template>
   <div class="modal-overlay" v-if="showModal">
@@ -16,9 +32,10 @@ export default {
       <input
         type="text"
         placeholder="Enter user name"
-        name="name"
+        name=""
         id="name"
         required
+        v-model="form.name"
       />
     </div>
     <div class="form-camp">
@@ -26,9 +43,10 @@ export default {
       <input
         type="text"
         placeholder="Enter Email"
-        name="email"
+        name=""
         id="email"
         required
+        v-model="form.email"
       />
     </div>
     <div class="form-camp">
@@ -36,9 +54,18 @@ export default {
       <input
         type="password"
         placeholder="Enter Password"
-        name="psw"
+        name=""
         id="psw"
         required
+        v-model="form.confirmation"
+      />
+      <input
+        type="password"
+        placeholder="Repeat Password"
+        name=""
+        id="psw-repeat"
+        required
+        v-model="form.password_confirmation"
       />
     </div>
 
