@@ -1,15 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import RegisterForm from "../components/LoginForm.vue";
+import LoginForm from "../components/LoginForm.vue";
 import ButtonsForm from "../components/ButtonsForm.vue";
 </script>
 <template>
- 
   <main>
-    <RegisterForm/>
+    <LoginForm/>
     <ButtonsForm/>
   </main>
 </template>
+
 
 <style scoped>
 main {

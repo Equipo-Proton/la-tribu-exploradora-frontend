@@ -12,20 +12,21 @@
           aria-labelledby="pills-home-tab"
         >
           <div class="form px-4 pt-5">
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Nombre de Profesor"
-            />
-
+            <a>Quien eres?</a>
             <input
               type="text"
               name=""
               class="form-control"
               placeholder="E-mail"
             />
-            <button class="btn btn-dark btn-block">Registrarse</button>
+            <a>Contrasena</a>
+            <input
+              type="text"
+              name=""
+              class="form-control"
+              placeholder="Contrasena"
+            />
+            <button class="btn btn-dark btn-block">Entrar</button>
           </div>
         </div>
         <div
