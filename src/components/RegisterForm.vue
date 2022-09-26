@@ -31,13 +31,6 @@ $fuction(){
               class="form-control"
               placeholder="Nombre"
             />
-            <a>Contrasena</a>
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Contrasena"
-            />
             <button class="btn btn-dark btn-block">Entrar</button>
           </div>
         </div>
