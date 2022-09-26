@@ -1,9 +1,12 @@
 <script setup>
 import { RouterView } from "vue-router";
+import AbcGameKeyborad from "../components/AbcGameKeyborad.vue";
 </script>
 
 <template>
-  <main></main>
+  <main>
+    <AbcGameKeyborad></AbcGameKeyborad>
+  </main>
   <RouterView />
 </template>
 
@@ -15,7 +18,6 @@ main {
   display: flex;
   justify-content: space-around;
   padding: 4vh;
-  font-family: "Montserrat Alternates", sans-serif;
   font-weight: bold;
   color: var(--font-color);
 }
