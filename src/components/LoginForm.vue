@@ -12,12 +12,8 @@ export default {
     };
   },
   methods: {
-    async login() {
-      const response = await apiAuth.getLogin(this.form);
-
-      const token = response.data.access_token;
-
-      localStorage.setItem("token", token);
+    correctLogin() {
+      apiAuth.getLogin(this.form);
 
       this.$router.push("/panel");
     },
@@ -57,7 +53,7 @@ export default {
             <button
               class="btn btn-dark btn-block"
               type="submit"
-              v-on:click="login"
+              v-on:click="correctLogin"
             >
               Entrar
             </button>
