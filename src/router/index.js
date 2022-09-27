@@ -23,9 +23,9 @@ const router = createRouter({
     },
     // vista de prueba simulando la pantalla de espera de los alumnos
     {
-      path: "/childs",
-      name: "rutadeprueba",
-      component: () => import("../views/RutaEspera.vue"),
+      path: "/children",
+      name: "waitingView",
+      component: () => import("../views/WaitingView.vue"),
     },
     {
       path: "/abcgameview",
