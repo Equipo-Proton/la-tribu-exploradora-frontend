@@ -1,0 +1,18 @@
+body{
+    padding: auto;
+    color: #F1FCFF;
+}
+main{
+    background-color: #F1FCFF;
+}
+
+img{
+    background-color: #F1FCFF;
+    padding: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    top: 220px;
+    height: 700px;
+    width: 700px;
+}
