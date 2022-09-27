@@ -11,7 +11,6 @@ export default {
       localStorage.removeItem("token");
     },
   }, */
-
 </script>
 
 <template>
