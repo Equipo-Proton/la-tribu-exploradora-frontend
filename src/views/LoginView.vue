@@ -1,15 +1,13 @@
 <script setup>
 import { RouterView } from "vue-router";
 import LoginForm from "../components/LoginForm.vue";
-import ButtonsForm from "../components/ButtonsForm.vue";
+import TheHeader from "../components/TheHeader.vue";
 </script>
 <template>
-  <TheHeader />
+  <TheHeader></TheHeader>
   <main>
     <LoginForm />
-    <ButtonsForm />
   </main>
-
   <RouterView />
 </template>
 

@@ -5,12 +5,12 @@ const router = createRouter({
   routes: [
     // vista de login
 
-/*     {
+    /*     {
       path: "/",
       name: "home",
       component: () => import("../views/LandingPageView.vue"),
     }, */
-/*     {
+    /*     {
       path: "/",
       name: "Login",
       component: () => import("../views/LoginView.vue"),
@@ -20,14 +20,6 @@ const router = createRouter({
       name: "home",
       component: () => import("../views/LoginView.vue"),
     },
-    // vista de register
-/*     {
-      path: "/register",
-      name: "register",
-      component: () => import("../views/RegisterView.vue"),
-    }, */
-    // vista de panel de administración
-
     {
       path: "/panel",
       name: "AdminPanel",
@@ -63,8 +55,6 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/GameControlView.vue"),
     },
-
-
   ],
 });
 
