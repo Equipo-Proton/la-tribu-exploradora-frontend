@@ -85,12 +85,13 @@ export default {
       >
         <div class="form">
           <div>
-            <a>Quien eres?</a>
+            <a>¿Quién eres?</a>
             <input
               type="text"
               name=""
               class="form-control"
               placeholder="E-mail"
+              v-model="form.email"
             />
           </div>
           <div>
@@ -100,9 +101,12 @@ export default {
               name=""
               class="form-control"
               placeholder="Contraseña"
+              v-model="form.password"
             />
           </div>
-          <button class="btn btn-dark btn-block">Entrar</button>
+          <button class="btn btn-dark btn-block" v-on:click="correctLogin">
+            Entrar
+          </button>
         </div>
       </div>
     </div>
