@@ -28,6 +28,18 @@ export default {
 <template>
   <div class="d-flex justify-content-center align-items-center mt-5">
     <div class="card">
+      <b-card no-body>
+        <b-tabs card>
+          <b-tab title="Tab 1" active>
+            <b-card-text>Tab contents 1</b-card-text>
+          </b-tab>
+          <b-tab title="Tab 2">
+            <b-card-text>Tab contents 2</b-card-text>
+          </b-tab>
+        </b-tabs>
+      </b-card>
+    </div>
+    <div class="card">
       <div class="tab-content" id="pills-tabContent">
         <div
           class="tab-pane fade show active"
