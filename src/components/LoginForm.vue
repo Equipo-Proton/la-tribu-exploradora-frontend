@@ -16,10 +16,20 @@ export default {
       const response = await apiAuth.getLogin(this.form);
 
       const token = response.data.access_token;
+      const isAdmin = response.data.user.isAdmin; // integer
+      const superAdmin = response.data.user.superAdmin;
 
-      localStorage.setItem("token", token);
+      localStorage.setItem("token", token); // string
+      localStorage.setItem("isAdmin", isAdmin);
+      localStorage.setItem("superAdmin", superAdmin);
 
-      this.$router.push("/panel");
+      if (isAdmin === 1 || superAdmin === 1) {
+        this.$router.push("/panel");
+
+        return;
+      }
+
+      this.$router.push("/waiting");
     },
   },
 };

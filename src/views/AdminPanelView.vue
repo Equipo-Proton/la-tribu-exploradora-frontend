@@ -1,14 +1,64 @@
-<script setup>
+<script>
 import { RouterView } from "vue-router";
 import TheHeader from "../components/TheHeader.vue";
 import GameList from "../components/GameList.vue";
 import TeacherList from "../components/TeacherList.vue";
+import StudentList from "../components/StudentList.vue";
+
+export default {
+  name: "AdminPanelView",
+
+  data() {
+    return {
+      isAdmin: Boolean,
+      superAdmin: Boolean,
+    };
+  },
+
+  methods: {
+    getIsAdmin() {
+      const isAdmin = localStorage.getItem("isAdmin");
+
+      if (isAdmin === "1") {
+        this.isAdmin = true;
+
+        return;
+      }
+
+      this.isAdmin = false;
+    },
+
+    getSuperAdmin() {
+      const superAdmin = localStorage.getItem("superAdmin");
+
+      if (superAdmin === "1") {
+        this.superAdmin = true;
+
+        return;
+      }
+
+      this.superAdmin = false;
+    },
+  },
+
+  created() {
+    this.getIsAdmin();
+    this.getSuperAdmin();
+  },
+
+  components: { TheHeader, GameList, TeacherList, StudentList },
+};
 </script>
 <template>
   <TheHeader />
   <main>
     <GameList />
-    <TeacherList />
+    <div v-if="isAdmin">
+      <StudentList />
+    </div>
+    <div v-if="superAdmin">
+      <TeacherList />
+    </div>
   </main>
   <RouterView />
 </template>
