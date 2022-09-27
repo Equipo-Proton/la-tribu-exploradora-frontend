@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from "vue-router";
-import AbcGameKeyboard from "../components/AbcGameKeyborad.vue";
+import AbcGameKeyboard from "../components/AbcGameKeyboard.vue";
 </script>
 
 <template>
