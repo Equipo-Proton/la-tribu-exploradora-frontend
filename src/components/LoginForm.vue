@@ -26,9 +26,9 @@ export default {
 </script>
 
 <template>
-  <div class="card">
+  <div class="card d-flex">
     <ul
-      class="nav nav-pills justify-content-around"
+      class="nav nav-pills nav-fill justify-content-around"
       id="pills-tab"
       role="tablist"
     >
@@ -61,9 +61,9 @@ export default {
         </button>
       </li>
     </ul>
-    <div class="tab-content align-self-center" id="pills-tabContent">
+    <div class="tab-content" id="pills-tabContent">
       <div
-        class="tab-pane fade show active"
+        class="tab-pane fade show active d-flex justify-content-center align-items-center"
         id="pills-user"
         role="tabpanel"
         aria-labelledby="pills-user-tab"
@@ -81,6 +81,7 @@ export default {
           <button class="btn btn-dark btn-block">Entrar</button>
         </div>
       </div>
+
       <div
         class="tab-pane fade"
         id="pills-teacher"
@@ -129,7 +130,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 1vw;
-  gap: 1vw;
+  row-gap: 2vw;
+  gap: 2vw;
 }
 </style>
