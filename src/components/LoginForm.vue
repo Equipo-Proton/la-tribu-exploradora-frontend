@@ -12,12 +12,8 @@ export default {
     };
   },
   methods: {
-    async login() {
-      const response = await apiAuth.getLogin(this.form);
-
-      const token = response.data.access_token;
-
-      localStorage.setItem("token", token);
+    correctLogin() {
+      apiAuth.getLogin(this.form);
 
       this.$router.push("/panel");
     },

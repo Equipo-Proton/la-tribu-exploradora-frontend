@@ -18,44 +18,67 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
+      meta: {
+        requiresAuth: false,
+      },
       component: () => import("../views/LoginView.vue"),
     },
     {
       path: "/panel",
       name: "AdminPanel",
+      meta: {
+        requiresAuth: true,
+      },
       component: () => import("../views/AdminPanelView.vue"),
     },
     // vista de prueba simulando la pantalla de espera de los alumnos
     {
       path: "/waiting",
       name: "Waiting",
+      meta: {
+        requiresAuth: true,
+      },
       component: () => import("../views/WaitingView.vue"),
     },
     {
-      path: "/abcgame",
-      name: "AbcGame",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      path: "/abcgameview",
+      name: "AbcGameView",
+      meta: {
+        requiresAuth: true,
+      },
       component: () => import("../views/AbcGameView.vue"),
     },
     {
       path: "/play",
       name: "ReadyToPlay",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      meta: {
+        requiresAuth: true,
+      },
       component: () => import("../views/ReadyToPlayView.vue"),
     },
     {
       path: "/gamecontrol",
       name: "GameControl",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      meta: {
+        requiresAuth: true,
+      },
       component: () => import("../views/GameControlView.vue"),
     },
   ],
+});
+
+router.beforeEach((to, next) => {
+  if (to.meta.requiresAuth && localStorage.getItem("token")) {
+    return next();
+  }
+
+  if (to.meta.requiresAuth && !localStorage.getItem("token")) {
+    router.push({
+      path: "/",
+      name: "home",
+      component: () => import("../views/LoginView.vue"),
+    });
+  }
 });
 
 export default router;
