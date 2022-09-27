@@ -17,6 +17,8 @@ main {
   align-items: center;
   justify-content: center;
   background-color: var(--background-color-blue);
-  height: 100vh;
+  height: 85vh;
+  width: 100vw;
+  position: absolute;
 }
 </style>

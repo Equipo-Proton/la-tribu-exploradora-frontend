@@ -28,7 +28,7 @@ export default {
 <template>
   <div class="card d-flex">
     <ul
-      class="nav nav-pills nav-fill justify-content-around"
+      class="nav nav-tabs nav-fill justify-content-around"
       id="pills-tab"
       role="tablist"
     >
@@ -43,7 +43,7 @@ export default {
           aria-controls="pills-user"
           aria-selected="true"
         >
-          Alumno
+          ALUMNO
         </button>
       </li>
       <li class="nav-item" role="presentation">
@@ -57,13 +57,16 @@ export default {
           aria-controls="pills-teacher"
           aria-selected="false"
         >
-          Profesor
+          PROFESOR
         </button>
       </li>
     </ul>
-    <div class="tab-content" id="pills-tabContent">
+    <div
+      class="tab-content d-flex justify-content-center align-items-center m-auto"
+      id="pills-tabContent"
+    >
       <div
-        class="tab-pane fade show active d-flex justify-content-center align-items-center"
+        class="tab-pane fade show active m-auto"
         id="pills-user"
         role="tabpanel"
         aria-labelledby="pills-user-tab"
@@ -78,7 +81,7 @@ export default {
               placeholder="E-mail"
             />
           </div>
-          <button class="btn btn-dark btn-block">Entrar</button>
+          <button class="btn">Entrar</button>
         </div>
       </div>
 
@@ -111,9 +114,7 @@ export default {
               v-model="form.password"
             />
           </div>
-          <button class="btn btn-dark btn-block" v-on:click="correctLogin">
-            Entrar
-          </button>
+          <button class="btn" v-on:click="correctLogin">Entrar</button>
         </div>
       </div>
     </div>
@@ -124,6 +125,12 @@ export default {
 .card {
   min-width: 812px;
   min-height: 485px;
+  overflow: hidden;
+}
+.card,
+ul,
+li {
+  border-radius: 2vw;
 }
 .form {
   display: flex;
@@ -132,5 +139,20 @@ export default {
   justify-content: center;
   row-gap: 2vw;
   gap: 2vw;
+}
+
+.btn {
+  background-color: var(--base-color-green);
+  border-radius: 2vw;
+}
+
+label,
+button,
+a {
+  font-weight: bold;
+  font-family: var(--font-family-secondary);
+}
+input {
+  border: 0.2vw solid var(--base-color-purple);
 }
 </style>
