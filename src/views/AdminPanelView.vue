@@ -1,11 +1,11 @@
 <script setup>
 import { RouterView } from "vue-router";
-import Header from "../components/Header.vue";
+import TheHeader from "../components/TheHeader.vue";
 import GameList from "../components/GameList.vue";
 import TeacherList from "../components/TeacherList.vue";
 </script>
 <template>
-  <Header />
+  <TheHeader />
   <main>
     <GameList />
     <TeacherList />

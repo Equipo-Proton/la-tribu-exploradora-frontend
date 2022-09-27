@@ -1,10 +1,26 @@
 <script>
+import { apiTeachers } from "../../services/apiTeachers.js";
+
 export default {
   name: "CreateTeacher",
+
   data() {
     return {
       showModal: false,
+      form: {
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+      },
     };
+  },
+
+  methods: {
+    async register() {
+      const response = await apiTeachers.registerTeacher(this.form);
+      console.log(response);
+    },
   },
 };
 </script>
@@ -16,9 +32,10 @@ export default {
       <input
         type="text"
         placeholder="Enter user name"
-        name="name"
+        name=""
         id="name"
         required
+        v-model="form.name"
       />
     </div>
     <div class="form-camp">
@@ -26,9 +43,10 @@ export default {
       <input
         type="text"
         placeholder="Enter Email"
-        name="email"
+        name=""
         id="email"
         required
+        v-model="form.email"
       />
     </div>
     <div class="form-camp">
@@ -36,9 +54,10 @@ export default {
       <input
         type="password"
         placeholder="Enter Password"
-        name="psw"
+        name=""
         id="psw"
         required
+        v-model="form.password"
       />
     </div>
     <div class="form-camp">
@@ -46,13 +65,20 @@ export default {
       <input
         type="password"
         placeholder="Repeat Password"
-        name="psw-repeat"
+        name=""
         id="psw-repeat"
         required
+        v-model="form.password_confirmation"
       />
     </div>
     <div class="modal-buttons">
-      <button class="accept-button" @click="showModal = false">Aceptar</button>
+      <button
+        class="accept-button"
+        @click="showModal = false"
+        v-on:click="register"
+      >
+        Aceptar
+      </button>
       <button class="cancel-button" @click="showModal = false">Cancelar</button>
     </div>
   </div>

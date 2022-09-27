@@ -16,5 +16,7 @@ import ButtonsForm from "../components/ButtonsForm.vue";
 <style scoped>
 main {
   background-color: var(--background-color-blue);
+  height: 100vh ;
 }
+
 </style>

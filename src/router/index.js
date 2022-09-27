@@ -3,58 +3,29 @@ import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // vista de login
     {
       path: "/",
       name: "home",
-      component: () => import("../views/HomeView.vue"),
-    },
-    {
-      path: "/adminPanelView",
-      name: "adminPanel",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AdminPanelView.vue"),
-    },
-    {
-      path: "/teacherPanelView",
-      name: "teacherPanel",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AdminPanelView.vue"),
-    },
-    {
-      path: "/login",
-      name: "login",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("../views/LoginView.vue"),
     },
+    // vista de register
     {
-      path: "/RegisterView.vue",
-      name: "Register",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      path: "/register",
+      name: "register",
       component: () => import("../views/RegisterView.vue"),
     },
+    // vista de panel de administración
     {
-      path: "/registertestview",
-      name: "RegisterTestView",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/RegisterTestView.vue"),
+      path: "/panel",
+      name: "administrationpanel",
+      component: () => import("../views/AdminPanelView.vue"),
     },
+    // vista de prueba simulando la pantalla de espera de los alumnos
     {
-      path: "/logintestview",
-      name: "LoginTestView",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/LoginTestView.vue"),
+      path: "/childs",
+      name: "rutadeprueba",
+      component: () => import("../views/RutaEspera.vue"),
     },
     {
       path: "/abcgameview",

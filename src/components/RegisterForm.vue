@@ -13,9 +13,7 @@ $fuction(){
 <template>
   <div class="d-flex justify-content-center align-items-center mt-5">
     <div class="card">
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        
-      </ul>
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"></ul>
       <div class="tab-content" id="pills-tabContent">
         <div
           class="tab-pane fade show active"
@@ -30,13 +28,6 @@ $fuction(){
               name=""
               class="form-control"
               placeholder="Nombre"
-            />
-            <a>Contrasena</a>
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Contrasena"
             />
             <button class="btn btn-dark btn-block">Entrar</button>
           </div>
