@@ -12,8 +12,12 @@ export default {
     };
   },
   methods: {
-    correctLogin() {
-      apiAuth.getLogin(this.form);
+    async correctLogin() {
+      const response = await apiAuth.getLogin(this.form);
+
+      const token = response.data.access_token;
+
+      localStorage.setItem("token", token);
 
       this.$router.push("/panel");
     },
@@ -85,8 +89,9 @@ export default {
       >
         <div class="form">
           <div>
-            <a>¿Quién eres?</a>
+            <label for="email">¿Quién eres?</label>
             <input
+              id="email"
               type="text"
               name=""
               class="form-control"
@@ -95,9 +100,10 @@ export default {
             />
           </div>
           <div>
-            <a>Contraseña</a>
+            <label for="password">Contraseña</label>
             <input
-              type="text"
+              id="password"
+              type="password"
               name=""
               class="form-control"
               placeholder="Contraseña"
