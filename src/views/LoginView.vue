@@ -13,6 +13,9 @@ import TheHeader from "../components/TheHeader.vue";
 
 <style scoped>
 main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--background-color-blue);
   height: 100vh;
 }
