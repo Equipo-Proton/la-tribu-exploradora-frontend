@@ -1,11 +1,11 @@
 <script setup>
 import { RouterView } from "vue-router";
-import AbcGameKeyborad from "../components/AbcGameKeyborad.vue";
+import AbcGameKeyboard from "../components/AbcGameKeyborad.vue";
 </script>
 
 <template>
   <main>
-    <AbcGameKeyborad></AbcGameKeyborad>
+    <AbcGameKeyboard></AbcGameKeyboard>
   </main>
   <RouterView />
 </template>
