@@ -3,32 +3,33 @@ import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // vista de login
+    //Vista home
     {
       path: "/",
       name: "home",
       component: () => import("../views/LoginView.vue"),
     },
-    // vista de register
+    // vista de login
     {
-      path: "/register",
-      name: "register",
-      component: () => import("../views/RegisterView.vue"),
+      path: "/login",
+      name: "login",
+      component: () => import("../views/LoginView.vue"),
     },
+
     // vista de panel de administración
     {
       path: "/panel",
-      name: "administrationpanel",
+      name: "adminPanel",
       component: () => import("../views/AdminPanelView.vue"),
     },
     // vista de prueba simulando la pantalla de espera de los alumnos
     {
-      path: "/children",
+      path: "/waiting",
       name: "waitingView",
       component: () => import("../views/WaitingView.vue"),
     },
     {
-      path: "/abcgameview",
+      path: "/abcgame",
       name: "AbcGameView",
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
