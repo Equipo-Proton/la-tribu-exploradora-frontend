@@ -6,15 +6,22 @@ import ConfirmDeleteStudent from "./modals/ConfirmDeleteStudent.vue";
 export default {
   name: "StudentList",
 
+  props: {
+    students: {
+      type: Object,
+      required: true,
+    },
+  },
+
   components: { EditStudent, CreateStudent, ConfirmDeleteStudent },
 };
 </script>
 <template>
   <main>
     <h3>Estudiantes</h3>
-    <div class="teachersBox">
+    <div v-for="(student, index) in students" :key="index" class="teachersBox">
       <div id="userManagement">
-        <div class="teacherName">Nombre</div>
+        <div class="teacherName">{{ student.name }}</div>
         <div><EditStudent></EditStudent></div>
         <div><ConfirmDeleteStudent></ConfirmDeleteStudent></div>
       </div>

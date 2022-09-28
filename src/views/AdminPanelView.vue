@@ -1,4 +1,6 @@
 <script>
+import { apiTeachers } from "../services/apiTeachers.js";
+import { apiUsers } from "../services/apiUsers.js";
 import TheHeader from "../components/TheHeader.vue";
 import GameList from "../components/GameList.vue";
 import TeacherList from "../components/TeacherList.vue";
@@ -9,13 +11,38 @@ export default {
 
   data() {
     return {
+      students: [],
+      teachers: [],
       isAdmin: Boolean,
       superAdmin: Boolean,
     };
   },
 
   methods: {
-    getIsAdmin() {
+    async listStudents() {
+      const token = localStorage.getItem("token");
+      console.log(token);
+
+      const response = await apiUsers.listUsers();
+
+      const studentsData = response.data.data;
+      console.log(studentsData);
+
+      this.students = studentsData;
+    },
+
+    async listTeachers() {
+      const token = localStorage.getItem("token");
+      console.log(token);
+
+      const response = await apiTeachers.listTeachers();
+
+      const teachersData = response.data.data;
+
+      this.teachers = teachersData;
+    },
+
+    async getIsAdmin() {
       const isAdmin = localStorage.getItem("isAdmin");
 
       if (isAdmin === "1") {
@@ -27,7 +54,7 @@ export default {
       this.isAdmin = false;
     },
 
-    getSuperAdmin() {
+    async getSuperAdmin() {
       const superAdmin = localStorage.getItem("superAdmin");
 
       if (superAdmin === "1") {
@@ -41,6 +68,8 @@ export default {
   },
 
   created() {
+    this.listStudents();
+    this.listTeachers();
     this.getIsAdmin();
     this.getSuperAdmin();
   },
@@ -53,10 +82,10 @@ export default {
   <main>
     <GameList />
     <div v-if="isAdmin">
-      <StudentList />
+      <StudentList :students="students" />
     </div>
     <div v-if="superAdmin">
-      <TeacherList />
+      <TeacherList :teachers="teachers" />
     </div>
   </main>
   <RouterView />

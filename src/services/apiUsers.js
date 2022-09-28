@@ -8,7 +8,11 @@ export const apiUsers = {
   },
 
   listUsers() {
-    return axios.get(baseUrl + "/users");
+    return axios.get(baseUrl + "/users", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   userProfile(id) {

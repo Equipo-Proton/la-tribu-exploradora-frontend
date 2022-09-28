@@ -1,5 +1,4 @@
 <script>
-import { apiTeachers } from "../services/apiTeachers.js";
 import EditTeacher from "./modals/EditTeacher.vue";
 import CreateTeacher from "./modals/CreateTeacher.vue";
 import ConfirmDeleteTeacher from "./modals/ConfirmDeleteTeacher.vue";
@@ -7,24 +6,11 @@ import ConfirmDeleteTeacher from "./modals/ConfirmDeleteTeacher.vue";
 export default {
   name: "StudentList",
 
-  data() {
-    return {
-      teachers: [],
-    };
-  },
-
-  methods: {
-    async listTeachers() {
-      const response = await apiTeachers.listTeachers();
-
-      const teachersData = response.data.data;
-
-      this.teachers = teachersData;
+  props: {
+    teachers: {
+      type: Object,
+      required: true,
     },
-  },
-
-  created() {
-    this.listTeachers();
   },
 
   components: { EditTeacher, CreateTeacher, ConfirmDeleteTeacher },

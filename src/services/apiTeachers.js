@@ -8,7 +8,11 @@ export const apiTeachers = {
   },
 
   listTeachers() {
-    return axios.get(baseUrl + "/teachers");
+    return axios.get(baseUrl + "/teachers", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   listAllAppUsers() {
