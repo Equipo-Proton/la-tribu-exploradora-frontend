@@ -1,4 +1,5 @@
 <script>
+import { apiTeachers } from "../services/apiTeachers.js";
 import EditTeacher from "./modals/EditTeacher.vue";
 import CreateTeacher from "./modals/CreateTeacher.vue";
 import ConfirmDeleteTeacher from "./modals/ConfirmDeleteTeacher.vue";
@@ -6,15 +7,35 @@ import ConfirmDeleteTeacher from "./modals/ConfirmDeleteTeacher.vue";
 export default {
   name: "StudentList",
 
+  data() {
+    return {
+      teachers: [],
+    };
+  },
+
+  methods: {
+    async listTeachers() {
+      const response = await apiTeachers.listTeachers();
+
+      const teachersData = response.data.data;
+
+      this.teachers = teachersData;
+    },
+  },
+
+  created() {
+    this.listTeachers();
+  },
+
   components: { EditTeacher, CreateTeacher, ConfirmDeleteTeacher },
 };
 </script>
 <template>
   <main>
     <h3>Profesores</h3>
-    <div class="teachersBox">
+    <div v-for="(teacher, index) in teachers" :key="index" class="teachersBox">
       <div id="userManagement">
-        <div class="teacherName">Nombre</div>
+        <div class="teacherName">{{ teacher.name }}</div>
         <div><EditTeacher></EditTeacher></div>
         <div><ConfirmDeleteTeacher></ConfirmDeleteTeacher></div>
       </div>
