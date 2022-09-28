@@ -14,7 +14,7 @@ export default {
     <div class="logo">
       <img src="../../assets/logo.svg" />
     </div>
-    <h3>¿Estas seguro que quieres eliminar al profesor?</h3>
+    <h3>¿Estas seguro que quieres eliminar al estudiante?</h3>
     <div class="modal-buttons">
       <button class="accept-button">Aceptar</button>
       <button class="cancel-button" @click="showModal = false">Cancelar</button>

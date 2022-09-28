@@ -1,8 +1,13 @@
-import { RouterView } from 'vue-router';
-<script setup>
+<script>
 import EditTeacher from "./modals/EditTeacher.vue";
 import CreateTeacher from "./modals/CreateTeacher.vue";
 import ConfirmDeleteTeacher from "./modals/ConfirmDeleteTeacher.vue";
+
+export default {
+  name: "StudentList",
+
+  components: { EditTeacher, CreateTeacher, ConfirmDeleteTeacher },
+};
 </script>
 <template>
   <main>

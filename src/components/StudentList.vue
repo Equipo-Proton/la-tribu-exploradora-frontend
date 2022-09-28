@@ -1,6 +1,13 @@
-<script setup>
+<script>
 import EditStudent from "./modals/EditStudent.vue";
 import CreateStudent from "./modals/CreateStudent.vue";
+import ConfirmDeleteStudent from "./modals/ConfirmDeleteStudent.vue";
+
+export default {
+  name: "StudentList",
+
+  components: { EditStudent, CreateStudent, ConfirmDeleteStudent },
+};
 </script>
 <template>
   <main>
@@ -9,7 +16,7 @@ import CreateStudent from "./modals/CreateStudent.vue";
       <div id="userManagement">
         <div class="teacherName">Nombre</div>
         <div><EditStudent></EditStudent></div>
-        <div><button id="deleteTeacher">Eliminar</button></div>
+        <div><ConfirmDeleteStudent></ConfirmDeleteStudent></div>
       </div>
     </div>
     <CreateStudent></CreateStudent>

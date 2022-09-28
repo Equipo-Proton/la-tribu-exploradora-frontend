@@ -1,5 +1,4 @@
 <script>
-import { RouterView } from "vue-router";
 import TheHeader from "../components/TheHeader.vue";
 import GameList from "../components/GameList.vue";
 import TeacherList from "../components/TeacherList.vue";
