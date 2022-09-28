@@ -16,18 +16,34 @@ export const apiTeachers = {
   },
 
   listAllAppUsers() {
-    return axios.get(baseUrl + "/listusers");
+    return axios.get(baseUrl + "/listusers", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   teacherProfile(id) {
-    return axios.get(baseUrl + "/profile/" + id);
+    return axios.get(baseUrl + "/profile/" + id, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   deleteTeacher(id) {
-    return axios.delete(baseUrl + `/teacher/delete/${id}`);
+    return axios.delete(baseUrl + `/teacher/delete/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   updateTeacher(id) {
-    return axios.patch(baseUrl + `/teacher/update/${id}`);
+    return axios.patch(baseUrl + `/teacher/update/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 };

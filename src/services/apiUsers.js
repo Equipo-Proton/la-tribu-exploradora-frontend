@@ -16,14 +16,26 @@ export const apiUsers = {
   },
 
   userProfile(id) {
-    return axios.get(baseUrl + "/userprofile/" + id);
+    return axios.get(baseUrl + "/userprofile/" + id, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   deleteUser(id) {
-    return axios.delete(baseUrl + `/delete/${id}`);
+    return axios.delete(baseUrl + `/delete/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   updateUser(id) {
-    return axios.patch(baseUrl + `/update/${id}`);
+    return axios.patch(baseUrl + `/update/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 };

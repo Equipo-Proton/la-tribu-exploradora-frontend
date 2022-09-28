@@ -1,10 +1,31 @@
 <script>
+import { apiUsers } from "../../services/apiUsers";
+
 export default {
   name: "ConfirmDeleteStudent",
+
   data() {
     return {
+      studentId: this.student.id,
       showModal: false,
     };
+  },
+
+  props: {
+    student: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  methods: {
+    async deleteStudent() {
+      await apiUsers.deleteUser(this.studentId);
+
+      alert("Estudiante eliminado/a");
+
+      location.reload();
+    },
   },
 };
 </script>
@@ -16,7 +37,13 @@ export default {
     </div>
     <h3>¿Estas seguro que quieres eliminar al estudiante?</h3>
     <div class="modal-buttons">
-      <button class="accept-button">Aceptar</button>
+      <button
+        v-on:click="deleteStudent"
+        class="accept-button"
+        @click="showModal = false"
+      >
+        Aceptar
+      </button>
       <button class="cancel-button" @click="showModal = false">Cancelar</button>
     </div>
   </div>
