@@ -1,5 +1,4 @@
 import axios from "axios";
-import router from "../router/index.js";
 
 const baseUrl = "http://localhost:8000/api";
 

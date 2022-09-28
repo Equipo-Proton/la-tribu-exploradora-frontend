@@ -1,16 +1,22 @@
-<!-- eslint-disable vue/multi-word-component-names -->
-<script setup>
-/* import { api } from "../services/apiAuth.js";
+<script>
+import { apiAuth } from "../services/apiAuth.js";
 
 export default {
+  name: "TheHeader",
+
   methods: {
-    async logout() {
-      await api.getLogout();
+    logout() {
+      apiAuth.getLogout();
       console.log("Logged out");
 
       localStorage.removeItem("token");
+      localStorage.removeItem("isAdmin");
+      localStorage.removeItem("superAdmin");
+
+      this.$router.push("/");
     },
-  }, */
+  },
+};
 </script>
 
 <template>
@@ -24,7 +30,7 @@ export default {
         <p>user</p>
       </div>
       <div><img src="../assets/icons/iconUser.svg" /></div>
-      <div><button id="logout">Salir</button></div>
+      <div><button id="logout" v-on:click="logout">Salir</button></div>
     </div>
   </header>
 </template>
