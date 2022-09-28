@@ -13,11 +13,12 @@
 <style scoped>
     @import "../assets/landingPage.css";
     .container{
-        background-color: #F1FCFF;
+        background-color: #d5f6ff;
         height: 100vh;
-        width: 100vw;
+        padding: auto;
+        margin: auto;
     }
     main{
-        background-color: #F1FCFF;
+
     }
 </style>
