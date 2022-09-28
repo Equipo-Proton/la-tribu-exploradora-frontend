@@ -1,7 +1,6 @@
-import { RouterView } from 'vue-router';
 <script setup>
 import EditStudent from "./modals/EditStudent.vue";
-import CreateTeacher from "./modals/CreateTeacher.vue";
+import CreateStudent from "./modals/CreateStudent.vue";
 </script>
 <template>
   <main>
@@ -13,7 +12,7 @@ import CreateTeacher from "./modals/CreateTeacher.vue";
         <div><button id="deleteTeacher">Eliminar</button></div>
       </div>
     </div>
-    <CreateTeacher></CreateTeacher>
+    <CreateStudent></CreateStudent>
   </main>
   <RouterView />
 </template>
