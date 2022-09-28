@@ -83,7 +83,7 @@ export default {
     </div>
   </div>
 
-  <button id="newTeacher" @click="showModal = true">Añadir profe</button>
+  <button id="newTeacher" @click="showModal = true">Añadir profesor</button>
 </template>
 
 <style scoped>
