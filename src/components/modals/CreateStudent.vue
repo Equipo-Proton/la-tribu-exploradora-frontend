@@ -19,8 +19,11 @@ export default {
 
   methods: {
     async register() {
-      const response = await apiUsers.registerUser(this.form);
-      console.log(response);
+      await apiUsers.registerUser(this.form);
+
+      alert("Creado con éxito");
+
+      location.reload();
     },
   },
 };
@@ -58,7 +61,7 @@ export default {
         name=""
         id="psw"
         required
-        v-model="form.confirmation"
+        v-model="form.password"
       />
       <input
         type="password"

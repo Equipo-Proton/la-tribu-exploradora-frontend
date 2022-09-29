@@ -4,7 +4,11 @@ const baseUrl = "http://localhost:8000/api";
 
 export const apiUsers = {
   registerUser(formData) {
-    return axios.post(baseUrl + "/register", formData);
+    return axios.post(baseUrl + "/register", formData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   listUsers() {

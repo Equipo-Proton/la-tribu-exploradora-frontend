@@ -19,8 +19,12 @@ export default {
 <template>
   <main>
     <h3>Profesores</h3>
-    <div v-for="(teacher, index) in teachers" :key="index" class="teachersBox">
-      <div id="userManagement">
+    <div class="teachersBox">
+      <div
+        v-for="(teacher, index) in teachers"
+        :key="index"
+        id="userManagement"
+      >
         <div class="teacherName">{{ teacher.name }}</div>
         <div><EditTeacher></EditTeacher></div>
         <div><ConfirmDeleteTeacher></ConfirmDeleteTeacher></div>

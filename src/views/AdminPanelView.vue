@@ -20,21 +20,14 @@ export default {
 
   methods: {
     async listStudents() {
-      const token = localStorage.getItem("token");
-      console.log(token);
-
       const response = await apiUsers.listUsers();
 
       const studentsData = response.data.data;
-      console.log(studentsData);
 
       this.students = studentsData;
     },
 
     async listTeachers() {
-      const token = localStorage.getItem("token");
-      console.log(token);
-
       const response = await apiTeachers.listTeachers();
 
       const teachersData = response.data.data;

@@ -18,8 +18,11 @@ export default {
 
   methods: {
     async register() {
-      const response = await apiTeachers.registerTeacher(this.form);
-      console.log(response);
+      await apiTeachers.registerTeacher(this.form);
+
+      alert("Creado con éxito");
+
+      location.reload();
     },
   },
 };

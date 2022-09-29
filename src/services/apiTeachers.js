@@ -4,7 +4,11 @@ const baseUrl = "http://localhost:8000/api";
 
 export const apiTeachers = {
   registerTeacher(formData) {
-    return axios.post(baseUrl + "/teacher/register", formData);
+    return axios.post(baseUrl + "/teacher/register", formData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   listTeachers() {
