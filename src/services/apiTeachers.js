@@ -43,8 +43,8 @@ export const apiTeachers = {
     });
   },
 
-  updateTeacher(id) {
-    return axios.patch(baseUrl + `/teacher/update/${id}`, {
+  updateTeacher(id, formData) {
+    return axios.patch(baseUrl + `/teacher/update/${id}`, formData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

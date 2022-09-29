@@ -6,11 +6,10 @@ export default {
   data() {
     return {
       teacherId: this.teacher.id,
-      teacherData: this.teacher,
       form: {
-        name: "",
-        email: "",
-        password: "",
+        name: this.teacher.name,
+        email: this.teacher.email,
+        password: this.teacher.password,
       },
       showModal: false,
     };
@@ -25,7 +24,7 @@ export default {
 
   methods: {
     async editTeacher() {
-      await apiTeachers.updateTeacher(this.teacherId);
+      await apiTeachers.updateTeacher(this.teacherId, this.form);
 
       alert("Profesor editado");
 
@@ -45,7 +44,7 @@ export default {
         name="name"
         id="name"
         required
-        v-model="this.teacherData.name"
+        v-model="form.name"
       />
     </div>
     <div class="form-camp">
@@ -56,18 +55,18 @@ export default {
         name="email"
         id="email"
         required
-        v-model="this.teacherData.email"
+        v-model="form.email"
       />
     </div>
     <div class="form-camp">
       <label for="psw"><b>Password</b></label>
       <input
-        type="password"
+        type="text"
         placeholder=""
         name="psw"
         id="psw"
         required
-        v-model="this.teacherData.password"
+        v-model="form.password"
       />
     </div>
 
