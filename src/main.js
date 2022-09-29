@@ -1,14 +1,21 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import axios from "axios";
 
-import App from './App.vue'
-import router from './router'
+import App from "./App.vue";
+import router from "./router";
 
-import './assets/main.css'
+import "./assets/main.css";
+import "./assets/bootstrap.min.css";
+import "./assets/bootstrap.bundle.min.js";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(createPinia())
-app.use(router)
+app.use(createPinia());
+app.use(router);
 
-app.mount('#app')
+/* axios.defaults.headers["Authorization"] = `Bearer ${localStorage.getItem(
+  "token"
+)}`; */
+
+app.mount("#app");

@@ -1,6 +1,6 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --base-color-blue:  #6CCBF4;
+  --base-color-blue: #6CCBF4;
   --base-color-green: #8EFFA7;
   --base-color-white: #FFFFFF;
   --base-color-white-2: #F1FCFF;
@@ -14,13 +14,13 @@
   --font-color-white: #FFFFFF;
   --font-color-black: #000000;
 
-  --background-color-blue:  #B4E4FF ;
+  --background-color-blue: #E6F2F1;
   --background-color-green: #B5FFC5;
 
-  --font-family-primary: 'Montserrat Alternates', sans-serif;;
-  --font-family-secondary: font-family: 'Raleway', sans-serif;
+  --font-family-primary: 'Montserrat Alternates', sans-serif;
+  --font-family-secondary: 'Raleway', sans-serif;
   --font-family-letters: 'Dancing Script', cursive;
-
+  --font-family-game: 'Vibur', cursive;
 }
 
 /* 
@@ -64,11 +64,9 @@ Semantic color variables for this project
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
+  min-width: 100vw;
+  background: var(--background-color-blue);
   line-height: 1.6;
-  font-family: ;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
