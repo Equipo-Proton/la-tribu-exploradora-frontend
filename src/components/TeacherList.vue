@@ -26,8 +26,8 @@ export default {
         id="userManagement"
       >
         <div class="teacherName">{{ teacher.name }}</div>
-        <div><EditTeacher></EditTeacher></div>
-        <div><ConfirmDeleteTeacher></ConfirmDeleteTeacher></div>
+        <div><EditTeacher :teacher="teacher"></EditTeacher></div>
+        <div><ConfirmDeleteTeacher :teacher="teacher"></ConfirmDeleteTeacher></div>
       </div>
     </div>
     <CreateTeacher></CreateTeacher>

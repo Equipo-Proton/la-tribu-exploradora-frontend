@@ -1,11 +1,30 @@
 <script>
+import { apiTeachers } from '../../services/apiTeachers';
 export default {
   name: "ConfirmDeleteTeacher",
   data() {
     return {
       showModal: false,
+      teacherId: this.teacher.id,
     };
   },
+
+  props: {
+    teacher: {
+      type: Object,
+      required:true,
+    },
+  },
+
+  methods:{
+    async confirmDeleteTeacher() {
+      await apiTeachers.deleteTeacher(this.teacherId);
+      alert("Teacher eliminado");
+
+      location.reload();
+    }
+
+  }
 };
 </script>
 
@@ -16,7 +35,7 @@ export default {
     </div>
     <h3>¿Estas seguro que quieres eliminar al profesor?</h3>
     <div class="modal-buttons">
-      <button class="accept-button">Aceptar</button>
+      <button class="accept-button" v-on:click="confirmDeleteTeacher">Aceptar</button>
       <button class="cancel-button" @click="showModal = false">Cancelar</button>
     </div>
   </div>
