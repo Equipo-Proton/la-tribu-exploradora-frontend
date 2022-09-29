@@ -1,10 +1,36 @@
 <script>
+import { apiTeachers } from "../../services/apiTeachers.js";
 export default {
   name: "EditTeacher",
+
   data() {
     return {
+      teacherId: this.teacher.id,
+      teacherData: this.teacher,
+      form: {
+        name: "",
+        email: "",
+        password: "",
+      },
       showModal: false,
     };
+  },
+
+  props: {
+    teacher: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  methods: {
+    async editTeacher() {
+      await apiTeachers.updateTeacher(this.teacherId);
+
+      alert("Profesor editado");
+
+      location.reload();
+    },
   },
 };
 </script>
@@ -15,35 +41,38 @@ export default {
       <label for="name"><b>Nombre</b></label>
       <input
         type="text"
-        placeholder="Enter user name"
+        placeholder=""
         name="name"
         id="name"
         required
+        v-model="this.teacherData.name"
       />
     </div>
     <div class="form-camp">
       <label for="email"><b>Email</b></label>
       <input
         type="text"
-        placeholder="Enter Email"
+        placeholder=""
         name="email"
         id="email"
         required
+        v-model="this.teacherData.email"
       />
     </div>
     <div class="form-camp">
       <label for="psw"><b>Password</b></label>
       <input
         type="password"
-        placeholder="Enter Password"
+        placeholder=""
         name="psw"
         id="psw"
         required
+        v-model="this.teacherData.password"
       />
     </div>
 
     <div class="modal-buttons">
-      <button class="accept-button" @click="showModal = false">Aceptar</button>
+      <button class="accept-button" v-on:click="editTeacher">Aceptar</button>
       <button class="cancel-button" @click="showModal = false">Cancelar</button>
     </div>
   </div>
