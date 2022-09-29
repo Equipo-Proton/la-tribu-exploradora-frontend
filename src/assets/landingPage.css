@@ -1,14 +1,5 @@
-body{
-    padding: auto;
-    margin: auto;
-    display: flex;
-    align-items: center;
-}
-main{
-    background-color: var(--bs-body-color);
-}
 img{
-    background-color:  #F1FCFF;;
+    background-color:  #F1FCFF;
     padding: auto;
     margin: auto;
     display: flex;

@@ -9,5 +9,4 @@ import LadingPage from "../components/LadingPage.vue";
 </template>
 
 <script scoped>
-    
 </script>
