@@ -10,7 +10,7 @@ export default {
       form: {
         name: this.student.name,
         email: this.student.email,
-        password: this.student.password,
+        password: this.student.showPassword,
       },
       showModal: false,
     };
@@ -62,7 +62,7 @@ export default {
     <div class="form-camp">
       <label for="psw"><b>Password</b></label>
       <input
-        type="password"
+        type="text"
         placeholder=""
         name="psw"
         id="psw"
