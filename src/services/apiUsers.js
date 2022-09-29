@@ -35,8 +35,8 @@ export const apiUsers = {
     });
   },
 
-  updateUser(id) {
-    return axios.patch(baseUrl + `/update/${id}`, {
+  updateUser(id, formData) {
+    return axios.patch(baseUrl + `/update/${id}`, formData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

@@ -1,10 +1,36 @@
 <script>
+import { apiUsers } from "../../services/apiUsers.js";
+
 export default {
   name: "EditStudent",
+
   data() {
     return {
+      studentId: this.student.id,
+      form: {
+        name: this.student.name,
+        email: this.student.email,
+        password: this.student.password,
+      },
       showModal: false,
     };
+  },
+
+  props: {
+    student: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  methods: {
+    async editStudent() {
+      await apiUsers.updateUser(this.studentId, this.form);
+
+      alert("Profesor editado");
+
+      location.reload();
+    },
   },
 };
 </script>
@@ -15,34 +41,37 @@ export default {
       <label for="name"><b>Nombre</b></label>
       <input
         type="text"
-        placeholder="Enter user name"
+        placeholder=""
         name="name"
         id="name"
         required
+        v-model="form.name"
       />
     </div>
     <div class="form-camp">
       <label for="email"><b>Email</b></label>
       <input
         type="text"
-        placeholder="Enter Email"
+        placeholder=""
         name="email"
         id="email"
         required
+        v-model="form.email"
       />
     </div>
     <div class="form-camp">
       <label for="psw"><b>Password</b></label>
       <input
         type="password"
-        placeholder="Enter Password"
+        placeholder=""
         name="psw"
         id="psw"
         required
+        v-model="form.password"
       />
     </div>
     <div class="modal-buttons">
-      <button class="accept-button" @click="showModal = false">Aceptar</button>
+      <button class="accept-button" v-on:click="editStudent">Aceptar</button>
       <button class="cancel-button" @click="showModal = false">Cancelar</button>
     </div>
   </div>

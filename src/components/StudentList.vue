@@ -26,7 +26,7 @@ export default {
         id="userManagement"
       >
         <div class="teacherName">{{ student.name }}</div>
-        <div><EditStudent></EditStudent></div>
+        <div><EditStudent :student="student"></EditStudent></div>
         <div>
           <ConfirmDeleteStudent :student="student"></ConfirmDeleteStudent>
         </div>
