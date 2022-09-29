@@ -16,10 +16,10 @@ export default {
       const response = await apiAuth.getLogin(this.form);
 
       const token = response.data.access_token;
-      const isAdmin = response.data.user.isAdmin; // integer
+      const isAdmin = response.data.user.isAdmin;
       const superAdmin = response.data.user.superAdmin;
 
-      localStorage.setItem("token", token); // string
+      localStorage.setItem("token", token);
       localStorage.setItem("isAdmin", isAdmin);
       localStorage.setItem("superAdmin", superAdmin);
 

@@ -1,6 +1,7 @@
 <script>
 import { apiTeachers } from "../services/apiTeachers.js";
 import { apiUsers } from "../services/apiUsers.js";
+import { admin } from "../functions/admin.js";
 import TheHeader from "../components/TheHeader.vue";
 import GameList from "../components/GameList.vue";
 import TeacherList from "../components/TeacherList.vue";
@@ -35,36 +36,21 @@ export default {
       this.teachers = teachersData;
     },
 
-    async getIsAdmin() {
-      const isAdmin = localStorage.getItem("isAdmin");
+    getAdminValues() {
+      const isAdmin = admin.getIsAdmin();
 
-      if (isAdmin === "1") {
-        this.isAdmin = true;
+      const superAdmin = admin.getSuperAdmin();
 
-        return;
-      }
+      this.isAdmin = isAdmin;
 
-      this.isAdmin = false;
-    },
-
-    async getSuperAdmin() {
-      const superAdmin = localStorage.getItem("superAdmin");
-
-      if (superAdmin === "1") {
-        this.superAdmin = true;
-
-        return;
-      }
-
-      this.superAdmin = false;
+      this.superAdmin = superAdmin;
     },
   },
 
   created() {
     this.listStudents();
     this.listTeachers();
-    this.getIsAdmin();
-    this.getSuperAdmin();
+    this.getAdminValues();
   },
 
   components: { TheHeader, GameList, TeacherList, StudentList },
