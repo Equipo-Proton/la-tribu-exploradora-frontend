@@ -1,5 +1,6 @@
 <script>
 import { apiTeachers } from "../../services/apiTeachers.js";
+
 export default {
   name: "EditTeacher",
 
@@ -9,7 +10,7 @@ export default {
       form: {
         name: this.teacher.name,
         email: this.teacher.email,
-        password: this.teacher.password,
+        password: this.teacher.showPassword,
       },
       showModal: false,
     };
