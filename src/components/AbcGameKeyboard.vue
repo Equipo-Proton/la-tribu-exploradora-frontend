@@ -85,6 +85,7 @@ export default {
     </div>
   </div>
 </template>
+
 <style scoped>
 .drop-zone {
   display: flex;
@@ -96,12 +97,11 @@ export default {
   border: 5px solid var(--base-color-purple);
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
-  font-size: 5vw;
 }
 .drag-zone {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  gap: 10px;
+  gap: 1vw;
 }
 .drag-el {
   display: flex;

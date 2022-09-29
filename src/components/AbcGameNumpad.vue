@@ -76,21 +76,21 @@ export default {
   border: 5px solid var(--base-color-purple);
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
-  font-size: 5vw;
+  font-size: 4vw;
 }
 .drag-zone {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 1vw;
 }
 .drag-el {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 55px;
-  min-height: 55px;
-  border-radius: 10px;
-  background-color: var(--base-color-purple);
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50px;
+  background-color: var(--base-color-orange);
   font-family: var(--font-family-game);
   font-size: 2vw;
   margin: auto;

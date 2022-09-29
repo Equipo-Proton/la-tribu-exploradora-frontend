@@ -18,18 +18,19 @@ main {
   height: 100vh;
   background-color: var(--background-color-blue);
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 2vw;
   align-items: center;
   font-weight: bold;
   color: var(--font-color);
 }
 .keyboard {
-  grid-column: 1 / 4;
+  grid-column: 2 / 10;
   grid-row: 1;
 }
-num-pad {
-  grid-column: 4 / 5;
+.num-pad {
+  grid-column: 11 / 12;
   grid-row: 1;
 }
 </style>
