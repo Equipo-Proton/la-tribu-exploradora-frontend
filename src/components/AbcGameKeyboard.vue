@@ -51,7 +51,7 @@ export default {
 </script>
 
 <template>
-  <div class="game-container">
+  <div class="keyboard">
     <div @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
       <div class="drop-zone">
         <div
@@ -99,7 +99,8 @@ export default {
   font-size: 5vw;
 }
 .drag-zone {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
   gap: 10px;
 }
 .drag-el {

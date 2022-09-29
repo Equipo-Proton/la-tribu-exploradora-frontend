@@ -36,7 +36,7 @@ const router = createRouter({
       path: "/waiting",
       name: "Waiting",
       meta: {
-        requiresAuth: true,
+        requiresAuth: false,
       },
       component: () => import("../views/WaitingView.vue"),
     },
@@ -44,7 +44,7 @@ const router = createRouter({
       path: "/abcgameview",
       name: "AbcGameView",
       meta: {
-        requiresAuth: true,
+        requiresAuth: false,
       },
       component: () => import("../views/AbcGameView.vue"),
     },
@@ -52,7 +52,7 @@ const router = createRouter({
       path: "/play",
       name: "ReadyToPlay",
       meta: {
-        requiresAuth: true,
+        requiresAuth: false,
       },
       component: () => import("../views/ReadyToPlayView.vue"),
     },
