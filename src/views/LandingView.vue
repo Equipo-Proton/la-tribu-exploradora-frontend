@@ -8,5 +8,8 @@ import LadingPage from "../components/LadingPage.vue";
     </main>
 </template>
 
-<script scoped>
-</script>
+<style scoped>
+div{
+    background-color: #F1FCFF;
+}
+</style>
