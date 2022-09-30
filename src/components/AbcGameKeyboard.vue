@@ -78,6 +78,11 @@ export default {
         </div>
       </div>
     </div>
+    <div class="bot-buttons">
+      <button>mayuscula</button>
+      <button>Listo</button>
+      <button>Borrar</button>
+    </div>
   </div>
 </template>
 <style scoped>
@@ -85,8 +90,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 820px;
-  min-height: 125px;
+  min-width: 10vw;
+  min-height: 10vh;
   border-radius: 15px;
   border: 5px solid var(--base-color-purple);
   background-color: var(--base-color-white);
@@ -108,5 +113,10 @@ export default {
   font-family: var(--font-family-game);
   font-size: 2vw;
   margin: auto;
+}
+.bot-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 </style>

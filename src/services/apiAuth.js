@@ -10,4 +10,16 @@ export const apiAuth = {
   getLogout() {
     return axios.get(baseUrl + "/logout");
   },
+
+  getAdminStatus() {
+    const isAdmin = localStorage.getItem("isAdmin");
+
+    return isAdmin;
+  },
+
+  getSuperAdminStatus() {
+    const superAdmin = localStorage.getItem("superAdmin");
+
+    return superAdmin;
+  },
 };

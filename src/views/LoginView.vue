@@ -1,17 +1,24 @@
 <script setup>
+import { RouterView } from "vue-router";
 import LoginForm from "../components/LoginForm.vue";
-import ButtonsForm from "../components/ButtonsForm.vue";
+import TheHeader from "../components/TheHeader.vue";
 </script>
 <template>
+  <TheHeader></TheHeader>
   <main>
     <LoginForm />
-    <ButtonsForm />
   </main>
+  <RouterView />
 </template>
 
 <style scoped>
 main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--background-color-blue);
-  height: 100vh;
+  height: 85vh;
+  width: 100vw;
+  position: absolute;
 }
 </style>

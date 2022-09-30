@@ -1,13 +1,14 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import TheHeader from "../components/TheHeader.vue";
 import RegisterForm from "../components/RegisterForm.vue";
 import ButtonsForm from "../components/ButtonsForm.vue";
 </script>
 
 <template>
+  <TheHeader />
   <main>
     <RegisterForm />
-    <ButtonsForm/>
+    <ButtonsForm />
   </main>
 
   <RouterView />
@@ -16,7 +17,6 @@ import ButtonsForm from "../components/ButtonsForm.vue";
 <style scoped>
 main {
   background-color: var(--background-color-blue);
-  height: 100vh ;
+  height: 100vh;
 }
-
 </style>

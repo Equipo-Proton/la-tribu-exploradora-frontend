@@ -1,17 +1,35 @@
-import { RouterView } from 'vue-router';
-<script setup>
+<script>
 import EditTeacher from "./modals/EditTeacher.vue";
 import CreateTeacher from "./modals/CreateTeacher.vue";
 import ConfirmDeleteTeacher from "./modals/ConfirmDeleteTeacher.vue";
+
+export default {
+  name: "StudentList",
+
+  props: {
+    teachers: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  components: { EditTeacher, CreateTeacher, ConfirmDeleteTeacher },
+};
 </script>
 <template>
   <main>
     <h3>Profesores</h3>
     <div class="teachersBox">
-      <div id="userManagement">
-        <div class="teacherName">Nombre</div>
-        <div><EditTeacher></EditTeacher></div>
-        <div><ConfirmDeleteTeacher></ConfirmDeleteTeacher></div>
+      <div
+        v-for="(teacher, index) in teachers"
+        :key="index"
+        id="userManagement"
+      >
+        <div class="teacherName">{{ teacher.name }}</div>
+        <div><EditTeacher :teacher="teacher"></EditTeacher></div>
+        <div>
+          <ConfirmDeleteTeacher :teacher="teacher"></ConfirmDeleteTeacher>
+        </div>
       </div>
     </div>
     <CreateTeacher></CreateTeacher>

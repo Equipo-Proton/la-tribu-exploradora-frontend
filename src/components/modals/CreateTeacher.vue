@@ -18,8 +18,11 @@ export default {
 
   methods: {
     async register() {
-      const response = await apiTeachers.registerTeacher(this.form);
-      console.log(response);
+      await apiTeachers.registerTeacher(this.form);
+
+      alert("Creado con éxito");
+
+      location.reload();
     },
   },
 };
@@ -83,7 +86,7 @@ export default {
     </div>
   </div>
 
-  <button id="newTeacher" @click="showModal = true">Añadir profe</button>
+  <button id="newTeacher" @click="showModal = true">Añadir profesor</button>
 </template>
 
 <style scoped>

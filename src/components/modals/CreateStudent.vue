@@ -1,29 +1,33 @@
 <script>
-  import { apiUsers } from "../../services/apiUsers.js";
-  
-  export default {
-    name: "CreateStudent",
-  
-    data() {
-      return {
-        showModal: false,
-        form: {
-          name: "",
-          email: "",
-          password: "",
-          password_confirmation: "",
-        },
-      };
-    },
-  
-    methods: {
-      async register() {
-        const response = await apiUsers.registerUser(this.form);
-        console.log(response);
+import { apiUsers } from "../../services/apiUsers.js";
+
+export default {
+  name: "CreateStudent",
+
+  data() {
+    return {
+      showModal: false,
+
+      form: {
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
       },
+    };
+  },
+
+  methods: {
+    async register() {
+      await apiUsers.registerUser(this.form);
+
+      alert("Creado con éxito");
+
+      location.reload();
     },
-  };
-  </script>
+  },
+};
+</script>
 
 <template>
   <div class="modal-overlay" v-if="showModal">
@@ -41,7 +45,7 @@
     <div class="form-camp">
       <label for="email"><b>Email</b></label>
       <input
-        type="text"
+        type="email"
         placeholder="Enter Email"
         name=""
         id="email"
@@ -57,7 +61,7 @@
         name=""
         id="psw"
         required
-        v-model="form.confirmation"
+        v-model="form.password"
       />
       <input
         type="password"
@@ -70,7 +74,14 @@
     </div>
 
     <div class="modal-buttons">
-      <button class="accept-button" @click="showModal = false">Aceptar</button>
+      <button
+        type="submit"
+        v-on:click="register"
+        class="accept-button"
+        @click="showModal = false"
+      >
+        Aceptar
+      </button>
       <button class="cancel-button" @click="showModal = false">Cancelar</button>
     </div>
   </div>
