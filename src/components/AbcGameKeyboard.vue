@@ -53,29 +53,37 @@ export default {
 <template>
   <div class="keyboard">
     <div @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
-      <div class="drop-zone">
-        <div
-          v-for="item in getList(2)"
-          :key="item.id"
-          class="drop-el"
-          draggable="true"
-          @dragstart="startDrag($event, item)"
-        >
-          {{ item.title }}
-        </div>
-      </div>
+      <div class="drop-zone"></div>
     </div>
     <div @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div class="drag-zone">
-        <div
-          v-for="item in getList(1)"
-          :key="item.id"
-          class="drag-el"
-          draggable="true"
-          @dragstart="startDrag($event, item)"
-        >
-          {{ item.title }}
-        </div>
+        <div class="drag-el" id="1">a</div>
+        <div class="drag-el" id="2">b</div>
+        <div class="drag-el" id="3">c</div>
+        <div class="drag-el" id="4">d</div>
+        <div class="drag-el" id="5">e</div>
+        <div class="drag-el" id="6">f</div>
+        <div class="drag-el" id="7">g</div>
+        <div class="drag-el" id="8">h</div>
+        <div class="drag-el" id="9">i</div>
+        <div class="drag-el" id="10">j</div>
+        <div class="drag-el" id="11">k</div>
+        <div class="drag-el" id="12">l</div>
+        <div class="drag-el" id="13">m</div>
+        <div class="drag-el" id="14">n</div>
+        <div class="drag-el" id="15">ñ</div>
+        <div class="drag-el" id="16">o</div>
+        <div class="drag-el" id="17">p</div>
+        <div class="drag-el" id="18">q</div>
+        <div class="drag-el" id="19">r</div>
+        <div class="drag-el" id="20">s</div>
+        <div class="drag-el" id="21">t</div>
+        <div class="drag-el" id="22">u</div>
+        <div class="drag-el" id="23">v</div>
+        <div class="drag-el" id="24">w</div>
+        <div class="drag-el" id="25">x</div>
+        <div class="drag-el" id="26">y</div>
+        <div class="drag-el" id="27">z</div>
       </div>
     </div>
     <div class="bot-buttons">

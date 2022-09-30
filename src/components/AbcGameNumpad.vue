@@ -39,28 +39,22 @@ export default {
   <div class="num-pad">
     <div @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
       <div class="drop-zone">
-        <div
-          v-for="item in getList(2)"
-          :key="item.id"
-          class="drop-el"
-          draggable="true"
-          @dragstart="startDrag($event, item)"
-        >
-          {{ item.title }}
-        </div>
+
       </div>
     </div>
     <div @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div class="drag-zone">
-        <div
-          v-for="item in getList(1)"
-          :key="item.id"
-          class="drag-el"
-          draggable="true"
-          @dragstart="startDrag($event, item)"
-        >
-          {{ item.title }}
-        </div>
+        <div class="drag-el" id="n0">0</div>
+        <div class="drag-el" id="n1">1</div>
+        <div class="drag-el" id="n2">2</div>
+        <div class="drag-el" id="n3">3</div>
+        <div class="drag-el" id="n4">4</div>
+        <div class="drag-el" id="n5">5</div>
+        <div class="drag-el" id="n6">6</div>
+        <div class="drag-el" id="n7">7</div>
+        <div class="drag-el" id="n8">8</div>
+        <div class="drag-el" id="n9">9</div>
+        <div class="drag-el" id="n10">10</div>
       </div>
     </div>
   </div>
