@@ -1,15 +1,35 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-import LadingPage from "../components/LadingPage.vue";
+<script>
+import LandingPage from "../components/LandingPage.vue";
+
+export default {
+  name: "LandingVIew",
+
+  methods: {
+    load() {
+      setTimeout(this.toLogin, 5500);
+    },
+
+    toLogin() {
+      this.$router.push("/login");
+    },
+  },
+
+  created() {
+    this.load();
+  },
+
+  components: { LandingPage },
+};
 </script>
+
 <template>
-    <main>
-        <LadingPage/>
-    </main>
+  <main>
+    <LandingPage />
+  </main>
 </template>
 
 <style scoped>
-div{
-    background-color: #F1FCFF;
+div {
+  background-color: #f1fcff;
 }
 </style>

@@ -3,33 +3,25 @@ import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // vista de login
-
-    /*     {
-      path: "/",
-      name: "home",
-      component: () => import("../views/LandingPageView.vue"),
-    }, */
-    /*     {
-      path: "/",
-      name: "Login",
-      component: () => import("../views/LoginView.vue"),
-
-    },
     // vista de Landing
     {
-      path: "/landing",
+      path: "/",
       name: "landing",
+      meta: {
+        requiresAuth: false,
+      },
       component: () => import("../views/LandingView.vue"),
     },
+    // vista de login
     {
-      path: "/",
+      path: "/login",
       name: "home",
       meta: {
         requiresAuth: false,
       },
       component: () => import("../views/LoginView.vue"),
     },
+    // vista de panel
     {
       path: "/panel",
       name: "AdminPanel",
@@ -47,6 +39,7 @@ const router = createRouter({
       },
       component: () => import("../views/WaitingView.vue"),
     },
+    // vista de juego
     {
       path: "/abcgameview",
       name: "AbcGameView",
@@ -55,6 +48,7 @@ const router = createRouter({
       },
       component: () => import("../views/AbcGameView.vue"),
     },
+    // vista de preparado para jugar
     {
       path: "/play",
       name: "ReadyToPlay",
@@ -63,6 +57,7 @@ const router = createRouter({
       },
       component: () => import("../views/ReadyToPlayView.vue"),
     },
+    // vista de panel de juego
     {
       path: "/gamecontrol",
       name: "GameControl",
