@@ -26,7 +26,6 @@ export default {
       const studentsData = response.data.data;
 
       this.students = studentsData;
-      console.log(this.students);
     },
 
     async listTeachers() {
@@ -35,7 +34,6 @@ export default {
       const teachersData = response.data.data;
 
       this.teachers = teachersData;
-      console.log(this.teacher);
     },
 
     getAdminValues() {
