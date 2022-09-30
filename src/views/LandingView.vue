@@ -6,7 +6,7 @@ export default {
 
   methods: {
     load() {
-      setTimeout(this.toLogin, 5500);
+      setTimeout(this.toLogin, 1000);
     },
 
     toLogin() {
