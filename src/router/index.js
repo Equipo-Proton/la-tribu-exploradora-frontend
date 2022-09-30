@@ -14,7 +14,14 @@ const router = createRouter({
       path: "/",
       name: "Login",
       component: () => import("../views/LoginView.vue"),
-    }, */
+
+    },
+    // vista de Landing
+    {
+      path: "/landing",
+      name: "landing",
+      component: () => import("../views/LandingView.vue"),
+    },
     {
       path: "/",
       name: "home",
