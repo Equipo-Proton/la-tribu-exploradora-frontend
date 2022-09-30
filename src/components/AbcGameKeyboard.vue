@@ -51,40 +51,51 @@ export default {
 </script>
 
 <template>
-  <div class="game-container">
+  <div class="keyboard">
     <div @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
-      <div class="drop-zone">
-        <div
-          v-for="item in getList(2)"
-          :key="item.id"
-          class="drop-el"
-          draggable="true"
-          @dragstart="startDrag($event, item)"
-        >
-          {{ item.title }}
-        </div>
-      </div>
+      <div class="drop-zone"></div>
     </div>
     <div @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div class="drag-zone">
-        <div
-          v-for="item in getList(1)"
-          :key="item.id"
-          class="drag-el"
-          draggable="true"
-          @dragstart="startDrag($event, item)"
-        >
-          {{ item.title }}
-        </div>
+        <div class="drag-el" id="1">a</div>
+        <div class="drag-el" id="2">b</div>
+        <div class="drag-el" id="3">c</div>
+        <div class="drag-el" id="4">d</div>
+        <div class="drag-el" id="5">e</div>
+        <div class="drag-el" id="6">f</div>
+        <div class="drag-el" id="7">g</div>
+        <div class="drag-el" id="8">h</div>
+        <div class="drag-el" id="9">i</div>
+        <div class="drag-el" id="10">j</div>
+        <div class="drag-el" id="11">k</div>
+        <div class="drag-el" id="12">l</div>
+        <div class="drag-el" id="13">m</div>
+        <div class="drag-el" id="14">n</div>
+        <div class="drag-el" id="15">ñ</div>
+        <div class="drag-el" id="16">o</div>
+        <div class="drag-el" id="17">p</div>
+        <div class="drag-el" id="18">q</div>
+        <div class="drag-el" id="19">r</div>
+        <div class="drag-el" id="20">s</div>
+        <div class="drag-el" id="21">t</div>
+        <div class="drag-el" id="22">u</div>
+        <div class="drag-el" id="23">v</div>
+        <div class="drag-el" id="24">w</div>
+        <div class="drag-el" id="25">x</div>
+        <div class="drag-el" id="26">y</div>
+        <div class="drag-el" id="27">z</div>
       </div>
     </div>
     <div class="bot-buttons">
-      <button>mayuscula</button>
-      <button>Listo</button>
-      <button>Borrar</button>
+      <button type="button" class="mayus-button">ABC</button>
+      <button type="submit" class="ready-button">¡Listo!</button>
+      <button type="button" class="delete-button">
+        <img src="../assets/img/deleteIcon.png" alt="Borrar" />
+      </button>
     </div>
   </div>
 </template>
+
 <style scoped>
 .drop-zone {
   display: flex;
@@ -92,23 +103,24 @@ export default {
   justify-content: center;
   min-width: 10vw;
   min-height: 10vh;
-  border-radius: 15px;
-  border: 5px solid var(--base-color-purple);
+  border-radius: 1vw;
+  border: 0.3vw solid var(--base-color-purple);
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
-  font-size: 5vw;
+  margin: 1vw auto;
 }
 .drag-zone {
-  display: flex;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 1vw;
 }
 .drag-el {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 55px;
-  min-height: 55px;
-  border-radius: 10px;
+  min-width: 5vw;
+  min-height: 7vh;
+  border-radius: 1vw;
   background-color: var(--base-color-purple);
   font-family: var(--font-family-game);
   font-size: 2vw;
@@ -118,5 +130,33 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 1vw auto;
+}
+
+.mayus-button,
+.ready-button,
+.delete-button {
+  border: none;
+  border-radius: 1vw;
+  min-width: 10vw;
+  padding: 1vw;
+  font-weight: bold;
+  font-family: var(--font-family-secondary);
+}
+
+.mayus-button {
+  background-color: var(--base-color-blue);
+}
+
+.ready-button {
+  background-color: var(--base-color-green);
+  color: var(--base-color-white-2);
+}
+
+.delete-button {
+  background-color: var(--base-color-orange);
+}
+img {
+  height: 2vw;
 }
 </style>
