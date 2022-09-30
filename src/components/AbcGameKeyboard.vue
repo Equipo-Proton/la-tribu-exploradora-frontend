@@ -87,9 +87,11 @@ export default {
       </div>
     </div>
     <div class="bot-buttons">
-      <button>mayuscula</button>
-      <button>Listo</button>
-      <button>Borrar</button>
+      <button type="button" class="mayus-button">ABC</button>
+      <button type="submit" class="ready-button">¡Listo!</button>
+      <button type="button" class="delete-button">
+        <img src="../assets/img/deleteIcon.png" alt="Borrar" />
+      </button>
     </div>
   </div>
 </template>
@@ -101,10 +103,11 @@ export default {
   justify-content: center;
   min-width: 10vw;
   min-height: 10vh;
-  border-radius: 15px;
-  border: 5px solid var(--base-color-purple);
+  border-radius: 1vw;
+  border: 0.3vw solid var(--base-color-purple);
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
+  margin: 1vw auto;
 }
 .drag-zone {
   display: grid;
@@ -115,9 +118,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 55px;
-  min-height: 55px;
-  border-radius: 10px;
+  min-width: 5vw;
+  min-height: 7vh;
+  border-radius: 1vw;
   background-color: var(--base-color-purple);
   font-family: var(--font-family-game);
   font-size: 2vw;
@@ -127,5 +130,33 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 1vw auto;
+}
+
+.mayus-button,
+.ready-button,
+.delete-button {
+  border: none;
+  border-radius: 1vw;
+  min-width: 10vw;
+  padding: 1vw;
+  font-weight: bold;
+  font-family: var(--font-family-secondary);
+}
+
+.mayus-button {
+  background-color: var(--base-color-blue);
+}
+
+.ready-button {
+  background-color: var(--base-color-green);
+  color: var(--base-color-white-2);
+}
+
+.delete-button {
+  background-color: var(--base-color-orange);
+}
+img {
+  height: 2vw;
 }
 </style>

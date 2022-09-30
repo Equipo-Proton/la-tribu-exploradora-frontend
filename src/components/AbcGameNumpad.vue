@@ -38,9 +38,7 @@ export default {
 <template>
   <div class="num-pad">
     <div @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
-      <div class="drop-zone">
-
-      </div>
+      <div class="drop-zone"></div>
     </div>
     <div @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div class="drag-zone">
@@ -66,11 +64,11 @@ export default {
   justify-content: center;
   min-width: 10vw;
   min-height: 10vh;
-  border-radius: 15px;
-  border: 5px solid var(--base-color-purple);
+  border-radius: 1vw;
+  border: 0.3vw solid var(--base-color-purple);
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
-  font-size: 4vw;
+  margin: 1vw auto;
 }
 .drag-zone {
   display: grid;
@@ -81,8 +79,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 50px;
-  min-height: 50px;
+  min-width: 4.5vw;
+  min-height: 4.5vw;
   border-radius: 50px;
   background-color: var(--base-color-orange);
   font-family: var(--font-family-game);
