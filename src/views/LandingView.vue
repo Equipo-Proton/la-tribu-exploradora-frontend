@@ -6,10 +6,10 @@ export default {
 
   methods: {
     load() {
-      setTimeout(this.toLogin, 1000);
+      setTimeout(this.toLocation, 1000);
     },
 
-    toLogin() {
+    toLocation() {
       this.$router.push("/login");
     },
   },

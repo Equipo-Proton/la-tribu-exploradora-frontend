@@ -1,6 +1,7 @@
 <script>
 import { apiTeachers } from "../services/apiTeachers.js";
 import { apiUsers } from "../services/apiUsers.js";
+import { apiAuth } from "../services/apiAuth.js";
 import { admin } from "../functions/admin.js";
 import TheHeader from "../components/TheHeader.vue";
 import GameList from "../components/GameList.vue";
@@ -12,6 +13,9 @@ export default {
 
   data() {
     return {
+      form: {
+        logged: true,
+      },
       students: [],
       teachers: [],
       isAdmin: Boolean,
@@ -26,6 +30,7 @@ export default {
       const studentsData = response.data.data;
 
       this.students = studentsData;
+      console.log(this.students);
     },
 
     async listTeachers() {
@@ -34,6 +39,11 @@ export default {
       const teachersData = response.data.data;
 
       this.teachers = teachersData;
+    },
+
+    async afterLogin() {
+      const response = await apiAuth.updateLogged(this.form);
+      console.log(response);
     },
 
     getAdminValues() {
@@ -50,6 +60,7 @@ export default {
   created() {
     this.listStudents();
     this.listTeachers();
+    this.afterLogin();
     this.getAdminValues();
   },
 

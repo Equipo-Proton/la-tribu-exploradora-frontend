@@ -1,10 +1,4 @@
-<script setup>
-import { RouterView } from "vue-router";
-
-/* export default {
-  name: "WaitingView",
-}; */
-</script>
+<script></script>
 
 <template>
   <main>
