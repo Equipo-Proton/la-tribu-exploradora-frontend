@@ -1,0 +1,14 @@
+body{
+    background-color: #F1FCFF !important;
+}
+main{
+    background-color: rgb(241, 241, 241);
+  }
+img{
+    background-color:  #F1FCFF;
+    padding: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    top: 220px;
+}

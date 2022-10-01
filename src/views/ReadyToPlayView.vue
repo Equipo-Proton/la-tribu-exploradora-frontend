@@ -37,26 +37,26 @@ main {
   height: 100%;
   background-color: var(--background-color-blue);
 }
-.sky{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.sky {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .chick {
   height: 15vh;
 }
 .chicks {
-  width: 100%; 
+  width: 100%;
   height: 35vh;
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: space-around;
   padding: 5vh;
 }
 .play {
-position: relative;
-padding: 0;
-margin-top: -5vh;
+  position: relative;
+  padding: 0;
+  margin-top: -5vh;
 }
 
 .playLogo {
@@ -69,16 +69,17 @@ margin-top: -5vh;
 }
 
 .yellow {
-    align-self: center;
-    transform: rotate(15deg);
+  align-self: center;
+  transform: rotate(15deg);
 }
 .blue {
-    align-self: flex-start;
-    transform: rotate(-35deg);
+  align-self: flex-start;
+  transform: rotate(-35deg);
 }
 .bush {
   width: 100%;
   margin-top: -10vh;
-/*   position: relative;
- */}
+  /*   position: relative;
+ */
+}
 </style>

@@ -1,6 +1,7 @@
 <script>
 import { apiTeachers } from "../services/apiTeachers.js";
 import { apiUsers } from "../services/apiUsers.js";
+import { apiAuth } from "../services/apiAuth.js";
 import { admin } from "../functions/admin.js";
 import TheHeader from "../components/TheHeader.vue";
 import GameList from "../components/GameList.vue";
@@ -12,6 +13,9 @@ export default {
 
   data() {
     return {
+      form: {
+        logged: true,
+      },
       students: [],
       teachers: [],
       isAdmin: Boolean,
