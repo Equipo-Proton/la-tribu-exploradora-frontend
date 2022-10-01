@@ -42,4 +42,20 @@ export const apiUsers = {
       },
     });
   },
+
+  play(formData) {
+    return axios.patch(baseUrl + "/play", formData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
+
+  getPlayValue() {
+    return axios.get(baseUrl + "/playvalue", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
 };

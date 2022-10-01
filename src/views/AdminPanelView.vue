@@ -1,7 +1,6 @@
 <script>
 import { apiTeachers } from "../services/apiTeachers.js";
 import { apiUsers } from "../services/apiUsers.js";
-import { apiAuth } from "../services/apiAuth.js";
 import { admin } from "../functions/admin.js";
 import TheHeader from "../components/TheHeader.vue";
 import GameList from "../components/GameList.vue";
@@ -14,7 +13,7 @@ export default {
   data() {
     return {
       form: {
-        logged: true,
+        play: false,
       },
       students: [],
       teachers: [],
@@ -30,7 +29,6 @@ export default {
       const studentsData = response.data.data;
 
       this.students = studentsData;
-      console.log(this.students);
     },
 
     async listTeachers() {
@@ -41,9 +39,22 @@ export default {
       this.teachers = teachersData;
     },
 
-    async afterLogin() {
-      const response = await apiAuth.updateLogged(this.form);
-      console.log(response);
+    async play() {
+      if (this.form.play === false) {
+        this.form.play = true;
+
+        await apiUsers.play(this.form);
+
+        return;
+      }
+
+      if (this.form.play === true) {
+        this.form.play = false;
+
+        await apiUsers.play(this.form);
+
+        return;
+      }
     },
 
     getAdminValues() {
@@ -60,16 +71,23 @@ export default {
   created() {
     this.listStudents();
     this.listTeachers();
-    this.afterLogin();
     this.getAdminValues();
   },
 
   components: { TheHeader, GameList, TeacherList, StudentList },
 };
 </script>
+
 <template>
   <TheHeader />
   <main>
+    <div v-if="this.form.play === false">
+      <button type="button" v-on:click="play">PLAY</button>
+    </div>
+    <div v-if="this.form.play === true">
+      <button type="button" v-on:click="play">STOP</button>
+    </div>
+
     <GameList />
     <div v-if="isAdmin">
       <StudentList :students="students" />

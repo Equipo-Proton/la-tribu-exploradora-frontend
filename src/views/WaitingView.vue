@@ -1,4 +1,28 @@
-<script></script>
+<script>
+import { apiUsers } from "../services/apiUsers.js";
+
+export default {
+  name: "WaitingView",
+
+  methods: {
+    async getPlayValue() {
+      const response = await apiUsers.getPlayValue();
+
+      if (response.data.data === 1) {
+        this.$router.push("/play");
+
+        return;
+      }
+
+      if (response.data.data === 0) {
+        console.log("Lo siento... Tu profesor no te ha dado permiso todavía");
+
+        return;
+      }
+    },
+  },
+};
+</script>
 
 <template>
   <main>
@@ -10,7 +34,9 @@
         <img class="bird" src="../assets/img/yellowBird.png" />
       </div>
       <div class="play grid-item">
-        <img class="playLogo" src="../assets/img/greyPlay.svg" />
+        <button type="button" v-on:click="getPlayValue">
+          <img class="playLogo" src="../assets/img/greyPlay.svg" />
+        </button>
       </div>
       <div class="bird green grid-item">
         <img class="bird" src="../assets/img/greenBird.png" />

@@ -12,6 +12,7 @@ const router = createRouter({
       },
       component: () => import("../views/LandingView.vue"),
     },
+
     // vista de login
     {
       path: "/login",
@@ -21,46 +22,51 @@ const router = createRouter({
       },
       component: () => import("../views/LoginView.vue"),
     },
+
     // vista de panel
     {
       path: "/panel",
-      name: "AdminPanel",
+      name: "adminpanel",
       meta: {
         requiresAuth: true,
       },
       component: () => import("../views/AdminPanelView.vue"),
     },
+
     // vista de prueba simulando la pantalla de espera de los alumnos
     {
       path: "/waiting",
-      name: "Waiting",
+      name: "waiting",
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
       component: () => import("../views/WaitingView.vue"),
     },
+
     // vista de juego
     {
       path: "/abcgameview",
-      name: "AbcGameView",
+      name: "abcgameview",
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
       component: () => import("../views/AbcGameView.vue"),
     },
+
     // vista de preparado para jugar
     {
       path: "/play",
-      name: "ReadyToPlay",
+      name: "readytoplay",
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
       component: () => import("../views/ReadyToPlayView.vue"),
     },
+
     // vista de panel de juego
     {
       path: "/gamecontrol",
-      name: "GameControl",
+      name: "gamecontrol",
       meta: {
         requiresAuth: true,
       },
