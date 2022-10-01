@@ -76,5 +76,5 @@ $fuction(){
 </template>
 
 <style scoped>
-@import "../assets/registerForm.css";
+  @import "../assets/registerForm.css";
 </style>

@@ -22,9 +22,9 @@ export default {
     async deleteStudent() {
       await apiUsers.deleteUser(this.studentId);
 
-      alert("Estudiante eliminado/a");
+      /*  alert(`${this.student.name} has been deleted`); */
 
-      location.reload();
+      this.$router.push("/");
     },
   },
 };

@@ -1,11 +1,13 @@
 <script setup>
 import { RouterView } from "vue-router";
 import AbcGameKeyboard from "../components/AbcGameKeyboard.vue";
+import AbcGameNumpad from "../components/AbcGameNumpad.vue";
 </script>
 
 <template>
   <main>
-    <AbcGameKeyboard></AbcGameKeyboard>
+    <AbcGameKeyboard />
+    <AbcGameNumpad />
   </main>
   <RouterView />
 </template>
@@ -15,10 +17,20 @@ main {
   width: 100%;
   height: 100vh;
   background-color: var(--background-color-blue);
-  display: flex;
-  justify-content: space-around;
-  padding: 4vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 2vw;
+  align-items: center;
   font-weight: bold;
   color: var(--font-color);
+}
+.keyboard {
+  grid-column: 2 / 10;
+  grid-row: 1;
+}
+.num-pad {
+  grid-column: 11 / 12;
+  grid-row: 1;
 }
 </style>

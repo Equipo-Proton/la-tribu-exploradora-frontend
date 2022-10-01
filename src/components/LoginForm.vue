@@ -83,15 +83,28 @@ export default {
       >
         <div class="form">
           <div>
-            <a>¿Quién eres?</a>
+            <label for="email">¿Quién eres?</label>
             <input
+              id="email"
               type="text"
               name=""
               class="form-control"
               placeholder="E-mail"
+              v-model="form.email"
             />
           </div>
-          <button class="btn">Entrar</button>
+          <div>
+            <label for="password">Contraseña</label>
+            <input
+              id="password"
+              type="password"
+              name=""
+              class="form-control"
+              placeholder="Contraseña"
+              v-model="form.password"
+            />
+          </div>
+          <button class="btn" v-on:click="correctLogin">Entrar</button>
         </div>
       </div>
 

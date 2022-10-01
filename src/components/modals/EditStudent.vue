@@ -27,7 +27,7 @@ export default {
     async editStudent() {
       await apiUsers.updateUser(this.studentId, this.form);
 
-      alert("Profesor editado");
+      alert(`${this.student.name} has been updated`);
 
       location.reload();
     },
