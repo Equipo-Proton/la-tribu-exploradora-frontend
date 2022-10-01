@@ -15,12 +15,16 @@ export default {
       }
 
       if (response.data.data === 0) {
-        console.log("Lo siento... Tu profesor no te ha dado permiso todavía");
+        alert("Lo siento... Tu profesor no te ha dado permiso todavía");
 
         return;
       }
     },
   },
+
+  created() {
+    this.getPlayValue();
+  }
 };
 </script>
 

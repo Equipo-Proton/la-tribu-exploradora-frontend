@@ -1,13 +1,15 @@
 <script>
+import { apiUsers } from "../services/apiUsers.js";
+
 export default {
   name: "ReadyToPlayView",
 
   methods: {
-    letsPlay() {
+    async letsPlay() {
       const question = confirm("¿Quieres jugar?");
 
       if (question === true) {
-        this.$router.push("/abcgameview");
+        this.getPlayValue();
       }
 
       return;
@@ -17,21 +19,17 @@ export default {
       const response = await apiUsers.getPlayValue();
 
       if (response.data.data === 1) {
-        this.$router.push("/play");
+        this.$router.push("/abcgameview");
 
         return;
       }
 
       if (response.data.data === 0) {
-        console.log("Lo siento... Tu profesor no te ha dado permiso todavía");
+        alert("Lo siento... Tu profesor no te ha dado permiso todavía");
 
         return;
       }
     },
-  },
-
-  created() {
-    this.getPlayValue();
   },
 };
 </script>

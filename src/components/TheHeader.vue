@@ -5,8 +5,8 @@ export default {
   name: "TheHeader",
 
   methods: {
-    logout() {
-      apiAuth.getLogout();
+    async logout() {
+      await apiAuth.getLogout();
 
       localStorage.removeItem("token");
       localStorage.removeItem("isAdmin");
