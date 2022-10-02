@@ -40,7 +40,22 @@ const router = createRouter({
       meta: {
         requiresAuth: true,
       },
+      isAdmin: 0,
+      superAdmin: 0,
       component: () => import("../views/WaitingView.vue"),
+      async beforeEnter(to) {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (to.isAdmin != isAdmin || to.superAdmin != superAdmin) {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
+
+          alert("You are not a student");
+        }
+      },
     },
 
     // vista de juego
@@ -60,6 +75,7 @@ const router = createRouter({
       meta: {
         requiresAuth: true,
       },
+      roles: false,
       component: () => import("../views/ReadyToPlayView.vue"),
     },
 

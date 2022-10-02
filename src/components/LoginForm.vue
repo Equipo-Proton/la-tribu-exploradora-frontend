@@ -19,8 +19,6 @@ export default {
     async correctLogin() {
       const response = await apiAuth.getLogin(this.form);
 
-      console.log(response);
-
       if (response === "Incorrect password") {
         this.incorrect = true;
 
@@ -33,7 +31,7 @@ export default {
         return;
       }
 
-      /*  const token = response.data.access_token;
+      const token = response.data.access_token;
       const isAdmin = response.data.user.isAdmin;
       const superAdmin = response.data.user.superAdmin;
 
@@ -47,7 +45,7 @@ export default {
         return;
       }
 
-      this.$router.push("/waiting"); */
+      this.$router.push("/waiting");
     },
 
     clearOnFocus() {
