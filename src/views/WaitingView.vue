@@ -5,11 +5,21 @@ export default {
   name: "WaitingView",
 
   methods: {
+    async letsPlay() {
+      const question = confirm("¿Quieres jugar?");
+
+      if (question === true) {
+        this.getPlayValue();
+      }
+
+      return;
+    },
+
     async getPlayValue() {
       const response = await apiUsers.getPlayValue();
 
       if (response.data.data === 1) {
-        this.$router.push("/play");
+        this.$router.push("/abcgameview");
 
         return;
       }
@@ -34,7 +44,7 @@ export default {
         <img class="bird" src="../assets/img/yellowBird.png" />
       </div>
       <div class="play grid-item">
-        <button type="button" v-on:click="getPlayValue">
+        <button type="button" v-on:click="letsPlay">
           <img class="playLogo" src="../assets/img/greenPlay.svg" />
         </button>
       </div>
