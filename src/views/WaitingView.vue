@@ -21,10 +21,6 @@ export default {
       }
     },
   },
-
-  created() {
-    this.getPlayValue();
-  },
 };
 </script>
 
@@ -39,7 +35,7 @@ export default {
       </div>
       <div class="play grid-item">
         <button type="button" v-on:click="getPlayValue">
-          <img class="playLogo" src="../assets/img/greyPlay.svg" />
+          <img class="playLogo" src="../assets/img/greenPlay.svg" />
         </button>
       </div>
       <div class="bird green grid-item">

@@ -31,29 +31,46 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/AdminPanelView.vue"),
+      async beforeEnter() {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (isAdmin === "0" && superAdmin === "0") {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
+
+          console.log(
+            "Debes loguearte como profesor o director para acceder a esta ruta"
+          );
+        }
+      },
     },
 
-    // vista de prueba simulando la pantalla de espera de los alumnos
+    // pantalla de espera de los alumnos
     {
       path: "/waiting",
       name: "waiting",
       meta: {
         requiresAuth: true,
       },
-      isAdmin: 0,
-      superAdmin: 0,
       component: () => import("../views/WaitingView.vue"),
-     /*  async beforeEnter(to) {
+      async beforeEnter() {
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");
-        if (to.isAdmin != isAdmin || to.superAdmin != superAdmin) {
+        if (isAdmin != "0" || superAdmin != "0") {
           await router.push({
             path: "/",
             name: "home",
             component: () => import("../views/LoginView.vue"),
           });
+
+          console.log(
+            "Debes loguearte como estudiante para acceder a esta ruta"
+          );
         }
-      }, */
+      },
     },
 
     // vista de juego
@@ -64,17 +81,21 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/AbcGameView.vue"),
-    },
+      async beforeEnter() {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (isAdmin != 0 || superAdmin != 0) {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
 
-    // vista de preparado para jugar
-    {
-      path: "/play",
-      name: "readytoplay",
-      meta: {
-        requiresAuth: true,
+          console.log(
+            "Debes loguearte como estudiante para acceder a esta ruta"
+          );
+        }
       },
-      roles: false,
-      component: () => import("../views/ReadyToPlayView.vue"),
     },
 
     // vista de panel de juego
@@ -85,6 +106,22 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/GameControlView.vue"),
+      async beforeEnter() {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (
+          (isAdmin === "0" && superAdmin === "0") ||
+          (isAdmin === "0" && superAdmin === "1")
+        ) {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
+
+          console.log("Debes loguearte como profesor para acceder a esta ruta");
+        }
+      },
     },
   ],
 });
