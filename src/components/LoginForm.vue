@@ -3,19 +3,37 @@ import { apiAuth } from "../services/apiAuth.js";
 
 export default {
   name: "LoginForm",
+
   data() {
     return {
+      incorrect: false,
+      noRegister: false,
       form: {
         email: "",
         password: "",
       },
     };
   },
+
   methods: {
     async correctLogin() {
       const response = await apiAuth.getLogin(this.form);
 
-      const token = response.data.access_token;
+      console.log(response);
+
+      if (response === "Incorrect password") {
+        this.incorrect = true;
+
+        return;
+      }
+
+      if (response === "User no registered") {
+        this.noRegister = true;
+
+        return;
+      }
+
+      /*  const token = response.data.access_token;
       const isAdmin = response.data.user.isAdmin;
       const superAdmin = response.data.user.superAdmin;
 
@@ -29,7 +47,12 @@ export default {
         return;
       }
 
-      this.$router.push("/waiting");
+      this.$router.push("/waiting"); */
+    },
+
+    clearOnFocus() {
+      this.incorrect = false;
+      this.noRegister = false;
     },
   },
 };
@@ -41,6 +64,7 @@ export default {
       class="tab-content d-flex justify-content-center align-items-center m-auto"
       id="pills-tabContent"
     >
+<<<<<<< HEAD
       <div class="form">
         <div>
           <label for="email">¿Quién eres?</label>
@@ -52,6 +76,44 @@ export default {
             placeholder="E-mail"
             v-model="form.email"
           />
+=======
+      <div
+        class="tab-pane fade show active m-auto"
+        id="pills-user"
+        role="tabpanel"
+        aria-labelledby="pills-user-tab"
+      >
+        <div class="form">
+          <div>
+            <label for="email">¿Quién eres?</label>
+            <input
+              id="email"
+              type="text"
+              name=""
+              class="form-control"
+              placeholder="E-mail"
+              v-model="form.email"
+              v-on:focus="clearOnFocus"
+            />
+            <p v-if="this.noRegister">User no registered</p>
+          </div>
+
+          <div>
+            <label for="password">Contraseña</label>
+            <input
+              id="password"
+              type="password"
+              name=""
+              class="form-control"
+              placeholder="Contraseña"
+              v-model="form.password"
+              v-on:focus="clearOnFocus"
+            />
+            <p v-if="this.incorrect">Incorrect password</p>
+          </div>
+
+          <button class="btn" v-on:click="correctLogin">Entrar</button>
+>>>>>>> 7b3f58e (testing incorrect login)
         </div>
         <div>
           <label for="password">Contraseña</label>
