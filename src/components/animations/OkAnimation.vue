@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "TryAgain",
+  name: "OkAnimation",
   data() {
     return {
       showModal: false,
@@ -12,10 +12,10 @@ export default {
 <template>
   <div class="modal-overlay" v-if="showModal" @click="showModal = false">
     <div class="modal-body zoomIn">
-      <img src="../../assets/img/TryAgain.png" alt="" />
+      <img src="../../assets/img/ok.png" alt="" />
     </div>
   </div>
-  <button @click="showModal = true">Test TryAgain</button>
+  <button @click="showModal = true">Test Ok</button>
 </template>
 
 <style scoped>
@@ -33,6 +33,7 @@ export default {
   right: 10%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.188);
+  padding: 5vh;
   z-index: 100;
 }
 .modal-body {

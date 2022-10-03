@@ -12,10 +12,10 @@ export default {
 <template>
   <div class="modal-overlay" v-if="showModal" @click="showModal = false">
     <div class="modal-body zoomIn">
-      <img src="../../assets/img/TryAgain.png" alt="" />
+      <img src="../../assets/img/wait.png" alt="" />
     </div>
   </div>
-  <button @click="showModal = true">Test TryAgain</button>
+  <button @click="showModal = true">Test Wait</button>
 </template>
 
 <style scoped>
