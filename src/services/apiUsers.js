@@ -43,8 +43,8 @@ export const apiUsers = {
     });
   },
 
-  play(formData) {
-    return axios.patch(baseUrl + "/play", formData, {
+  play(jsonData) {
+    return axios.patch(baseUrl + "/play", jsonData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

@@ -10,7 +10,11 @@ export const apiAuth = {
   },
 
   getLogout() {
-    return axios.get(baseUrl + "/logout");
+    return axios.get(baseUrl + "/logout", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   },
 
   getAdminStatus() {

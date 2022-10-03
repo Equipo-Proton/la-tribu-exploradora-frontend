@@ -12,7 +12,7 @@ export default {
 
   data() {
     return {
-      form: {
+      obj: {
         play: false,
       },
       students: [],
@@ -40,18 +40,18 @@ export default {
     },
 
     async play() {
-      if (this.form.play === false) {
-        this.form.play = true;
+      if (this.obj.play === false) {
+        this.obj.play = true;
 
-        await apiUsers.play(this.form);
+        await apiUsers.play(this.obj);
 
         return;
       }
 
-      if (this.form.play === true) {
-        this.form.play = false;
+      if (this.obj.play === true) {
+        this.obj.play = false;
 
-        await apiUsers.play(this.form);
+        await apiUsers.play(this.obj);
 
         return;
       }
@@ -81,10 +81,10 @@ export default {
 <template>
   <TheHeader />
   <main>
-    <div v-if="this.form.play === false">
+    <div v-if="this.obj.play === false">
       <button type="button" v-on:click="play">PLAY</button>
     </div>
-    <div v-if="this.form.play === true">
+    <div v-if="this.obj.play === true">
       <button type="button" v-on:click="play">STOP</button>
     </div>
 

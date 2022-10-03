@@ -43,7 +43,7 @@ const router = createRouter({
       isAdmin: 0,
       superAdmin: 0,
       component: () => import("../views/WaitingView.vue"),
-      async beforeEnter(to) {
+     /*  async beforeEnter(to) {
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");
         if (to.isAdmin != isAdmin || to.superAdmin != superAdmin) {
@@ -52,10 +52,8 @@ const router = createRouter({
             name: "home",
             component: () => import("../views/LoginView.vue"),
           });
-
-          alert("You are not a student");
         }
-      },
+      }, */
     },
 
     // vista de juego
