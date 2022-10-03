@@ -8,19 +8,19 @@ import TheHeader from './TheHeader.vue';
     <h1>Palabra Secreta</h1>
     <main>  
         <div class="secretWord">
-            <div>Valnalon</div>
+            <div><h2>Valnalon</h2></div>
         </div>
         <div class="StudentCell">
             <div class="studentBox">
                 <div><h2> Tribu Ejemplo</h2> </div>
             </div>
             <div class="studentIcons">
-                <div>
-                    <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                    <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                    <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                    <img src="../assets/img/restartWord.svg" alt="restart Word" />
-                </div>
+                
+                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+                <img src="../assets/img/redFinger.svg" alt="red Finger" />
+                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+                <img src="../assets/img/restartWord.svg" alt="restart Word" />
+               
             </div>
         </div>
 
@@ -52,6 +52,10 @@ import TheHeader from './TheHeader.vue';
         border: 2px solid rgb(255, 170, 22);
         width: 730px;
         height: 51px;
+        background-color: #ffffff;
+    }
+    .secretWord div h2{
+        top: 0px;
     }
     .studentBox{
         top: 140px;
@@ -65,11 +69,20 @@ import TheHeader from './TheHeader.vue';
         border: 3px solid rgb(184, 184, 184);
         width: 300px;
         height: 100px;
+        background-color: #ffffff;
     }
     .studentIcons{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
+        
+    }
+    img{
+        display: inline-block;
+        margin: 20px;
+        top: 140px;
+
+
     }
     .studentIcons div{
         border-radius: 20px;
@@ -78,8 +91,8 @@ import TheHeader from './TheHeader.vue';
         width: 300px;
         height: 60px;
         top: 160px;
+        background-color: #ffffff;
     }
-    
  
     /*
     div{
