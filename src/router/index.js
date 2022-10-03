@@ -78,7 +78,7 @@ const router = createRouter({
       path: "/abcgameview",
       name: "abcgameview",
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
       component: () => import("../views/AbcGameView.vue"),
       async beforeEnter() {
