@@ -4,33 +4,7 @@ import { apiUsers } from "../services/apiUsers.js";
 export default {
   name: "WaitingView",
 
-  methods: {
-    async letsPlay() {
-      const question = confirm("¿Quieres jugar?");
-
-      if (question === true) {
-        this.getPlayValue();
-      }
-
-      return;
-    },
-
-    async getPlayValue() {
-      const response = await apiUsers.getPlayValue();
-
-      if (response.data.data === 1) {
-        this.$router.push("/abcgameview");
-
-        return;
-      }
-
-      if (response.data.data === 0) {
-        alert("Lo siento... Tu profesor no te ha dado permiso todavía");
-
-        return;
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -44,7 +18,7 @@ export default {
         <img class="bird" src="../assets/img/yellowBird.png" />
       </div>
       <div class="play grid-item">
-        <button type="button" v-on:click="letsPlay">
+        <button type="button">
           <img class="playLogo" src="../assets/img/greyPlay.svg" />
         </button>
       </div>
