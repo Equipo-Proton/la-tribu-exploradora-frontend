@@ -12,7 +12,105 @@ import TheHeader from './TheHeader.vue';
         </div>
         <div class="StudentCell">
             <div class="studentBox">
-                <div><h2> Tribu Ejemplo</h2> </div>
+                <div><h2> Tribu Ejemplo 1</h2> </div>
+            </div>
+            <div class="studentIcons">
+                
+                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+                <img src="../assets/img/redFinger.svg" alt="red Finger" />
+                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+                <img src="../assets/img/restartWord.svg" alt="restart Word" />
+               
+            </div>
+        </div>
+
+        <div class="StudentCell">
+            <div class="studentBox">
+                <div><h2> Tribu Ejemplo 2</h2> </div>
+            </div>
+            <div class="studentIcons">
+                
+                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+                <img src="../assets/img/redFinger.svg" alt="red Finger" />
+                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+                <img src="../assets/img/restartWord.svg" alt="restart Word" />
+               
+            </div>
+        </div>
+
+        <div class="StudentCell">
+            <div class="studentBox">
+                <div><h2> Tribu Ejemplo 3</h2> </div>
+            </div>
+            <div class="studentIcons">
+                
+                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+                <img src="../assets/img/redFinger.svg" alt="red Finger" />
+                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+                <img src="../assets/img/restartWord.svg" alt="restart Word" />
+               
+            </div>
+        </div>
+
+        <div class="StudentCell">
+            <div class="studentBox">
+                <div><h2> Tribu Ejemplo 4</h2> </div>
+            </div>
+            <div class="studentIcons">
+                
+                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+                <img src="../assets/img/redFinger.svg" alt="red Finger" />
+                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+                <img src="../assets/img/restartWord.svg" alt="restart Word" />
+               
+            </div>
+        </div>
+
+        <div class="StudentCell">
+            <div class="studentBox">
+                <div><h2> Tribu Ejemplo 5</h2> </div>
+            </div>
+            <div class="studentIcons">
+                
+                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+                <img src="../assets/img/redFinger.svg" alt="red Finger" />
+                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+                <img src="../assets/img/restartWord.svg" alt="restart Word" />
+               
+            </div>
+        </div>
+
+        <div class="StudentCell">
+            <div class="studentBox">
+                <div><h2> Tribu Ejemplo 6</h2> </div>
+            </div>
+            <div class="studentIcons">
+                
+                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+                <img src="../assets/img/redFinger.svg" alt="red Finger" />
+                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+                <img src="../assets/img/restartWord.svg" alt="restart Word" />
+               
+            </div>
+        </div>
+
+        <div class="StudentCell">
+            <div class="studentBox">
+                <div><h2> Tribu Ejemplo 7</h2> </div>
+            </div>
+            <div class="studentIcons">
+                
+                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+                <img src="../assets/img/redFinger.svg" alt="red Finger" />
+                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+                <img src="../assets/img/restartWord.svg" alt="restart Word" />
+               
+            </div>
+        </div>
+
+        <div class="StudentCell">
+            <div class="studentBox">
+                <div><h2> Tribu Ejemplo 8</h2> </div>
             </div>
             <div class="studentIcons">
                 
@@ -93,6 +191,19 @@ import TheHeader from './TheHeader.vue';
         top: 160px;
         background-color: #ffffff;
     }
+    .StudentCell {
+        width: 500px;
+        margin: 50px;
+        padding: auto;
+        display: flex;
+        align-items: center;
+        display: inline-block;
+        flex-wrap: wrap;
+        
+    }
+    .StudentCell>* {
+          flex: 0 0 33.3333%;
+      }
  
     /*
     div{
