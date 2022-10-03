@@ -52,8 +52,6 @@ import TheHeader from './TheHeader.vue';
         border: 2px solid rgb(255, 170, 22);
         width: 730px;
         height: 51px;
-        background-color: rgb(255, 255, 255);
-
     }
     .studentBox{
         top: 140px;
@@ -67,7 +65,6 @@ import TheHeader from './TheHeader.vue';
         border: 3px solid rgb(184, 184, 184);
         width: 300px;
         height: 100px;
-        background-color: rgb(250, 249, 246);
     }
     .studentIcons{
         display: flex;
@@ -81,9 +78,9 @@ import TheHeader from './TheHeader.vue';
         width: 300px;
         height: 60px;
         top: 160px;
-        background-color: rgb(250, 249, 246)
     }
-
+    
+ 
     /*
     div{
         display: flex;

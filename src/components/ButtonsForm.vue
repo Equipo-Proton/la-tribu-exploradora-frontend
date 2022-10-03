@@ -13,9 +13,10 @@
     background-color: rgb(255, 183, 0);
     font-size: 30px;
     border: 0px;
-    height: 60px;
-    border-radius: 9px 9px 9px 9px;
+    height: 50px;
+    border-radius: 15px 15px 15px 15px;
     border-color: black;
+    color: #fff;
     padding: auto;
 }
 
@@ -23,16 +24,18 @@
     background-color: red;
     font-size: 30px;
     border: 0px;
-    height: 60px;
-    border-radius: 9px 9px 9px 9px;
+    height: 50px;
+    border-radius: 15px 15px 15px 15px;
     border-color: black;
-    margin: 6px;
+    margin: 60px;
+    color: #fff;
     padding: auto;
 
 }
 
 .flex-parent {
     display: flex;
+    align-items: center;
     top: 600px;
 
 }
@@ -45,12 +48,12 @@
 
 .ButtonLeft:hover {
     color: #fff;
-    background-color: #ffbe45;
+    background-color: #fb6e16;
     border-color: #000000;
 }
 .ButtonRight:hover {
     color: #fff;
-    background-color: #ff5b49;
+    background-color: #ae1302;
     border-color: #000000;
 }
 </style>
