@@ -62,19 +62,6 @@ export default {
       class="tab-content d-flex justify-content-center align-items-center m-auto"
       id="pills-tabContent"
     >
-<<<<<<< HEAD
-      <div class="form">
-        <div>
-          <label for="email">¿Quién eres?</label>
-          <input
-            id="email"
-            type="text"
-            name=""
-            class="form-control"
-            placeholder="E-mail"
-            v-model="form.email"
-          />
-=======
       <div
         class="tab-pane fade show active m-auto"
         id="pills-user"
@@ -111,20 +98,7 @@ export default {
           </div>
 
           <button class="btn" v-on:click="correctLogin">Entrar</button>
->>>>>>> 7b3f58e (testing incorrect login)
         </div>
-        <div>
-          <label for="password">Contraseña</label>
-          <input
-            id="password"
-            type="password"
-            name=""
-            class="form-control"
-            placeholder="Contraseña"
-            v-model="form.password"
-          />
-        </div>
-        <button class="btn" v-on:click="correctLogin">Entrar</button>
       </div>
     </div>
   </div>
@@ -163,5 +137,9 @@ a {
 }
 input {
   border: 0.2vw solid var(--base-color-purple);
+}
+
+p {
+  color: rgba(255, 0, 0, 0.817);
 }
 </style>
