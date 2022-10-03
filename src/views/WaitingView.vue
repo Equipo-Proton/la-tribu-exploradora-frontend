@@ -1,11 +1,34 @@
-<script>
+<script setup>
+import { useRouter } from "vue-router";
 import { apiUsers } from "../services/apiUsers.js";
 
-export default {
-  name: "WaitingView",
+const router = useRouter();
 
-  methods: {},
-};
+const interval = setInterval(checkRedirectToWaiting, 5000);
+
+async function checkRedirectToWaiting() {
+  const playValue = await callDatabase();
+
+  checkPlayValue(playValue);
+
+  return;
+}
+
+function checkPlayValue(playValue) {
+  if (playValue === 1) {
+    clearInterval(interval);
+
+    router.push({ path: "/play" });
+
+    return;
+  }
+}
+
+async function callDatabase() {
+  const response = await apiUsers.getPlayValue();
+
+  return response.data.data;
+}
 </script>
 
 <template>

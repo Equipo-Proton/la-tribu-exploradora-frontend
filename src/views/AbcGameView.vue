@@ -9,9 +9,8 @@ import { apiUsers } from "../services/apiUsers";
 
 const router = useRouter();
 
-setInterval(checkRedirectToWaiting, 5000);
+const interval = setInterval(checkRedirectToWaiting, 5000);
 
-// funciones para comprobar si permanecen o se van a waiting
 async function checkRedirectToWaiting() {
   const playValue = await callDatabase();
 
@@ -22,6 +21,8 @@ async function checkRedirectToWaiting() {
 
 function checkPlayValue(playValue) {
   if (playValue === 0) {
+    clearInterval(interval);
+
     router.push({ path: "/waiting" });
 
     return;
