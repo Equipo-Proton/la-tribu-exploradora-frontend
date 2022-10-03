@@ -2,12 +2,14 @@
 import { RouterView } from "vue-router";
 import AbcGameKeyboard from "../components/AbcGameKeyboard.vue";
 import AbcGameNumpad from "../components/AbcGameNumpad.vue";
+import TryAgain from "../components/animations/TryAgain.vue";
 </script>
 
 <template>
   <main>
     <AbcGameKeyboard />
     <AbcGameNumpad />
+    <TryAgain></TryAgain>
   </main>
   <RouterView />
 </template>
