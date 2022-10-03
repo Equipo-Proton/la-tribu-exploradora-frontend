@@ -98,7 +98,7 @@ const router = createRouter({
       },
     },
 
-    // vista de panel de juego
+    // vista de control de juego
     {
       path: "/gamecontrol",
       name: "gamecontrol",
