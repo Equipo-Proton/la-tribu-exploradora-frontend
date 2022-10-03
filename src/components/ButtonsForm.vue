@@ -3,35 +3,40 @@
 </script>
 <template>
     <div class="flex-parent jc-center">
-        <button type="button" class="ButtonLeft">Alumno</button>
-        <button type="button" class="ButtonRight">Profesor</button>
+        <button type="button" class="ButtonLeft">Reiniciar Juego</button>
+        <button type="button" class="ButtonRight">Terminar Juego</button>
     </div>
 </template>
 
 <style scoped>
 .ButtonLeft {
-    background-color: cornflowerblue;
-    font-size: 25px;
+    background-color: rgb(255, 183, 0);
+    font-size: 30px;
     border: 0px;
-    border-radius: 9px 9px 9px 9px;
+    height: 50px;
+    border-radius: 15px 15px 15px 15px;
     border-color: black;
+    color: #fff;
     padding: auto;
 }
 
 .ButtonRight {
-    background-color: var(--base-color-purple);
-    font-size: 25px;
+    background-color: red;
+    font-size: 30px;
     border: 0px;
-    border-radius: 9px 9px 9px 9px;
+    height: 50px;
+    border-radius: 15px 15px 15px 15px;
     border-color: black;
-    margin: 6px;
+    margin: 60px;
+    color: #fff;
     padding: auto;
 
 }
 
 .flex-parent {
     display: flex;
-    top: 330px;
+    align-items: center;
+    top: 600px;
 
 }
 
@@ -43,12 +48,12 @@
 
 .ButtonLeft:hover {
     color: #fff;
-    background-color: #ab09d0;
+    background-color: #fb6e16;
     border-color: #000000;
 }
 .ButtonRight:hover {
     color: #fff;
-    background-color: #ab09d0;
+    background-color: #ae1302;
     border-color: #000000;
 }
 </style>
