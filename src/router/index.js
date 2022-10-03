@@ -73,6 +73,31 @@ const router = createRouter({
       },
     },
 
+    // pantalla de preparados para jugar
+    {
+      path: "/play",
+      name: "play",
+      meta: {
+        requiresAuth: true,
+      },
+      component: () => import("../views/ReadyToPlayView.vue"),
+      async beforeEnter() {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (isAdmin != "0" || superAdmin != "0") {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
+
+          console.log(
+            "Debes loguearte como estudiante para acceder a esta ruta"
+          );
+        }
+      },
+    },
+
     // vista de juego
     {
       path: "/abcgameview",

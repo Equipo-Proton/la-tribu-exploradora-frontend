@@ -45,7 +45,7 @@ export default {
       </div>
       <div class="play grid-item">
         <button type="button" v-on:click="letsPlay">
-          <img class="playLogo" src="../assets/img/greenPlay.svg" />
+          <img class="playLogo" src="../assets/img/greyPlay.svg" />
         </button>
       </div>
       <div class="bird green grid-item">
