@@ -1,91 +1,99 @@
 <script>
-import { ref } from "vue";
+import draggable from "vuedraggable";
+let idGlobal = 8;
 export default {
-  setup() {
-    const items = ref([
-      { id: 0, title: "a", list: 1 },
-      { id: 1, title: "b", list: 1 },
-      { id: 2, title: "c", list: 1 },
-      { id: 3, title: "d", list: 1 },
-      { id: 4, title: "e", list: 1 },
-      { id: 5, title: "f", list: 1 },
-      { id: 6, title: "g", list: 1 },
-      { id: 7, title: "h", list: 1 },
-      { id: 8, title: "i", list: 1 },
-      { id: 9, title: "j", list: 1 },
-      { id: 10, title: "k", list: 1 },
-      { id: 11, title: "l", list: 1 },
-      { id: 12, title: "m", list: 1 },
-      { id: 13, title: "n", list: 1 },
-      { id: 14, title: "ñ", list: 1 },
-      { id: 15, title: "o", list: 1 },
-      { id: 16, title: "p", list: 1 },
-      { id: 17, title: "q", list: 1 },
-      { id: 18, title: "r", list: 1 },
-      { id: 19, title: "s", list: 1 },
-      { id: 20, title: "t", list: 1 },
-      { id: 21, title: "u", list: 1 },
-      { id: 22, title: "v", list: 1 },
-      { id: 23, title: "w", list: 1 },
-      { id: 24, title: "y", list: 1 },
-      { id: 25, title: "z", list: 1 },
-    ]);
-    const getList = (list) => {
-      return items.value.filter((item) => item.list == list);
+  name: "custom-clone",
+  display: "Custom Clone",
+  order: 3,
+  components: {
+    draggable,
+  },
+  data() {
+    return {
+      list1: [
+        { name: "a", id: 1 },
+        { name: "b", id: 2 },
+        { name: "c", id: 3 },
+        { name: "d", id: 4 },
+        { name: "e", id: 5 },
+        { name: "f", id: 6 },
+        { name: "g", id: 7 },
+        { name: "h", id: 8 },
+        { name: "i", id: 9 },
+        { name: "j", id: 10 },
+        { name: "k", id: 11 },
+        { name: "l", id: 12 },
+        { name: "m", id: 13 },
+        { name: "n", id: 14 },
+        { name: "ñ", id: 15 },
+        { name: "o", id: 16 },
+        { name: "p", id: 17 },
+        { name: "q", id: 18 },
+        { name: "r", id: 19 },
+        { name: "s", id: 20 },
+        { name: "t", id: 21 },
+        { name: "u", id: 22 },
+        { name: "v", id: 23 },
+        { name: "w", id: 24 },
+        { name: "x", id: 25 },
+        { name: "y", id: 26 },
+        { name: "z", id: 27 },
+      ],
+      list2: [],
     };
-    const startDrag = (event, item) => {
-      console.log(item);
-      event.dataTransfer.dropEffect = "move";
-      event.dataTransfer.effectAllowed = "move";
-      event.dataTransfer.setData("itemID", item.id);
-    };
-
-    const onDrop = (event, list) => {
-      const itemID = event.dataTransfer.getData("itemID");
-      const item = items.value.find((item) => item.id == itemID);
-      item.list = list;
-    };
-    return { getList, onDrop, startDrag };
+  },
+  methods: {
+    log: function (evt) {
+      window.console.log(evt);
+    },
+    cloneLetter({ name }) {
+      return {
+        id: idGlobal++,
+        name: ` ${name}`,
+      };
+    },
+    showResult() {
+      console.log("alumno");
+      console.log(this.list2);
+    },
   },
 };
 </script>
 
 <template>
   <div class="keyboard">
-    <div @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
-      <div class="drop-zone"></div>
-    </div>
-    <div @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
-      <div class="drag-zone">
-        <div class="drag-el" id="1">a</div>
-        <div class="drag-el" id="2">b</div>
-        <div class="drag-el" id="3">c</div>
-        <div class="drag-el" id="4">d</div>
-        <div class="drag-el" id="5">e</div>
-        <div class="drag-el" id="6">f</div>
-        <div class="drag-el" id="7">g</div>
-        <div class="drag-el" id="8">h</div>
-        <div class="drag-el" id="9">i</div>
-        <div class="drag-el" id="10">j</div>
-        <div class="drag-el" id="11">k</div>
-        <div class="drag-el" id="12">l</div>
-        <div class="drag-el" id="13">m</div>
-        <div class="drag-el" id="14">n</div>
-        <div class="drag-el" id="15">ñ</div>
-        <div class="drag-el" id="16">o</div>
-        <div class="drag-el" id="17">p</div>
-        <div class="drag-el" id="18">q</div>
-        <div class="drag-el" id="19">r</div>
-        <div class="drag-el" id="20">s</div>
-        <div class="drag-el" id="21">t</div>
-        <div class="drag-el" id="22">u</div>
-        <div class="drag-el" id="23">v</div>
-        <div class="drag-el" id="24">w</div>
-        <div class="drag-el" id="25">x</div>
-        <div class="drag-el" id="26">y</div>
-        <div class="drag-el" id="27">z</div>
-      </div>
-    </div>
+    <draggable
+      class="drop-zone"
+      :list="list2"
+      group="people"
+      @change="log"
+      item-key="id"
+    >
+      <template #item="{ element }">
+        <div class="drop-el">
+          {{ element.name }}
+        </div>
+      </template>
+    </draggable>
+
+    <draggable
+      class="drag-zone"
+      :list="list1"
+      :group="{ name: 'people', pull: 'clone', put: false }"
+      :clone="cloneLetter"
+      @change="log"
+      item-key="id"
+    >
+      <template #item="{ element }">
+        <div class="drag-el">
+          {{ element.name }}
+        </div>
+      </template>
+    </draggable>
+
+    <rawDisplayer :value="list1" title="List 1" />
+
+    <rawDisplayer :value="list2" title="List 2" />
     <div class="bot-buttons">
       <button type="button" class="mayus-button">ABC</button>
       <button type="submit" class="ready-button">¡Listo!</button>
@@ -108,6 +116,17 @@ export default {
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
   margin: 1vw auto;
+}
+.drop-el {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5vw;
+  min-height: 7vh;
+  border-radius: 1vw;
+  background-color: var(--base-color-purple);
+  font-family: var(--font-family-game);
+  font-size: 2vw;
 }
 .drag-zone {
   display: grid;
