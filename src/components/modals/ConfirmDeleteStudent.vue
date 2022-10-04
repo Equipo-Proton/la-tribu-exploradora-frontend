@@ -22,7 +22,7 @@ export default {
     async deleteStudent() {
       await apiUsers.deleteUser(this.studentId);
 
-      /*  alert(`${this.student.name} has been deleted`); */
+      alert(`${this.student.name} ya no está en la lista`);
 
       this.$router.push("/");
     },
@@ -35,7 +35,7 @@ export default {
     <div class="logo">
       <img src="../../assets/logo.svg" />
     </div>
-    <h3>¿Estas seguro que quieres eliminar al estudiante?</h3>
+    <h3>¿Seguro que quieres eliminar a este estudiante?</h3>
     <div class="modal-buttons">
       <button
         v-on:click="deleteStudent"

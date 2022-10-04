@@ -80,7 +80,7 @@ export default {
               v-model="form.email"
               v-on:focus="clearOnFocus"
             />
-            <p v-if="this.noRegister">User no registered</p>
+            <p v-if="this.noRegister">Usuario no registrado</p>
           </div>
 
           <div>
@@ -94,7 +94,7 @@ export default {
               v-model="form.password"
               v-on:focus="clearOnFocus"
             />
-            <p v-if="this.incorrect">Incorrect password</p>
+            <p v-if="this.incorrect">Contraseña incorrecta</p>
           </div>
 
           <button class="btn" v-on:click="correctLogin">Entrar</button>

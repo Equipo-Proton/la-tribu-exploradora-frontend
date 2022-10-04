@@ -54,7 +54,7 @@ export default {
       />
     </div>
     <div class="form-camp">
-      <label for="psw"><b>Password</b></label>
+      <label for="psw"><b>Contraseña</b></label>
       <input
         type="password"
         placeholder="Enter Password"

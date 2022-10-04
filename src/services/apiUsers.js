@@ -62,4 +62,12 @@ export const apiUsers = {
         return error.response;
       });
   },
+
+  sendCorrection(id, jsonData) {
+    return axios.patch(baseUrl + `/correction/${id}`, jsonData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
 };
