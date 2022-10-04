@@ -1,46 +1,11 @@
-<script>
-import { ref } from "vue";
-export default {
-  setup() {
-    const items = ref([
-      { id: 0, title: "0", list: 1 },
-      { id: 1, title: "1", list: 1 },
-      { id: 2, title: "2", list: 1 },
-      { id: 3, title: "3", list: 1 },
-      { id: 4, title: "4", list: 1 },
-      { id: 5, title: "5", list: 1 },
-      { id: 6, title: "6", list: 1 },
-      { id: 7, title: "7", list: 1 },
-      { id: 8, title: "8", list: 1 },
-      { id: 9, title: "9", list: 1 },
-      { id: 10, title: "10", list: 1 },
-    ]);
-    const getList = (list) => {
-      return items.value.filter((item) => item.list == list);
-    };
-    const startDrag = (event, item) => {
-      console.log(item);
-      event.dataTransfer.dropEffect = "move";
-      event.dataTransfer.effectAllowed = "move";
-      event.dataTransfer.setData("itemID", item.id);
-    };
-
-    const onDrop = (event, list) => {
-      const itemID = event.dataTransfer.getData("itemID");
-      const item = items.value.find((item) => item.id == itemID);
-      item.list = list;
-    };
-    return { getList, onDrop, startDrag };
-  },
-};
-</script>
+<script></script>
 
 <template>
   <div class="num-pad">
-    <div @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
+    <div>
       <div class="drop-zone"></div>
     </div>
-    <div @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
+    <div>
       <div class="drag-zone">
         <div class="drag-el" id="n0">0</div>
         <div class="drag-el" id="n1">1</div>

@@ -1,9 +1,37 @@
-<script setup>
-import { RouterView } from "vue-router";
+<script>
+import { apiUsers } from "../services/apiUsers.js";
 
-/* export default {
-      name: "WaitingView",
-    }; */
+export default {
+  name: "ReadyToPlayView",
+
+  methods: {
+    async letsPlay() {
+      const question = confirm("¿Quieres jugar?");
+
+      if (question === true) {
+        this.getPlayValue();
+      }
+
+      return;
+    },
+
+    async getPlayValue() {
+      const response = await apiUsers.getPlayValue();
+
+      if (response.data.data === 1) {
+        this.$router.push("/abcgameview");
+
+        return;
+      }
+
+      if (response.data.data === 0) {
+        alert("Lo siento... Tu profesor no te ha dado permiso todavía");
+
+        return;
+      }
+    },
+  },
+};
 </script>
 
 <template>
@@ -21,7 +49,9 @@ import { RouterView } from "vue-router";
         </div>
       </div>
       <div class="play">
-        <img class="playLogo" src="../assets/img/greenPlay.svg" />
+        <button type="button" v-on:click="letsPlay">
+          <img class="playLogo" src="../assets/img/greenPlay.svg" />
+        </button>
       </div>
     </section>
     <section class="garden">
