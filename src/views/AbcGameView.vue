@@ -31,6 +31,11 @@ function checkPlayValue(playValue) {
 
 async function callDatabase() {
   const response = await apiUsers.getPlayValue();
+  if (response.data.message) {
+    clearInterval(interval);
+
+    router.push("/login");
+  }
 
   return response.data.data;
 }
