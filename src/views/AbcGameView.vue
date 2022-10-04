@@ -9,9 +9,9 @@ import { apiUsers } from "../services/apiUsers";
 
 const router = useRouter();
 
-const interval = setInterval(checkRedirectToWaiting, 5000);
+const interval = setInterval(checkRedirectToWaitingView, 5000);
 
-async function checkRedirectToWaiting() {
+async function checkRedirectToWaitingView() {
   const playValue = await callDatabase();
 
   checkPlayValue(playValue);
@@ -31,7 +31,8 @@ function checkPlayValue(playValue) {
 
 async function callDatabase() {
   const response = await apiUsers.getPlayValue();
-  if (response.data.message) {
+
+  if (response.data.message === "Unauthenticated.") {
     clearInterval(interval);
 
     router.push("/login");
