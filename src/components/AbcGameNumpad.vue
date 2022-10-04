@@ -41,6 +41,9 @@ export default {
       console.log("alumno");
       console.log(this.list2);
     },
+    clearField(){
+      this.list2 = [];
+    }
   },
 };
 </script>
@@ -74,14 +77,20 @@ export default {
         <div class="drag-el">
           {{ element.name }}
         </div>
+        
       </template>
+      
     </draggable>
+    <button type="button" @click="clearField" class="drag-el deleteNumPad">Borrar </button>
+
 
     <rawDisplayer :value="list1" title="List 1" />
 
     <rawDisplayer :value="list2" title="List 2" />
     
   </div>
+
+  
 </template>
 <style scoped>
 .drop-zone {
@@ -112,5 +121,9 @@ export default {
   font-family: var(--font-family-game);
   font-size: 2vw;
   margin: auto;
+}
+
+.deleteNumPad{
+  margin-top: 10px;
 }
 </style>
