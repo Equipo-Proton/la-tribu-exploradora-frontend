@@ -1,25 +1,86 @@
-<script></script>
+<script>
+import draggable from "vuedraggable";
+let idGlobal = 8;
+export default {
+  name: "custom-clone",
+  display: "Custom Clone",
+  order: 3,
+  components: {
+    draggable,
+  },
+  data() {
+    return {
+      list1: [
+        { name: "0", id: 28 },
+        { name: "1", id: 29 },
+        { name: "2", id: 30 },
+        { name: "3", id: 31 },
+        { name: "4", id: 32 },
+        { name: "5", id: 33 },
+        { name: "6", id: 34 },
+        { name: "7", id: 35 },
+        { name: "8", id: 36 },
+        { name: "9", id: 37 },
+        { name: "10", id: 38 },
+        
+      ],
+      list2: [],
+    };
+  },
+  methods: {
+    log: function (evt) {
+      window.console.log(evt);
+    },
+    cloneLetter({ name }) {
+      return {
+        id: idGlobal++,
+        name: ` ${name}`,
+      };
+    },
+    showResult() {
+      console.log("alumno");
+      console.log(this.list2);
+    },
+  },
+};
+</script>
+
 
 <template>
   <div class="num-pad">
-    <div>
-      <div class="drop-zone"></div>
-    </div>
-    <div>
-      <div class="drag-zone">
-        <div class="drag-el" id="n0">0</div>
-        <div class="drag-el" id="n1">1</div>
-        <div class="drag-el" id="n2">2</div>
-        <div class="drag-el" id="n3">3</div>
-        <div class="drag-el" id="n4">4</div>
-        <div class="drag-el" id="n5">5</div>
-        <div class="drag-el" id="n6">6</div>
-        <div class="drag-el" id="n7">7</div>
-        <div class="drag-el" id="n8">8</div>
-        <div class="drag-el" id="n9">9</div>
-        <div class="drag-el" id="n10">10</div>
-      </div>
-    </div>
+    <draggable
+      class="drop-zone"
+      :list="list2"
+      group="people"
+      @change="log"
+      item-key="id"
+    >
+      <template #item="{ element }">
+        <div class="drop-el">
+          {{ element.name }}
+        </div>
+      </template>
+    </draggable>
+
+    <draggable
+      class="drag-zone"
+      :list="list1"
+      :group="{ name: 'people', pull: 'clone', put: false }"
+      :clone="cloneLetter"
+      @change="log"
+      item-key="id"
+    >
+      <template #item="{ element }">
+        <div class="drag-el">
+          {{ element.name }}
+        </div>
+      </template>
+    </draggable>
+
+    <rawDisplayer :value="list1" title="List 1" />
+
+    <rawDisplayer :value="list2" title="List 2" />
+    
   </div>
 </template>
 <style scoped>
