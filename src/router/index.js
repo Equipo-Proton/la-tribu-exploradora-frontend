@@ -12,6 +12,7 @@ const router = createRouter({
       },
       component: () => import("../views/LandingView.vue"),
     },
+
     // vista de login
     {
       path: "/login",
@@ -21,50 +22,131 @@ const router = createRouter({
       },
       component: () => import("../views/LoginView.vue"),
     },
+
     // vista de panel
     {
       path: "/panel",
-      name: "AdminPanel",
+      name: "adminpanel",
       meta: {
         requiresAuth: true,
       },
       component: () => import("../views/AdminPanelView.vue"),
+      async beforeEnter() {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (isAdmin === "0" && superAdmin === "0") {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
+
+          console.log(
+            "Debes loguearte como profesor o director para acceder a esta ruta"
+          );
+        }
+      },
     },
-    // vista de prueba simulando la pantalla de espera de los alumnos
+
+    // pantalla de espera de los alumnos
     {
       path: "/waiting",
-      name: "Waiting",
+      name: "waiting",
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
       component: () => import("../views/WaitingView.vue"),
+      async beforeEnter() {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (isAdmin != "0" || superAdmin != "0") {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
+
+          console.log(
+            "Debes loguearte como estudiante para acceder a esta ruta"
+          );
+        }
+      },
     },
+
+    // pantalla de preparados para jugar
+    {
+      path: "/play",
+      name: "play",
+      meta: {
+        requiresAuth: true,
+      },
+      component: () => import("../views/ReadyToPlayView.vue"),
+      async beforeEnter() {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (isAdmin != "0" || superAdmin != "0") {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
+
+          console.log(
+            "Debes loguearte como estudiante para acceder a esta ruta"
+          );
+        }
+      },
+    },
+
     // vista de juego
     {
       path: "/abcgameview",
-      name: "AbcGameView",
+      name: "abcgameview",
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
       component: () => import("../views/AbcGameView.vue"),
-    },
-    // vista de preparado para jugar
-    {
-      path: "/play",
-      name: "ReadyToPlay",
-      meta: {
-        requiresAuth: false,
+      async beforeEnter() {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (isAdmin != 0 || superAdmin != 0) {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
+
+          console.log(
+            "Debes loguearte como estudiante para acceder a esta ruta"
+          );
+        }
       },
-      component: () => import("../views/ReadyToPlayView.vue"),
     },
-    // vista de panel de juego
+
+    // vista de control de juego
     {
       path: "/gamecontrol",
-      name: "GameControl",
+      name: "gamecontrol",
       meta: {
         requiresAuth: true,
       },
       component: () => import("../views/GameControlView.vue"),
+      async beforeEnter() {
+        const isAdmin = localStorage.getItem("isAdmin");
+        const superAdmin = localStorage.getItem("superAdmin");
+        if (
+          (isAdmin === "0" && superAdmin === "0") ||
+          (isAdmin === "0" && superAdmin === "1")
+        ) {
+          await router.push({
+            path: "/",
+            name: "home",
+            component: () => import("../views/LoginView.vue"),
+          });
+
+          console.log("Debes loguearte como profesor para acceder a esta ruta");
+        }
+      },
     },
   ],
 });
