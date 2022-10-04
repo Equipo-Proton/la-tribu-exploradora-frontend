@@ -12,9 +12,6 @@ export default {
 
   data() {
     return {
-      obj: {
-        play: false,
-      },
       students: [],
       teachers: [],
       isAdmin: Boolean,
@@ -37,24 +34,6 @@ export default {
       const teachersData = response.data.data;
 
       this.teachers = teachersData;
-    },
-
-    async play() {
-      if (this.obj.play === false) {
-        this.obj.play = true;
-
-        await apiUsers.play(this.obj);
-
-        return;
-      }
-
-      if (this.obj.play === true) {
-        this.obj.play = false;
-
-        await apiUsers.play(this.obj);
-
-        return;
-      }
     },
 
     getAdminValues() {
@@ -81,13 +60,6 @@ export default {
 <template>
   <TheHeader />
   <main>
-    <div v-if="this.obj.play === false">
-      <button type="button" v-on:click="play">PLAY</button>
-    </div>
-    <div v-if="this.obj.play === true">
-      <button type="button" v-on:click="play">STOP</button>
-    </div>
-
     <GameList />
     <div v-if="isAdmin">
       <StudentList :students="students" />

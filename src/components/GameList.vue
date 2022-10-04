@@ -1,10 +1,8 @@
 <script>
-import { apiTeachers } from "../services/apiTeachers.js";
 import { apiUsers } from "../services/apiUsers.js";
-import { admin } from "../functions/admin.js";
 
 export default {
-  name: "AdminPanelView",
+  name: "GameList",
 
   data() {
     return {
@@ -19,57 +17,18 @@ export default {
   },
 
   methods: {
-    async listStudents() {
-      const response = await apiUsers.listUsers();
-
-      const studentsData = response.data.data;
-
-      this.students = studentsData;
-    },
-
-    async listTeachers() {
-      const response = await apiTeachers.listTeachers();
-
-      const teachersData = response.data.data;
-
-      this.teachers = teachersData;
-    },
-
     async play() {
       if (this.obj.play === false) {
         this.obj.play = true;
 
         await apiUsers.play(this.obj);
 
-        return;
-      }
-
-      if (this.obj.play === true) {
-        this.obj.play = false;
-
-        await apiUsers.play(this.obj);
+        this.$router.push("/gamecontrol");
 
         return;
       }
     },
-
-    getAdminValues() {
-      const isAdmin = admin.getIsAdmin();
-
-      const superAdmin = admin.getSuperAdmin();
-
-      this.isAdmin = isAdmin;
-
-      this.superAdmin = superAdmin;
-    },
   },
-
-  created() {
-    this.listStudents();
-    this.listTeachers();
-    this.getAdminValues();
-  },
-
 };
 </script>
 <template>
@@ -82,22 +41,11 @@ export default {
       <div v-if="this.obj.play === false">
         <button class="play" type="button" v-on:click="play">PLAY</button>
       </div>
-      <div v-if="this.obj.play === true">
-        <button class="stop" type="button" v-on:click="play">STOP</button>
-      </div>
-      <!--       <div class="playButton" v-if="this.obj.play === true">
-        <button type="button" v-on:click="play">STOP</button>
-      </div>
-      <div class="playButton" v-if="this.obj.play === false">
-        <button type="button" v-on:click="play">PLAY</button>
-      </div> -->
     </div>
   </main>
   <RouterView />
 </template>
 <style scoped>
-
-
 .gamesBox {
   display: flex;
   flex-direction: column;
@@ -138,5 +86,4 @@ button {
 .stop {
   background-color: var(--color-warning);
 }
-
 </style>
