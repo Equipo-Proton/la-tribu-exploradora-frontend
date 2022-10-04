@@ -26,8 +26,6 @@ export default {
 
       await apiUsers.sendCorrection(this.studentId, this.jsonData);
 
-      this.jsonData.correct = false;
-
       alert("Has enviado una buena corrección");
     },
 
