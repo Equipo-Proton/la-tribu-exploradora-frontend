@@ -1,62 +1,77 @@
-<script setup>
+<script>
+import { apiUsers } from "../services/apiUsers.js";
 
+export default {
+  name: "ButtonsForm",
+
+  data() {
+    return {
+      obj: {
+        play: true,
+      },
+    };
+  },
+
+  methods: {
+    async play() {
+      if (this.obj.play === true) {
+        this.obj.play = false;
+
+        await apiUsers.play(this.obj);
+
+        this.$router.push("/panel");
+
+        return;
+      }
+    },
+  },
+};
 </script>
 <template>
-    <div class="flex-parent jc-center">
-        <button type="button" class="ButtonLeft">Reiniciar Juego</button>
-        <button type="button" class="ButtonRight">Terminar Juego</button>
-    </div>
+  <div class="buttons-game-control">
+    <button v-on:click="play" type="button" class="button-left">
+      Reiniciar Juego
+    </button>
+    <button v-on:click="play" type="button" class="button-right">
+      Terminar Juego
+    </button>
+  </div>
 </template>
 
 <style scoped>
-.ButtonLeft {
-    background-color: rgb(255, 183, 0);
-    font-size: 30px;
-    border: 0px;
-    height: 50px;
-    border-radius: 15px 15px 15px 15px;
-    border-color: black;
-    color: #fff;
-    padding: auto;
+.buttons-game-control {
+  display: flex;
+  width: 50vw;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+  text-align: center;
+}
+.button-left,
+.button-right {
+  border: 0px;
+  height: 5vh;
+  width: 15vw;
+  color: var(--base-color-white-2);
+  border-radius: 0.7vw;
+  font-size: 1vw;
+  text-align: center;
+  font-weight: bold;
+}
+.button-left {
+  background-color: var(--base-color-orange);
 }
 
-.ButtonRight {
-    background-color: red;
-    font-size: 30px;
-    border: 0px;
-    height: 50px;
-    border-radius: 15px 15px 15px 15px;
-    border-color: black;
-    margin: 60px;
-    color: #fff;
-    padding: auto;
-
+.button-right {
+  background-color: var(--color-warning);
 }
 
-.flex-parent {
-    display: flex;
-    align-items: center;
-    top: 600px;
-
+.button-left:hover {
+  background-color: var(--base-color-orange);
+  border-color: #000000;
 }
-
-.jc-center {
-    justify-content: center;
-    margin: auto;
-    padding: auto;
-}
-
-.ButtonLeft:hover {
-    color: #fff;
-    background-color: #fb6e16;
-    border-color: #000000;
-}
-.ButtonRight:hover {
-    color: #fff;
-    background-color: #ae1302;
-    border-color: #000000;
+.button-right:hover {
+  background-color: #ae1302;
+  border-color: #000000;
 }
 </style>
-
-
-

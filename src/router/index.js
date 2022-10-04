@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { apiUsers } from "../services/apiUsers";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -82,6 +83,8 @@ const router = createRouter({
       },
       component: () => import("../views/ReadyToPlayView.vue"),
       async beforeEnter() {
+        const response = await apiUsers.getPlayValue();
+        const playValue = await response.data.data;
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");
         if (isAdmin != "0" || superAdmin != "0") {
@@ -95,6 +98,16 @@ const router = createRouter({
             "Debes loguearte como estudiante para acceder a esta ruta"
           );
         }
+
+        if (playValue === 0) {
+          await router.push({
+            path: "/waiting",
+            name: "waiting",
+            component: () => import("../views/WaitingView.vue"),
+          });
+
+          alert("No tienes permiso para acceder a play view");
+        }
       },
     },
 
@@ -107,6 +120,8 @@ const router = createRouter({
       },
       component: () => import("../views/AbcGameView.vue"),
       async beforeEnter() {
+        const response = await apiUsers.getPlayValue();
+        const playValue = await response.data.data;
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");
         if (isAdmin != 0 || superAdmin != 0) {
@@ -119,6 +134,16 @@ const router = createRouter({
           console.log(
             "Debes loguearte como estudiante para acceder a esta ruta"
           );
+        }
+
+        if (playValue === 0) {
+          await router.push({
+            path: "/waiting",
+            name: "waiting",
+            component: () => import("../views/WaitingView.vue"),
+          });
+
+          alert("No tienes permiso para acceder a play view");
         }
       },
     },

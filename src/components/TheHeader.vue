@@ -1,11 +1,26 @@
 <script>
 import { apiAuth } from "../services/apiAuth.js";
+import { apiUsers } from "../services/apiUsers";
 
 export default {
   name: "TheHeader",
 
+  data() {
+    return {
+      obj: {
+        play: false,
+      },
+    };
+  },
+
   methods: {
     async logout() {
+      const noSuperAdmin = localStorage.getItem("superAdmin");
+
+      if (noSuperAdmin != "1") {
+        await apiUsers.play(this.obj);
+      }
+
       await apiAuth.getLogout();
 
       localStorage.removeItem("token");
@@ -26,7 +41,7 @@ export default {
     <div class="appTitle">AÑA: añerando, la Tribu Exploradora</div>
     <div class="user">
       <div>
-        <p>user</p>
+        <p>¡Hola!</p>
       </div>
       <div><img src="../assets/icons/iconUser.svg" /></div>
       <div><button id="logout" v-on:click="logout">Salir</button></div>

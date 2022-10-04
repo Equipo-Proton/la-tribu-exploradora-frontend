@@ -4,9 +4,9 @@ import { apiUsers } from "../services/apiUsers.js";
 
 const router = useRouter();
 
-const interval = setInterval(checkRedirectToWaiting, 5000);
+const interval = setInterval(checkToPlayView, 5000);
 
-async function checkRedirectToWaiting() {
+async function checkToPlayView() {
   const playValue = await callDatabase();
 
   checkPlayValue(playValue);
@@ -26,6 +26,12 @@ function checkPlayValue(playValue) {
 
 async function callDatabase() {
   const response = await apiUsers.getPlayValue();
+
+  if (response.data.message === "Unauthenticated.") {
+    clearInterval(interval);
+
+    router.push("/login");
+  }
 
   return response.data.data;
 }
@@ -82,6 +88,10 @@ main {
 }
 .playLogo {
   width: 25vw;
+}
+button {
+  background-color: transparent;
+  border: none;
 }
 .purple {
   grid-column-start: 1;

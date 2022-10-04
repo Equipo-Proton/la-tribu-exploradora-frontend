@@ -2,16 +2,13 @@
 import { RouterView, useRouter } from "vue-router";
 import AbcGameKeyboard from "../components/AbcGameKeyboard.vue";
 import AbcGameNumpad from "../components/AbcGameNumpad.vue";
-import TryAgain from "../components/animations/TryAgain.vue";
-import WaitAnimation from "../components/animations/WaitAnimation.vue";
-import OkAnimation from "../components/animations/OkAnimation.vue";
 import { apiUsers } from "../services/apiUsers";
 
 const router = useRouter();
 
-const interval = setInterval(checkRedirectToWaiting, 5000);
+const interval = setInterval(checkRedirectToWaitingView, 5000);
 
-async function checkRedirectToWaiting() {
+async function checkRedirectToWaitingView() {
   const playValue = await callDatabase();
 
   checkPlayValue(playValue);
@@ -31,7 +28,8 @@ function checkPlayValue(playValue) {
 
 async function callDatabase() {
   const response = await apiUsers.getPlayValue();
-  if (response.data.message) {
+
+  if (response.data.message === "Unauthenticated.") {
     clearInterval(interval);
 
     router.push("/login");
@@ -45,9 +43,6 @@ async function callDatabase() {
   <main>
     <AbcGameKeyboard />
     <AbcGameNumpad />
-    <TryAgain></TryAgain>
-    <WaitAnimation></WaitAnimation>
-    <OkAnimation></OkAnimation>
   </main>
   <RouterView />
 </template>

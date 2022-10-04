@@ -30,7 +30,27 @@ export default {
         return;
       }
     },
+
+  /*  async callDatabase() {
+      const response = await apiUsers.getPlayValue();
+
+      if (response.data.message === "Unauthenticated.") {
+        clearInterval(this.interval);
+
+        this.$router.push("/login");
+      }
+
+      return;
+    },
+
+    interval() {
+      setInterval(this.callDatabase, 5000);
+    }, */
   },
+
+  /* created() {
+    this.interval();
+  }, */
 };
 </script>
 
@@ -92,6 +112,11 @@ main {
 .playLogo {
   width: 30vw;
 }
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .purple {
   transform: rotate(25deg);
   justify-content: flex-end;
