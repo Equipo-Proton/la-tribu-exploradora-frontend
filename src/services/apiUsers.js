@@ -52,10 +52,14 @@ export const apiUsers = {
   },
 
   getPlayValue() {
-    return axios.get(baseUrl + "/playvalue", {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
+    return axios
+      .get(baseUrl + "/playvalue", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .catch((error) => {
+        return error.response;
+      });
   },
 };

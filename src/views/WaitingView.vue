@@ -1,31 +1,40 @@
-<script>
+<script setup>
+import { useRouter } from "vue-router";
 import { apiUsers } from "../services/apiUsers.js";
 
-export default {
-  name: "WaitingView",
+const router = useRouter();
 
-  methods: {
-    async getPlayValue() {
-      const response = await apiUsers.getPlayValue();
+const interval = setInterval(checkToPlayView, 5000);
 
-      if (response.data.data === 1) {
-        this.$router.push("/play");
+async function checkToPlayView() {
+  const playValue = await callDatabase();
 
-        return;
-      }
+  checkPlayValue(playValue);
 
-      if (response.data.data === 0) {
-        alert("Lo siento... Tu profesor no te ha dado permiso todavía");
+  return;
+}
 
-        return;
-      }
-    },
-  },
+function checkPlayValue(playValue) {
+  if (playValue === 1) {
+    clearInterval(interval);
 
-  created() {
-    this.getPlayValue();
-  },
-};
+    router.push({ path: "/play" });
+
+    return;
+  }
+}
+
+async function callDatabase() {
+  const response = await apiUsers.getPlayValue();
+
+  if (response.data.message === "Unauthenticated.") {
+    clearInterval(interval);
+
+    router.push("/login");
+  }
+
+  return response.data.data;
+}
 </script>
 
 <template>
@@ -38,7 +47,7 @@ export default {
         <img class="bird" src="../assets/img/yellowBird.png" />
       </div>
       <div class="play grid-item">
-        <button type="button" v-on:click="getPlayValue">
+        <button type="button">
           <img class="playLogo" src="../assets/img/greyPlay.svg" />
         </button>
       </div>
