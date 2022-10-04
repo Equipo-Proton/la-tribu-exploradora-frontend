@@ -31,7 +31,7 @@ export default {
       }
     },
 
-   /*  async callDatabase() {
+    /*  async callDatabase() {
       const response = await apiUsers.getPlayValue();
 
       if (response.data.message === "Unauthenticated.") {

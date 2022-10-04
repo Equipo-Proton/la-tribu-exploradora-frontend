@@ -1,6 +1,34 @@
-<script setup>
+<script>
 import TheHeader from "./TheHeader.vue";
 import ButtonsForm from "./ButtonsForm.vue";
+import { apiUsers } from "../services/apiUsers.js";
+import StudentItem from "./StudentItem.vue";
+
+export default {
+  name: "StudentBox",
+
+  data() {
+    return {
+      students: [],
+    };
+  },
+
+  methods: {
+    async listStudents() {
+      const response = await apiUsers.listUsers();
+
+      const studentsData = response.data.data;
+
+      this.students = studentsData;
+    },
+  },
+
+  created() {
+    this.listStudents();
+  },
+
+  components: { TheHeader, ButtonsForm, StudentItem },
+};
 </script>
 
 <template>
@@ -16,97 +44,12 @@ import ButtonsForm from "./ButtonsForm.vue";
         id="name"
       />
     </div>
-    <div class="student-container">
-      <div class="student-box">
-        <h2>TRIBU</h2>
-        <div class="word-container"></div>
-        <div class="studentIcons">
-          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-          <img src="../assets/img/redFinger.svg" alt="red Finger" />
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-          <img src="../assets/img/restartWord.svg" alt="restart Word" />
-        </div>
-      </div>
-      <div class="student-box">
-        <h2>TRIBU</h2>
-        <div class="word-container"></div>
-        <div class="studentIcons">
-          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-          <img src="../assets/img/redFinger.svg" alt="red Finger" />
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-          <img src="../assets/img/restartWord.svg" alt="restart Word" />
-        </div>
-      </div>
-      <div class="student-box">
-        <h2>TRIBU</h2>
-        <div class="word-container"></div>
-        <div class="studentIcons">
-          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-          <img src="../assets/img/redFinger.svg" alt="red Finger" />
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-          <img src="../assets/img/restartWord.svg" alt="restart Word" />
-        </div>
-      </div>
-      <div class="student-box">
-        <h2>TRIBU</h2>
-        <div class="word-container"></div>
-        <div class="studentIcons">
-          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-          <img src="../assets/img/redFinger.svg" alt="red Finger" />
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-          <img src="../assets/img/restartWord.svg" alt="restart Word" />
-        </div>
-      </div>
-      <div class="student-box">
-        <h2>TRIBU</h2>
-        <div class="word-container"></div>
-        <div class="studentIcons">
-          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-          <img src="../assets/img/redFinger.svg" alt="red Finger" />
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-          <img src="../assets/img/restartWord.svg" alt="restart Word" />
-        </div>
-      </div>
-      <div class="student-box">
-        <h2>TRIBU</h2>
-        <div class="word-container"></div>
-        <div class="studentIcons">
-          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-          <img src="../assets/img/redFinger.svg" alt="red Finger" />
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-          <img src="../assets/img/restartWord.svg" alt="restart Word" />
-        </div>
-      </div>
-      <div class="student-box">
-        <h2>TRIBU</h2>
-        <div class="word-container"></div>
-        <div class="studentIcons">
-          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-          <img src="../assets/img/redFinger.svg" alt="red Finger" />
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-          <img src="../assets/img/restartWord.svg" alt="restart Word" />
-        </div>
-      </div>
-      <div class="student-box">
-        <h2>TRIBU</h2>
-        <div class="word-container"></div>
-        <div class="studentIcons">
-          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-          <img src="../assets/img/redFinger.svg" alt="red Finger" />
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-          <img src="../assets/img/restartWord.svg" alt="restart Word" />
-        </div>
-      </div>
-      <div class="student-box">
-        <h2>TRIBU</h2>
-        <div class="word-container"></div>
-        <div class="studentIcons">
-          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-          <img src="../assets/img/redFinger.svg" alt="red Finger" />
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-          <img src="../assets/img/restartWord.svg" alt="restart Word" />
-        </div>
-      </div>
+    <div
+      class="student-container"
+      v-for="(student, index) in students"
+      :key="index"
+    >
+      <StudentItem :student="student" />
     </div>
   </main>
   <ButtonsForm></ButtonsForm>
@@ -154,46 +97,5 @@ input {
   flex-wrap: wrap;
   width: 90vw;
   height: 70vh;
-}
-.student-box {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 25vw;
-}
-
-.word-container {
-  width: 20vw;
-  height: 10vh;
-  border-radius: 1vw;
-  border: 0.3vw solid var(--color-border);
-  background-color: var(--base-color-white);
-}
-
-.studentIcons {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: calc(100% / 2);
-  height: calc(100% / 6);
-}
-
-img {
-  display: inline-block;
-  margin: 2vh;
-  width: calc(100% / 6);
-  height: calc(100% / 6);
-  display: flex;
-  align-content: center;
-  align-items: center;
-}
-.studentIcons div {
-  border-radius: 20px;
-  text-align: center;
-  border: 3px solid rgb(184, 184, 184);
-  width: 300px;
-  height: 60px;
-  background-color: var(--base-color-white);
 }
 </style>
