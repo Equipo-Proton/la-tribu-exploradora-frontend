@@ -89,6 +89,10 @@ main {
 .playLogo {
   width: 25vw;
 }
+button {
+  background-color: transparent;
+  border: none;
+}
 .purple {
   grid-column-start: 1;
   grid-row-start: 1;

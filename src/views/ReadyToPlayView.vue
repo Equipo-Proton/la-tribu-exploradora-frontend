@@ -31,7 +31,7 @@ export default {
       }
     },
 
-   /*  async callDatabase() {
+  /*  async callDatabase() {
       const response = await apiUsers.getPlayValue();
 
       if (response.data.message === "Unauthenticated.") {
@@ -112,6 +112,11 @@ main {
 .playLogo {
   width: 30vw;
 }
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .purple {
   transform: rotate(25deg);
   justify-content: flex-end;
