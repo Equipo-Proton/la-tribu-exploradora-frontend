@@ -12,7 +12,7 @@ import TheHeader from './TheHeader.vue';
         </div>
         <div class="StudentCell">
             <div class="studentBox">
-                <div><h2> Tribu Ejemplo 1</h2> </div>
+                <div><h2> Tribu Ejemplo 1</h2> <h3>Ladrillo</h3></div>
             </div>
             <div class="studentIcons">
                 
@@ -26,7 +26,7 @@ import TheHeader from './TheHeader.vue';
 
         <div class="StudentCell">
             <div class="studentBox">
-                <div><h2> Tribu Ejemplo 2</h2> </div>
+                <div><h2> Tribu Ejemplo 2</h2><h3>Casa</h3></div>
             </div>
             <div class="studentIcons">
                 
@@ -40,7 +40,7 @@ import TheHeader from './TheHeader.vue';
 
         <div class="StudentCell">
             <div class="studentBox">
-                <div><h2> Tribu Ejemplo 3</h2> </div>
+                <div><h2> Tribu Ejemplo 3</h2><h3>Granero</h3></div>
             </div>
             <div class="studentIcons">
                 
@@ -54,7 +54,7 @@ import TheHeader from './TheHeader.vue';
 
         <div class="StudentCell">
             <div class="studentBox">
-                <div><h2> Tribu Ejemplo 4</h2> </div>
+                <div><h2> Tribu Ejemplo 4</h2><h3>Granero</h3></div>
             </div>
             <div class="studentIcons">
                 
@@ -68,7 +68,7 @@ import TheHeader from './TheHeader.vue';
 
         <div class="StudentCell">
             <div class="studentBox">
-                <div><h2> Tribu Ejemplo 5</h2> </div>
+                <div><h2> Tribu Ejemplo 5</h2><h3>Lechuga</h3></div>
             </div>
             <div class="studentIcons">
                 
@@ -82,7 +82,7 @@ import TheHeader from './TheHeader.vue';
 
         <div class="StudentCell">
             <div class="studentBox">
-                <div><h2> Tribu Ejemplo 6</h2> </div>
+                <div><h2> Tribu Ejemplo 6</h2><h3>Lechuga</h3></div>
             </div>
             <div class="studentIcons">
                 
@@ -93,35 +93,6 @@ import TheHeader from './TheHeader.vue';
                
             </div>
         </div>
-
-        <div class="StudentCell">
-            <div class="studentBox">
-                <div><h2> Tribu Ejemplo 7</h2> </div>
-            </div>
-            <div class="studentIcons">
-                
-                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                <img src="../assets/img/restartWord.svg" alt="restart Word" />
-               
-            </div>
-        </div>
-
-        <div class="StudentCell">
-            <div class="studentBox">
-                <div><h2> Tribu Ejemplo 8</h2> </div>
-            </div>
-            <div class="studentIcons">
-                
-                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                <img src="../assets/img/restartWord.svg" alt="restart Word" />
-               
-            </div>
-        </div>
-
         <div class="gameButtons">
 
         </div>
@@ -169,6 +140,10 @@ import TheHeader from './TheHeader.vue';
         height: 100px;
         background-color: #ffffff;
     }
+    .studentBox div h3{
+        text-align: center;
+        font-size: auto;
+    }
     .studentIcons{
         display: flex;
         align-items: flex-start;
@@ -199,12 +174,19 @@ import TheHeader from './TheHeader.vue';
         align-items: center;
         display: inline-block;
         flex-wrap: wrap;
-        
+        top: -60px;
     }
     .StudentCell>* {
-          flex: 0 0 33.3333%;
-      }
- 
+          /*flex: 0 3 33.3333%;*/
+          grid:1 2 3333%;
+    }
+    .StudentCell div h2{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
     /*
     div{
         display: flex;
