@@ -175,11 +175,18 @@ input {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  width: calc(100% / 2);
+  height: calc(100% / 6);
 }
 
 img {
   display: inline-block;
-  margin: 20px;
+  margin: 2vh;
+  width: calc(100% / 6);
+  height: calc(100% / 6);
+  display: flex;
+  align-content: center;
+  align-items: center;
 }
 .studentIcons div {
   border-radius: 20px;
