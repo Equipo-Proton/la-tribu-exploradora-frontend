@@ -15,7 +15,11 @@ export default {
 
   methods: {
     async logout() {
-      await apiUsers.play(this.obj);
+      const noSuperAdmin = localStorage.getItem("superAdmin");
+
+      if (noSuperAdmin != "1") {
+        await apiUsers.play(this.obj);
+      }
 
       await apiAuth.getLogout();
 
