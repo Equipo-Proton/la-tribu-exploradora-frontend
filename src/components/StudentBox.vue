@@ -1,221 +1,192 @@
 <script setup>
-import TheHeader from './TheHeader.vue';
-
+import TheHeader from "./TheHeader.vue";
+import ButtonsForm from "./ButtonsForm.vue";
 </script>
 
 <template>
-    <TheHeader/>
-    <h1>Palabra Secreta</h1>
-    <main>  
-        <div class="secretWord">
-            <div><h2>Valnalon</h2></div>
-        </div>
-        <div class="StudentCell">
-            <div class="studentBox">
-                <div><h2> Tribu Ejemplo 1</h2> <h3>Ladrillo</h3></div>
-            </div>
-            <div class="studentIcons">
-                
-                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                <img src="../assets/img/restartWord.svg" alt="restart Word" />
-               
-            </div>
-        </div>
+  <TheHeader />
 
-        <div class="StudentCell">
-            <div class="studentBox">
-                <div><h2> Tribu Ejemplo 2</h2><h3>Casa</h3></div>
-            </div>
-            <div class="studentIcons">
-                
-                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                <img src="../assets/img/restartWord.svg" alt="restart Word" />
-               
-            </div>
+  <main>
+    <div class="secret-word">
+      <label for="name"><b>PALABRA SECRETA</b></label>
+      <input
+        type="text"
+        placeholder="Introduce la palabra secreta"
+        name=""
+        id="name"
+      />
+    </div>
+    <div class="student-container">
+      <div class="student-box">
+        <h2>TRIBU</h2>
+        <div class="word-container"></div>
+        <div class="studentIcons">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
         </div>
-
-        <div class="StudentCell">
-            <div class="studentBox">
-                <div><h2> Tribu Ejemplo 3</h2><h3>Granero</h3></div>
-            </div>
-            <div class="studentIcons">
-                
-                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                <img src="../assets/img/restartWord.svg" alt="restart Word" />
-               
-            </div>
+      </div>
+      <div class="student-box">
+        <h2>TRIBU</h2>
+        <div class="word-container"></div>
+        <div class="studentIcons">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
         </div>
-
-        <div class="StudentCell">
-            <div class="studentBox">
-                <div><h2> Tribu Ejemplo 4</h2><h3>Granero</h3></div>
-            </div>
-            <div class="studentIcons">
-                
-                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                <img src="../assets/img/restartWord.svg" alt="restart Word" />
-               
-            </div>
+      </div>
+      <div class="student-box">
+        <h2>TRIBU</h2>
+        <div class="word-container"></div>
+        <div class="studentIcons">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
         </div>
-
-        <div class="StudentCell">
-            <div class="studentBox">
-                <div><h2> Tribu Ejemplo 5</h2><h3>Lechuga</h3></div>
-            </div>
-            <div class="studentIcons">
-                
-                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                <img src="../assets/img/restartWord.svg" alt="restart Word" />
-               
-            </div>
+      </div>
+      <div class="student-box">
+        <h2>TRIBU</h2>
+        <div class="word-container"></div>
+        <div class="studentIcons">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
         </div>
-
-        <div class="StudentCell">
-            <div class="studentBox">
-                <div><h2> Tribu Ejemplo 6</h2><h3>Lechuga</h3></div>
-            </div>
-            <div class="studentIcons">
-                
-                <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                <img src="../assets/img/restartWord.svg" alt="restart Word" />
-               
-            </div>
+      </div>
+      <div class="student-box">
+        <h2>TRIBU</h2>
+        <div class="word-container"></div>
+        <div class="studentIcons">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
         </div>
-        <div class="gameButtons">
-
+      </div>
+      <div class="student-box">
+        <h2>TRIBU</h2>
+        <div class="word-container"></div>
+        <div class="studentIcons">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
         </div>
-    </main>
+      </div>
+      <div class="student-box">
+        <h2>TRIBU</h2>
+        <div class="word-container"></div>
+        <div class="studentIcons">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
+        </div>
+      </div>
+      <div class="student-box">
+        <h2>TRIBU</h2>
+        <div class="word-container"></div>
+        <div class="studentIcons">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
+        </div>
+      </div>
+      <div class="student-box">
+        <h2>TRIBU</h2>
+        <div class="word-container"></div>
+        <div class="studentIcons">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
+        </div>
+      </div>
+    </div>
+  </main>
+  <ButtonsForm></ButtonsForm>
 </template>
 
-
 <style scoped>
-    h1{
-        top: 20px;
-        text-align: center;
-        
-    }
-    h2{
-        bottom:50px;
-    }
-    .secretWord{
-        top:20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .secretWord div{
-        border-radius: 15px 15px 15px 15px;
-        text-align: center;
-        border: 2px solid rgb(255, 170, 22);
-        width: 730px;
-        height: 51px;
-        background-color: #ffffff;
-    }
-    .secretWord div h2{
-        top: 0px;
-    }
-    .studentBox{
-        top: 140px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .studentBox div{
-        border-radius: 20px 20px 20px 20px;
-        text-align: center;
-        border: 3px solid rgb(184, 184, 184);
-        width: 300px;
-        height: 100px;
-        background-color: #ffffff;
-    }
-    .studentBox div h3{
-        text-align: center;
-        font-size: auto;
-    }
-    .studentIcons{
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        
-    }
-    img{
-        display: inline-block;
-        margin: 20px;
-        top: 140px;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1vw;
+}
+.secret-word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1vh;
+}
 
+label {
+  font-size: 1.5vw;
+}
+input {
+  width: 30vw;
+  height: 6vh;
+  border: 0.2vw solid var(--base-color-orange);
+  border-radius: 0.8vw;
+  text-align: center;
+  font-size: 1vw;
+}
+.secret-word div {
+  border-radius: 15px 15px 15px 15px;
+  text-align: center;
+  border: 2px solid var(--base-color-orange);
+  width: 730px;
+  height: 51px;
+  background-color: var(--base-color-white);
+}
+.student-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 90vw;
+  height: 70vh;
+}
+.student-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 25vw;
+}
 
-    }
-    .studentIcons div{
-        border-radius: 20px;
-        text-align: center;
-        border: 3px solid rgb(184, 184, 184);
-        width: 300px;
-        height: 60px;
-        top: 160px;
-        background-color: #ffffff;
-    }
-    .StudentCell {
-        width: 500px;
-        margin: 50px;
-        padding: auto;
-        display: flex;
-        align-items: center;
-        display: inline-block;
-        flex-wrap: wrap;
-        top: -60px;
-    }
-    .StudentCell>* {
-          /*flex: 0 3 33.3333%;*/
-          grid:1 2 3333%;
-    }
-    .StudentCell div h2{
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-    }
-    /*
-    div{
-        display: flex;
-        justify-items: center;
-        justify-content: center;
-        border-radius: 20px 20px 20px 20px;
-        height: 60px;
-        width: 740px;
-        background-color: rgb(226, 255, 255);
+.word-container {
+  width: 20vw;
+  height: 10vh;
+  border-radius: 1vw;
+  border: 0.3vw solid var(--color-border);
+  background-color: var(--base-color-white);
+}
 
-    }
-    #secretWord{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.studentIcons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
 
-    }
-    #grid { 
-        top: 360px;
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap:9vw;
-    }
-    #grid > div {
-        font-size: 3vw;
-        padding: .5em;
-        background: rgb(239, 234, 205);
-        text-align: center;
-    }
-    */
+img {
+  display: inline-block;
+  margin: 20px;
+}
+.studentIcons div {
+  border-radius: 20px;
+  text-align: center;
+  border: 3px solid rgb(184, 184, 184);
+  width: 300px;
+  height: 60px;
+  background-color: var(--base-color-white);
+}
 </style>
