@@ -1,115 +1,101 @@
-<script setup>
-import TheHeader from './TheHeader.vue';
+<script>
+import TheHeader from "./TheHeader.vue";
+import ButtonsForm from "./ButtonsForm.vue";
+import { apiUsers } from "../services/apiUsers.js";
+import StudentItem from "./StudentItem.vue";
 
+export default {
+  name: "StudentBox",
+
+  data() {
+    return {
+      students: [],
+    };
+  },
+
+  methods: {
+    async listStudents() {
+      const response = await apiUsers.listUsers();
+
+      const studentsData = response.data.data;
+
+      this.students = studentsData;
+    },
+  },
+
+  created() {
+    this.listStudents();
+  },
+
+  components: { TheHeader, ButtonsForm, StudentItem },
+};
 </script>
 
 <template>
-    <TheHeader/>
-    <h1>Palabra Secreta</h1>
-    <main>  
-        <div class="secretWord">
-            <div>Valnalon</div>
-        </div>
-        <div class="StudentCell">
-            <div class="studentBox">
-                <div><h2> Tribu Ejemplo</h2> </div>
-            </div>
-            <div class="studentIcons">
-                <div>
-                    <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-                    <img src="../assets/img/redFinger.svg" alt="red Finger" />
-                    <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-                    <img src="../assets/img/restartWord.svg" alt="restart Word" />
-                </div>
-            </div>
-        </div>
+  <TheHeader />
 
-        <div class="gameButtons">
-
-        </div>
-    </main>
+  <main>
+    <div class="secret-word">
+      <label for="name"><b>PALABRA SECRETA</b></label>
+      <input
+        type="text"
+        placeholder="Introduce la palabra secreta"
+        name=""
+        id="name"
+      />
+    </div>
+    <div
+      class="student-container"
+      v-for="(student, index) in students"
+      :key="index"
+    >
+      <StudentItem :student="student" />
+    </div>
+  </main>
+  <ButtonsForm></ButtonsForm>
 </template>
 
-
 <style scoped>
-    h1{
-        top: 20px;
-        text-align: center;
-        
-    }
-    h2{
-        bottom:50px;
-    }
-    .secretWord{
-        top:20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .secretWord div{
-        border-radius: 15px 15px 15px 15px;
-        text-align: center;
-        border: 2px solid rgb(255, 170, 22);
-        width: 730px;
-        height: 51px;
-    }
-    .studentBox{
-        top: 140px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .studentBox div{
-        border-radius: 20px 20px 20px 20px;
-        text-align: center;
-        border: 3px solid rgb(184, 184, 184);
-        width: 300px;
-        height: 100px;
-    }
-    .studentIcons{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .studentIcons div{
-        border-radius: 20px;
-        text-align: center;
-        border: 3px solid rgb(184, 184, 184);
-        width: 300px;
-        height: 60px;
-        top: 160px;
-    }
-    
- 
-    /*
-    div{
-        display: flex;
-        justify-items: center;
-        justify-content: center;
-        border-radius: 20px 20px 20px 20px;
-        height: 60px;
-        width: 740px;
-        background-color: rgb(226, 255, 255);
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1vw;
+}
+.secret-word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1vh;
+}
 
-    }
-    #secretWord{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-    }
-    #grid { 
-        top: 360px;
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap:9vw;
-    }
-    #grid > div {
-        font-size: 3vw;
-        padding: .5em;
-        background: rgb(239, 234, 205);
-        text-align: center;
-    }
-    */
+label {
+  font-size: 1.5vw;
+}
+input {
+  width: 30vw;
+  height: 6vh;
+  border: 0.2vw solid var(--base-color-orange);
+  border-radius: 0.8vw;
+  text-align: center;
+  font-size: 1vw;
+}
+.secret-word div {
+  border-radius: 15px 15px 15px 15px;
+  text-align: center;
+  border: 2px solid var(--base-color-orange);
+  width: 730px;
+  height: 51px;
+  background-color: var(--base-color-white);
+}
+.student-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 90vw;
+  height: 70vh;
+}
 </style>
