@@ -53,7 +53,7 @@ export default {
       />
     </div>
     <div class="form-camp">
-      <label for="psw"><b>Password</b></label>
+      <label for="psw"><b>Contraseña</b></label>
       <input
         type="password"
         placeholder="Enter Password"
@@ -64,7 +64,7 @@ export default {
       />
     </div>
     <div class="form-camp">
-      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <label for="psw-repeat"><b>Repetir contraseña</b></label>
       <input
         type="password"
         placeholder="Repeat Password"

@@ -33,7 +33,7 @@ export default {
     <div class="logo">
       <img src="../../assets/logo.svg" />
     </div>
-    <h3>¿Estas seguro que quieres eliminar al profesor?</h3>
+    <h3>¿Seguro que quieres eliminar a este profe?</h3>
     <div class="modal-buttons">
       <button class="accept-button" v-on:click="confirmDeleteTeacher">
         Aceptar

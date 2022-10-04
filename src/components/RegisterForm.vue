@@ -22,7 +22,7 @@ $fuction(){
           aria-labelledby="pills-home-tab"
         >
           <div class="form px-4 pt-5">
-            <a>Quien eres?</a>
+            <a>¿Quién eres?</a>
             <input
               type="text"
               name=""
@@ -67,7 +67,7 @@ $fuction(){
               placeholder="Password"
             />
 
-            <button class="btn btn-dark btn-block">Signup</button>
+            <button class="btn btn-dark btn-block">Registro</button>
           </div>
         </div>
       </div>
