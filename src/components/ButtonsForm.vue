@@ -1,8 +1,40 @@
-<script setup></script>
+<script>
+import { apiUsers } from "../services/apiUsers.js";
+
+export default {
+  name: "ButtonsForm",
+
+  data() {
+    return {
+      obj: {
+        play: true,
+      },
+    };
+  },
+
+  methods: {
+    async play() {
+      if (this.obj.play === true) {
+        this.obj.play = false;
+
+        await apiUsers.play(this.obj);
+
+        this.$router.push("/panel");
+
+        return;
+      }
+    },
+  },
+};
+</script>
 <template>
   <div class="buttons-game-control">
-    <button type="button" class="button-left">Reiniciar Juego</button>
-    <button type="button" class="button-right">Terminar Juego</button>
+    <button v-on:click="play" type="button" class="button-left">
+      Reiniciar Juego
+    </button>
+    <button v-on:click="play" type="button" class="button-right">
+      Terminar Juego
+    </button>
   </div>
 </template>
 
