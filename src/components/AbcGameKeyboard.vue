@@ -56,6 +56,9 @@ export default {
       console.log("alumno");
       console.log(this.list2);
     },
+    deleteLetter(){
+      this.list2.pop();
+    }
   },
 };
 </script>
@@ -97,7 +100,7 @@ export default {
     <div class="bot-buttons">
       <button type="button" class="mayus-button">ABC</button>
       <button type="submit" class="ready-button">¡Listo!</button>
-      <button type="button" class="delete-button">
+      <button @click="deleteLetter" type="button" class="delete-button">
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
       </button>
     </div>
