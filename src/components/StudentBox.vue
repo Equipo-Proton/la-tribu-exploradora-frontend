@@ -44,12 +44,10 @@ export default {
         id="name"
       />
     </div>
-    <div
-      class="student-container"
-      v-for="(student, index) in students"
-      :key="index"
-    >
-      <StudentItem :student="student" />
+    <div class="student-container">
+      <div v-for="(student, index) in students" :key="index">
+        <StudentItem :student="student" />
+      </div>
     </div>
   </main>
   <ButtonsForm></ButtonsForm>
@@ -82,14 +80,7 @@ input {
   text-align: center;
   font-size: 1vw;
 }
-.secret-word div {
-  border-radius: 15px 15px 15px 15px;
-  text-align: center;
-  border: 2px solid var(--base-color-orange);
-  width: 730px;
-  height: 51px;
-  background-color: var(--base-color-white);
-}
+
 .student-container {
   display: flex;
   justify-content: center;
