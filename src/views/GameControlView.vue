@@ -1,18 +1,15 @@
 <script setup>
-import StudentBox from '../components/StudentBox.vue';
-import ButtonsFormVue from '../components/ButtonsForm.vue';
-import ButtonsForm from '../components/ButtonsForm.vue';
+import StudentBox from "../components/StudentBox.vue";
 </script>
 
 <template>
-    <main>
-        <StudentBox/>
-        <ButtonsForm/>
-    </main>
+  <main>
+    <StudentBox />
+  </main>
 </template>
 <style scoped>
-    main {
-        height: 100vh;
-        background-color: #f1fcff;
-    }
-    </style>
+main {
+  background-color: var(--base-color-white-2);
+  font-family: var(--font-family-secondary);
+}
+</style>
