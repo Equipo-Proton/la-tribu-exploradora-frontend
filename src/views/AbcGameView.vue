@@ -2,9 +2,6 @@
 import { RouterView, useRouter } from "vue-router";
 import AbcGameKeyboard from "../components/AbcGameKeyboard.vue";
 import AbcGameNumpad from "../components/AbcGameNumpad.vue";
-import TryAgain from "../components/animations/TryAgain.vue";
-import WaitAnimation from "../components/animations/WaitAnimation.vue";
-import OkAnimation from "../components/animations/OkAnimation.vue";
 import { apiUsers } from "../services/apiUsers";
 
 const router = useRouter();
@@ -46,9 +43,6 @@ async function callDatabase() {
   <main>
     <AbcGameKeyboard />
     <AbcGameNumpad />
-    <TryAgain></TryAgain>
-    <WaitAnimation></WaitAnimation>
-    <OkAnimation></OkAnimation>
   </main>
   <RouterView />
 </template>

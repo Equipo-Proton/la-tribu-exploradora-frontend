@@ -61,49 +61,47 @@ export default {
 </script>
 
 <template>
-  <div class="row">
-    <div class="col-3">
-      <h3>Draggable 1</h3>
-      <draggable
-        class="dragArea list-group"
-        :list="list1"
-        :group="{ name: 'people', pull: 'clone', put: false }"
-        :clone="cloneLetter"
-        @change="log"
-        item-key="id"
-      >
-        <template #item="{ element }">
-          <div class="list-group-item">
-            {{ element.name }}
-          </div>
-        </template>
-      </draggable>
+  <div class="keyboard">
+    <draggable
+      class="drop-zone"
+      :list="list2"
+      group="people"
+      @change="log"
+      item-key="id"
+    >
+      <template #item="{ element }">
+        <div class="drop-el">
+          {{ element.name }}
+        </div>
+      </template>
+    </draggable>
+
+    <draggable
+      class="drag-zone"
+      :list="list1"
+      :group="{ name: 'people', pull: 'clone', put: false }"
+      :clone="cloneLetter"
+      @change="log"
+      item-key="id"
+    >
+      <template #item="{ element }">
+        <div class="drag-el">
+          {{ element.name }}
+        </div>
+      </template>
+    </draggable>
+
+    <rawDisplayer :value="list1" title="List 1" />
+
+    <rawDisplayer :value="list2" title="List 2" />
+    <div class="bot-buttons">
+      <button type="button" class="mayus-button">ABC</button>
+      <button type="submit" class="ready-button">¡Listo!</button>
+      <button type="button" class="delete-button">
+        <img src="../assets/img/deleteIcon.png" alt="Borrar" />
+      </button>
     </div>
-
-    <div class="col-3">
-      <h3>Draggable 2</h3>
-      <draggable
-        class="dragArea list-group drag-zone"
-        :list="list2"
-        group="people"
-        @change="log"
-        item-key="id"
-        
-      >
-        <template #item="{ element }">
-          <div class="list-group-item">
-            {{ element.name }}
-          </div>
-        </template>
-      </draggable>
-    </div>
-
-    <rawDisplayer class="col-3" :value="list1" title="List 1" />
-
-    <rawDisplayer class="col-3" :value="list2" title="List 2" />
   </div>
-
-  <button @click="showResult">Enviar</button>
 </template>
 
 <style scoped>
@@ -118,6 +116,17 @@ export default {
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
   margin: 1vw auto;
+}
+.drop-el {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5vw;
+  min-height: 7vh;
+  border-radius: 1vw;
+  background-color: var(--base-color-purple);
+  font-family: var(--font-family-game);
+  font-size: 2vw;
 }
 .drag-zone {
   display: grid;
