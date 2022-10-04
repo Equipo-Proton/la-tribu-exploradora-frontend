@@ -37,6 +37,7 @@ export default {
   <RouterView />
 </template>
 <style scoped>
+
 .teachersBox {
   width: 55vw;
   height: 70vh;

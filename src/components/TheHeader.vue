@@ -37,7 +37,7 @@ export default {
     <div class="appTitle">AÑA: añerando, la Tribu Exploradora</div>
     <div class="user">
       <div>
-        <p>user</p>
+        <p>¡Hola!</p>
       </div>
       <div><img src="../assets/icons/iconUser.svg" /></div>
       <div><button id="logout" v-on:click="logout">Salir</button></div>
