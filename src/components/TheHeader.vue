@@ -1,11 +1,22 @@
 <script>
 import { apiAuth } from "../services/apiAuth.js";
+import { apiUsers } from "../services/apiUsers";
 
 export default {
   name: "TheHeader",
 
+  data() {
+    return {
+      obj: {
+        play: false,
+      },
+    };
+  },
+
   methods: {
     async logout() {
+      await apiUsers.play(this.obj);
+
       await apiAuth.getLogout();
 
       localStorage.removeItem("token");
