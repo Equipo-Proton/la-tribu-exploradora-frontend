@@ -39,6 +39,7 @@ export default {
 </template>
 
 <style scoped>
+
 .buttons-game-control {
   display: flex;
   width: 50vw;
