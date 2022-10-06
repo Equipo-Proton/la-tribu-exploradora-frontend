@@ -1,5 +1,7 @@
 <script>
 import draggable from "vuedraggable";
+import { apiUsers } from "../services/apiUsers.js";
+
 let idGlobal = 8;
 export default {
   name: "custom-clone",
@@ -52,13 +54,31 @@ export default {
         name: ` ${name}`,
       };
     },
-    showResult() {
-      console.log("alumno");
-      console.log(this.list2);
+
+    async sendWord() {
+      const dataObject = this.list2;
+
+      let dataLetters = [];
+      dataObject.forEach((letterObj) => {
+        const letter = letterObj.name;
+
+        dataLetters.push(letter);
+      });
+
+      let dataWord = dataLetters.toString("");
+      dataWord = dataWord.replace(/, /g, "");
+
+      const jsonData = {
+        word: dataWord,
+      };
+
+      await apiUsers.sendWord(jsonData);
+
+      alert("Has enviado la palabra");
     },
-    deleteLetter(){
+    deleteLetter() {
       this.list2.pop();
-    }
+    },
   },
 };
 </script>
@@ -99,7 +119,9 @@ export default {
     <rawDisplayer :value="list2" title="List 2" />
     <div class="bot-buttons">
       <button type="button" class="mayus-button">ABC</button>
-      <button type="submit" class="ready-button">¡Listo!</button>
+      <button v-on:click="sendWord" type="submit" class="ready-button">
+        ¡Listo!
+      </button>
       <button @click="deleteLetter" type="button" class="delete-button">
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
       </button>

@@ -70,4 +70,12 @@ export const apiUsers = {
       },
     });
   },
+
+  sendWord(jsonData) {
+    return axios.patch(baseUrl + `/word`, jsonData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
 };
