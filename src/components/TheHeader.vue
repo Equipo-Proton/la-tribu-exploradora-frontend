@@ -10,6 +10,9 @@ export default {
       obj: {
         play: false,
       },
+      jsonData: {
+        word: null,
+      },
     };
   },
 
@@ -19,6 +22,7 @@ export default {
 
       if (noSuperAdmin != "1") {
         await apiUsers.play(this.obj);
+        await apiUsers.sendWord(this.jsonData);
       }
 
       await apiAuth.getLogout();
