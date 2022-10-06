@@ -77,10 +77,15 @@ export default {
         </div>
       </template>
     </draggable>
+    <div class="bot-buttons">
+      <button type="submit" class="ready-button">
+        <img src="../assets/img/submitIcon.png" alt="" />
+      </button>
+      <button @click="deleteLetter" type="button" class="delete-button">
+        <img src="../assets/img/deleteIcon.png" alt="Borrar" />
+      </button>
+    </div>
 
-    <button type="button" @click="clearField" class="drag-el deleteNumPad">
-      Borrar
-    </button>
     <rawDisplayer :value="list1" title="List 1" />
 
     <rawDisplayer :value="list2" title="List 2" />
@@ -119,8 +124,29 @@ export default {
   margin: auto;
   cursor: grab;
 }
+.bot-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1vw auto;
+}
+.ready-button,
+.delete-button {
+  border: none;
+  border-radius: 1vw;
+  padding: 1vw;
+  font-weight: bold;
+  font-family: var(--font-family-secondary);
+}
+.ready-button {
+  background-color: var(--base-color-green);
+  color: var(--base-color-white-2);
+}
 
-.deleteNumPad {
-  margin-top: 10px;
+.delete-button {
+  background-color: var(--base-color-orange);
+}
+img {
+  height: 2vw;
 }
 </style>
