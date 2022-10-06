@@ -1,5 +1,7 @@
 <script>
 import draggable from "vuedraggable";
+import { apiUsers } from "../services/apiUsers.js";
+
 let idGlobal = 8;
 export default {
   name: "custom-clone",
@@ -22,7 +24,6 @@ export default {
         { name: "8", id: 36 },
         { name: "9", id: 37 },
         { name: "10", id: 38 },
-        
       ],
       list2: [],
     };
@@ -37,14 +38,30 @@ export default {
         name: ` ${name}`,
       };
     },
-    showResult() {
-      console.log("alumno");
-      console.log(this.list2);
+    async sendNumber() {
+      const dataObject = this.list2;
+
+      let dataLetters = [];
+      dataObject.forEach((letterObj) => {
+        const letter = letterObj.name;
+
+        dataLetters.push(letter);
+      });
+
+      let dataWord = dataLetters.toString("");
+      dataWord = dataWord.replace(/, /g, "");
+
+      const jsonData = {
+        word: dataWord,
+      };
+
+      await apiUsers.sendWord(jsonData);
+
+      alert("Has enviado el número");
     },
   },
 };
 </script>
-
 
 <template>
   <div class="num-pad">
@@ -80,7 +97,11 @@ export default {
     <rawDisplayer :value="list1" title="List 1" />
 
     <rawDisplayer :value="list2" title="List 2" />
-    
+
+    <!-- botón provisonal -->
+    <button v-on:click="sendNumber" type="submit" class="ready-button">
+      ¡Listo!
+    </button>
   </div>
 </template>
 <style scoped>
