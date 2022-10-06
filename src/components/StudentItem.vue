@@ -47,7 +47,9 @@ export default {
 <template>
   <div class="student-box">
     <h2>{{ student.name }}</h2>
-    <div class="word-container"></div>
+    <div class="word-container">
+      <p class="text-center">{{ student.word }}</p>
+    </div>
     <div class="studentIcons">
       <button v-on:click="sendGoodCorrection">
         <img src="../assets/img/greenFinger.svg" alt="Green Finger" />

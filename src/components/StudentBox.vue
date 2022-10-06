@@ -21,10 +21,15 @@ export default {
 
       this.students = studentsData;
     },
+
+    interval() {
+      setInterval(this.listStudents, 5000);
+    },
   },
 
   created() {
     this.listStudents();
+    this.interval();
   },
 
   components: { TheHeader, ButtonsForm, StudentItem },
