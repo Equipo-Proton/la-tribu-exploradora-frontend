@@ -25,7 +25,9 @@ export default {
         :key="index"
         id="userManagement"
       >
-        <div class="teacherName">{{ teacher.name }}</div>
+        <div class="namesList">
+          <div class="teacherName">{{ teacher.name }}</div>
+        </div>
         <div><EditTeacher :teacher="teacher"></EditTeacher></div>
         <div>
           <ConfirmDeleteTeacher :teacher="teacher"></ConfirmDeleteTeacher>
@@ -45,6 +47,23 @@ export default {
   border: 1px solid #a5a2a9;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 3vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 1vw;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5vh;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(179, 143, 224, 0.53);
+  border-radius: 5vh;
+
 }
 
 #userManagement {
@@ -54,17 +73,19 @@ export default {
   align-items: center;
 }
 
+
 button,
 .teacherName {
   border: none;
   border-radius: 2vh;
-  height: 7vh;
-  padding: 2vw;
+  height: auto;
+  padding: 1vw;
   display: flex;
   align-items: center;
   color: white;
   font-weight: 700;
   font-size: 2.5vh;
+  text-align: center;
 }
 
 .teacherName {
