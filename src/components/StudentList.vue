@@ -19,13 +19,13 @@ export default {
 <template>
   <main>
     <h3>Estudiantes</h3>
-    <div class="teachersBox">
+    <div class="studentsBox">
       <div
         v-for="(student, index) in students"
         :key="index"
         id="userManagement"
       >
-        <div class="teacherName">{{ student.name }}</div>
+        <div class="studentName">{{ student.name }}</div>
         <div><EditStudent :student="student"></EditStudent></div>
         <div>
           <ConfirmDeleteStudent :student="student"></ConfirmDeleteStudent>
@@ -37,13 +37,15 @@ export default {
   <RouterView />
 </template>
 <style scoped>
-.teachersBox {
+.studentsBox {
   width: 55vw;
   height: 70vh;
   background: #ffffff;
   border: 1px solid #a5a2a9;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 3vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 #userManagement {
@@ -54,7 +56,7 @@ export default {
 }
 
 button,
-.teacherName {
+.studentName {
   border: none;
   border-radius: 2vh;
   height: 7vh;
@@ -65,8 +67,21 @@ button,
   font-weight: 700;
   font-size: 2.5vh;
 }
+::-webkit-scrollbar {
+  width: 1vw;
+}
 
-.teacherName {
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5vh;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(179, 143, 224, 0.53);
+  border-radius: 5vh;
+}
+
+.studentName {
   background-color: var(--base-color-orange);
 }
 
