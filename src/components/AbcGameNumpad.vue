@@ -81,7 +81,7 @@ export default {
       <button type="submit" class="ready-button">
         <img src="../assets/img/submitIcon.png" alt="" />
       </button>
-      <button @click="deleteLetter" type="button" class="delete-button">
+      <button @click="clearField" type="button" class="delete-button">
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
       </button>
     </div>
