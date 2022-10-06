@@ -64,7 +64,15 @@ export default {
 </template>
 
 <style scoped>
-.student-box {
+  button{
+  background-color: transparent;
+  border: none;
+  }
+
+  img button{
+    width: 4vw;
+  }
+  .student-box {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -91,8 +99,8 @@ export default {
 img {
   display: inline-block;
   margin: 2vh;
-  width: calc(100% / 6);
-  height: calc(100% / 6);
+  width: 3vw;
+  height: 2vw;
   display: flex;
   align-content: center;
   align-items: center;

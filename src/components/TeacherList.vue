@@ -57,13 +57,11 @@ export default {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 5vh;
-
 }
 
 ::-webkit-scrollbar-thumb {
   background: rgba(179, 143, 224, 0.53);
   border-radius: 5vh;
-
 }
 
 #userManagement {
