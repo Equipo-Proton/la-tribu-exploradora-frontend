@@ -58,7 +58,13 @@ export default {
     },
     deleteLetter(){
       this.list2.pop();
-    }
+    },
+    capitalize(){
+      
+      
+      console.log("carro".toUpperCase() );
+      this.list1.map((name) => name.toUpperCase());
+    },
   },
 };
 </script>
@@ -98,7 +104,7 @@ export default {
 
     <rawDisplayer :value="list2" title="List 2" />
     <div class="bot-buttons">
-      <button type="button" class="mayus-button">ABC</button>
+      <button @click="capitalize" type="button" class="mayus-button">ABC</button>
       <button type="submit" class="ready-button">¡Listo!</button>
       <button @click="deleteLetter" type="button" class="delete-button">
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
