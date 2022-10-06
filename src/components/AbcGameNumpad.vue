@@ -22,7 +22,6 @@ export default {
         { name: "8", id: 36 },
         { name: "9", id: 37 },
         { name: "10", id: 38 },
-        
       ],
       list2: [],
     };
@@ -41,13 +40,12 @@ export default {
       console.log("alumno");
       console.log(this.list2);
     },
-    clearField(){
+    clearField() {
       this.list2 = [];
-    }
+    },
   },
 };
 </script>
-
 
 <template>
   <div class="num-pad">
@@ -77,20 +75,16 @@ export default {
         <div class="drag-el">
           {{ element.name }}
         </div>
-        
       </template>
-      
     </draggable>
-    <button type="button" @click="clearField" class="drag-el deleteNumPad">Borrar </button>
 
-
+    <button type="button" @click="clearField" class="drag-el deleteNumPad">
+      Borrar
+    </button>
     <rawDisplayer :value="list1" title="List 1" />
 
     <rawDisplayer :value="list2" title="List 2" />
-    
   </div>
-
-  
 </template>
 <style scoped>
 .drop-zone {
@@ -104,11 +98,13 @@ export default {
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
   margin: 1vw auto;
+  cursor: grab;
 }
 .drag-zone {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1vw;
+  cursor: grab;
 }
 .drag-el {
   display: flex;
@@ -121,9 +117,10 @@ export default {
   font-family: var(--font-family-game);
   font-size: 2vw;
   margin: auto;
+  cursor: grab;
 }
 
-.deleteNumPad{
+.deleteNumPad {
   margin-top: 10px;
 }
 </style>
