@@ -141,6 +141,7 @@ export default {
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
   margin: 1vw auto;
+  cursor: grab;
 }
 .drop-el {
   display: flex;
@@ -152,11 +153,13 @@ export default {
   background-color: var(--base-color-purple);
   font-family: var(--font-family-game);
   font-size: 2vw;
+  cursor: grab;
 }
 .drag-zone {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   gap: 1vw;
+  cursor: grab;
 }
 .drag-el {
   display: flex;
@@ -169,6 +172,7 @@ export default {
   font-family: var(--font-family-game);
   font-size: 2vw;
   margin: auto;
+  cursor: grab;
 }
 .bot-buttons {
   display: flex;
