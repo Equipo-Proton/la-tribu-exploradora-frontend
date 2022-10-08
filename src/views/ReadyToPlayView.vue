@@ -1,5 +1,5 @@
 <script>
-import { apiUsers } from "../services/apiUsers.js";
+import { apiGame } from "../services/apiGame.js";
 
 export default {
   name: "ReadyToPlayView",
@@ -9,14 +9,14 @@ export default {
       const question = confirm("¿Quieres jugar?");
 
       if (question === true) {
-        this.getPlayValue();
+        this.getPlayPermission();
       }
 
       return;
     },
 
-    async getPlayValue() {
-      const response = await apiUsers.getPlayValue();
+    async getPlayPermission() {
+      const response = await apiGame.getPlayPermission();
 
       if (response.data.data === 1) {
         this.$router.push("/abcgameview");
@@ -30,27 +30,7 @@ export default {
         return;
       }
     },
-
-  /*  async callDatabase() {
-      const response = await apiUsers.getPlayValue();
-
-      if (response.data.message === "Unauthenticated.") {
-        clearInterval(this.interval);
-
-        this.$router.push("/login");
-      }
-
-      return;
-    },
-
-    interval() {
-      setInterval(this.callDatabase, 5000);
-    }, */
   },
-
-  /* created() {
-    this.interval();
-  }, */
 };
 </script>
 

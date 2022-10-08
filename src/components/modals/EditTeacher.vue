@@ -25,7 +25,7 @@ export default {
 
   methods: {
     async editTeacher() {
-      await apiTeachers.updateTeacher(this.teacherId, this.form);
+      await apiTeachers.updateTeachers(this.teacherId, this.form);
 
       alert(`${this.teacher.name} has been updated`);
 

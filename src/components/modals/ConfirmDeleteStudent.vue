@@ -20,7 +20,7 @@ export default {
 
   methods: {
     async deleteStudent() {
-      await apiUsers.deleteUser(this.studentId);
+      await apiUsers.deleteStudents(this.studentId);
 
       alert(`${this.student.name} ya no está en la lista`);
 

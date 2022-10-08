@@ -18,7 +18,7 @@ export default {
 
   methods: {
     async register() {
-      await apiTeachers.registerTeacher(this.form);
+      await apiTeachers.registerTeachers(this.form);
 
       alert("Creado con éxito");
 

@@ -17,7 +17,8 @@ export default {
 
   methods: {
     async correctLogin() {
-      const response = await apiAuth.getLogin(this.form);
+      const response = await apiAuth.login(this.form);
+      console.log(response.data.data);
 
       if (response === "Incorrect password") {
         this.incorrect = true;
@@ -31,21 +32,30 @@ export default {
         return;
       }
 
-      const token = response.data.access_token;
-      const isAdmin = response.data.user.isAdmin;
-      const superAdmin = response.data.user.superAdmin;
+      if (
+        response.data.data.isAdmin != undefined &&
+        response.data.data.superAdmin != undefined
+      ) {
+        const token = response.data.access_token;
+        const isAdmin = response.data.data.isAdmin;
+        const superAdmin = response.data.data.superAdmin;
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("isAdmin", isAdmin);
-      localStorage.setItem("superAdmin", superAdmin);
+        localStorage.setItem("token", token);
+        localStorage.setItem("isAdmin", isAdmin);
+        localStorage.setItem("superAdmin", superAdmin);
 
-      if (isAdmin === 1 || superAdmin === 1) {
         this.$router.push("/panel");
 
         return;
       }
 
+      const token = response.data.access_token;
+
+      localStorage.setItem("token", token);
+
       this.$router.push("/waiting");
+
+      return;
     },
 
     clearOnFocus() {

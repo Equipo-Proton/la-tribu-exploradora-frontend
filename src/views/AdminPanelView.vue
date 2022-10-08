@@ -1,7 +1,7 @@
 <script>
 import { apiTeachers } from "../services/apiTeachers.js";
 import { apiUsers } from "../services/apiUsers.js";
-import { admin } from "../functions/admin.js";
+import { apiAuth } from "../services/apiAuth.js";
 import TheHeader from "../components/TheHeader.vue";
 import GameList from "../components/GameList.vue";
 import TeacherList from "../components/TeacherList.vue";
@@ -21,7 +21,7 @@ export default {
 
   methods: {
     async listStudents() {
-      const response = await apiUsers.listUsers();
+      const response = await apiUsers.listStudents();
 
       const studentsData = response.data.data;
 
@@ -37,9 +37,9 @@ export default {
     },
 
     getAdminValues() {
-      const isAdmin = admin.getIsAdmin();
+      const isAdmin = apiAuth.getIsAdmin();
 
-      const superAdmin = admin.getSuperAdmin();
+      const superAdmin = apiAuth.getSuperAdmin();
 
       this.isAdmin = isAdmin;
 

@@ -19,7 +19,7 @@ export default {
 
   methods: {
     async register() {
-      await apiUsers.registerUser(this.form);
+      await apiUsers.registerStudents(this.form);
 
       alert("Creado con éxito");
 

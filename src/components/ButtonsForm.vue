@@ -1,5 +1,5 @@
 <script>
-import { apiUsers } from "../services/apiUsers.js";
+import { apiGame } from "../services/apiGame.js";
 
 export default {
   name: "ButtonsForm",
@@ -17,7 +17,7 @@ export default {
       if (this.obj.play === true) {
         this.obj.play = false;
 
-        await apiUsers.play(this.obj);
+        await apiGame.changePlayPermission(this.obj);
 
         this.$router.push("/panel");
 

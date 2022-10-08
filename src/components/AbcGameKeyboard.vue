@@ -1,6 +1,6 @@
 <script>
 import draggable from "vuedraggable";
-import { apiUsers } from "../services/apiUsers.js";
+import { apiGame } from "../services/apiGame.js";
 
 let idGlobal = 8;
 export default {
@@ -72,7 +72,7 @@ export default {
         word: dataWord,
       };
 
-      await apiUsers.sendWord(jsonData);
+      await apiGame.sendWord(jsonData);
 
       alert("Has enviado la palabra");
     },

@@ -1,6 +1,6 @@
 <script>
 import { apiAuth } from "../services/apiAuth.js";
-import { apiUsers } from "../services/apiUsers";
+import { apiGame } from "../services/apiGame";
 
 export default {
   name: "TheHeader",
@@ -10,7 +10,7 @@ export default {
       obj: {
         play: false,
       },
-      jsonData: {
+      wordData: {
         word: null,
       },
     };
@@ -21,11 +21,11 @@ export default {
       const noSuperAdmin = localStorage.getItem("superAdmin");
 
       if (noSuperAdmin != "1") {
-        await apiUsers.play(this.obj);
-        await apiUsers.sendWord(this.jsonData);
+        await apiGame.changePlayPermission(this.obj);
+        await apiGame.wordNull(this.wordData);
       }
 
-      await apiAuth.getLogout();
+      await apiAuth.logout();
 
       localStorage.removeItem("token");
       localStorage.removeItem("isAdmin");

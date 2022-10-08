@@ -15,7 +15,7 @@ export default {
 
   methods: {
     async listStudents() {
-      const response = await apiUsers.listUsers();
+      const response = await apiUsers.listStudents();
 
       const studentsData = response.data.data;
 
@@ -54,7 +54,7 @@ export default {
         <StudentItem :student="student" />
       </div>
     </div>
-      <ButtonsForm></ButtonsForm>
+    <ButtonsForm></ButtonsForm>
   </main>
 </template>
 
