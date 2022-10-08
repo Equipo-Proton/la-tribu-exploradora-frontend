@@ -1,3 +1,4 @@
+<!-- eslint-disable prettier/prettier -->
 <script>
 import draggable from "vuedraggable";
 let idGlobal = 8;
@@ -10,6 +11,8 @@ export default {
   },
   data() {
     return {
+      lowercase: true,
+      uppercase: false,
       list1: [
         { name: "a", id: 1 },
         { name: "b", id: 2 },
@@ -40,6 +43,35 @@ export default {
         { name: "z", id: 27 },
       ],
       list2: [],
+      list3: [
+        { name: "A", id: 39},
+        { name: "B", id: 40 },
+        { name: "C", id: 41 },
+        { name: "D", id: 42 },
+        { name: "E", id: 43 },
+        { name: "F", id: 44 },
+        { name: "G", id: 45},
+        { name: "H", id: 46 },
+        { name: "I", id: 47 },
+        { name: "J", id: 48 },
+        { name: "K", id: 49 },
+        { name: "L", id: 50 },
+        { name: "M", id: 51 },
+        { name: "N", id: 52 },
+        { name: "Ñ", id: 53 },
+        { name: "O", id: 54 },
+        { name: "P", id: 55 },
+        { name: "Q", id: 56 },
+        { name: "R", id: 57 },
+        { name: "S", id: 58 },
+        { name: "T", id: 59 },
+        { name: "U", id: 60 },
+        { name: "V", id: 61 },
+        { name: "W", id: 62 },
+        { name: "X", id: 63 },
+        { name: "Y", id: 64 },
+        { name: "Z", id: 65 },
+      ],
     };
   },
   methods: {
@@ -59,17 +91,29 @@ export default {
     deleteLetter(){
       this.list2.pop();
     },
-    capitalize(){
-      
-      
-      console.log("carro".toUpperCase() );
-      this.list1.map((name) => name.toUpperCase());
-    },
+    
+    toggle(){
+      if (this.lowercase && !this.uppercase){
+        this.lowercase = false;
+        this.uppercase = true;
+        console.log("minusculas");
+      }
+
+      else{
+        this.lowercase = true;
+        this.uppercase = false;
+        console.log("mayusculas")
+      }
+
+    }
   },
+   
 };
 </script>
 
 <template>
+
+
   <div class="keyboard">
     <draggable
       class="drop-zone"
@@ -85,28 +129,48 @@ export default {
       </template>
     </draggable>
 
-    <draggable
-      class="drag-zone"
-      :list="list1"
-      :group="{ name: 'people', pull: 'clone', put: false }"
-      :clone="cloneLetter"
-      @change="log"
-      item-key="id"
-    >
-      <template #item="{ element }">
-        <div class="drag-el">
-          {{ element.name }}
-        </div>
-      </template>
-    </draggable>
+    <div v-if="lowercase">
+      <draggable
+        class="drag-zone"
+        :list="list1"
+        :group="{ name: 'people', pull: 'clone', put: false }"
+        :clone="cloneLetter"
+        @change="log"
+        item-key="id"
+      >
+        <template #item="{ element }">
+          <div class="drag-el">
+            {{ element.name }}
+          </div>
+        </template>
+      </draggable>
+    </div>
 
+    
+    <div v-if="uppercase">
+      <draggable
+        class="drag-zone"
+        :list="list3"
+        :group="{ name: 'people', pull: 'clone', put: false }"
+        :clone="cloneLetter"
+        @change="log"
+        item-key="id"
+      >
+        <template #item="{ element }">
+          <div class="drag-el">
+            {{ element.name }}
+          </div>
+        </template>
+      </draggable>
+    </div>
+        
     <rawDisplayer :value="list1" title="List 1" />
 
     <rawDisplayer :value="list2" title="List 2" />
     <div class="bot-buttons">
-      <button @click="capitalize" type="button" class="mayus-button">ABC</button>
+      <button @click="toggle" type="button" class="mayus-button">ABC</button>
       <button type="submit" class="ready-button">¡Listo!</button>
-      <button @click="deleteLetter" type="button" class="delete-button">
+      <button @click= "deleteLetter" type="button" class="delete-button">
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
       </button>
     </div>
