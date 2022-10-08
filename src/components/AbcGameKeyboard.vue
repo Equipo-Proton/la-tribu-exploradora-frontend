@@ -127,13 +127,11 @@ export default {
       if (this.lowercase && !this.uppercase){
         this.lowercase = false;
         this.uppercase = true;
-        console.log("minusculas");
       }
 
       else{
         this.lowercase = true;
         this.uppercase = false;
-        console.log("mayusculas")
       }
 
     },
