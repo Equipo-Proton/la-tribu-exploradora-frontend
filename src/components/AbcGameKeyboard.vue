@@ -188,7 +188,9 @@ export default {
 
     <rawDisplayer :value="list2" title="List 2" />
     <div class="bot-buttons">
-      <button @click="toggle" type="button" class="mayus-button">ABC</button>
+      <button v-if="lowercase" @click="toggle" type="button" class="mayus-button">abc</button>
+      <button v-if="uppercase" @click="toggle" type="button" class="mayus-button">ABC</button>
+
       <button type="submit" class="ready-button">¡Listo!</button>
       <button @click= "deleteLetter" type="button" class="delete-button">
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
@@ -262,6 +264,7 @@ export default {
 
 .mayus-button {
   background-color: var(--base-color-blue);
+  font-size: 150%;
 }
 
 .ready-button {
