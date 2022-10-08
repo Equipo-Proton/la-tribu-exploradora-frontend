@@ -11,8 +11,16 @@ export default {
   components: {
     draggable,
   },
+  mounted: function () {
+  this.timer = setInterval(() => {
+    this.sort()
+  }, 1000)
+},
+
+ 
   data() {
     return {
+      timer: null,
       lowercase: true,
       uppercase: false,
       list1: [
@@ -76,6 +84,9 @@ export default {
       ],
     };
   },
+  beforeUnmount() {
+  clearInterval(this.timer)
+},
   methods: {
     log: function (evt) {
       window.console.log(evt);
@@ -125,6 +136,11 @@ export default {
         console.log("mayusculas")
       }
 
+    },
+
+    sort(){
+      this.list3 = this.list3.sort((a, b) => a.id - b.id);
+      this.list1 = this.list1.sort((a, b) => a.id - b.id);
     }
   },
    
