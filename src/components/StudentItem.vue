@@ -81,6 +81,8 @@ export default {
 }
 
 .word-container {
+  display: flex;
+  align-items: center;
   width: 20vw;
   height: 10vh;
   border-radius: 1vw;
@@ -90,7 +92,7 @@ export default {
 
 .studentIcons {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: calc(100% / 2);
   height: calc(100% / 6);
@@ -112,5 +114,9 @@ img {
   width: 300px;
   height: 60px;
   background-color: var(--base-color-white);
+}
+
+p {
+  margin: auto;
 }
 </style>
