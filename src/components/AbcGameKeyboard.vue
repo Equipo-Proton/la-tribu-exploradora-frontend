@@ -188,17 +188,9 @@ export default {
 
     <rawDisplayer :value="list2" title="List 2" />
     <div class="bot-buttons">
-<<<<<<< HEAD
-      <button type="button" class="mayus-button">ABC</button>
-      <button v-on:click="sendWord" type="submit" class="ready-button">
-        ¡Listo!
-      </button>
-      <button @click="deleteLetter" type="button" class="delete-button">
-=======
       <button @click="toggle" type="button" class="mayus-button">ABC</button>
       <button type="submit" class="ready-button">¡Listo!</button>
       <button @click= "deleteLetter" type="button" class="delete-button">
->>>>>>> te-114
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
       </button>
     </div>
