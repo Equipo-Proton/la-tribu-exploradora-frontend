@@ -213,7 +213,7 @@ export default {
         ABC
       </button>
 
-      <button type="submit" class="ready-button">¡Listo!</button>
+      <button @click="sendWord" type="submit" class="ready-button">¡Listo!</button>
       <button @click="deleteLetter" type="button" class="delete-button">
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
       </button>
