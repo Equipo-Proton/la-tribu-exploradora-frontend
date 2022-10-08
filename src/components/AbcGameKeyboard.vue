@@ -11,6 +11,14 @@ export default {
   components: {
     draggable,
   },
+  updated(){
+    
+    this.list3 = this.list3.sort((c, d) => c.id - d.id);
+    this.list1 = this.list1.sort((a, b) => a.id - b.id);
+    
+
+  },
+ 
   data() {
     return {
       lowercase: true,
@@ -125,7 +133,7 @@ export default {
         console.log("mayusculas")
       }
 
-    }
+    },
   },
    
 };
@@ -188,11 +196,25 @@ export default {
 
     <rawDisplayer :value="list2" title="List 2" />
     <div class="bot-buttons">
-      <button v-if="lowercase" @click="toggle" type="button" class="mayus-button">abc</button>
-      <button v-if="uppercase" @click="toggle" type="button" class="mayus-button">ABC</button>
+      <button
+        v-if="lowercase"
+        @click="toggle"
+        type="button"
+        class="mayus-button"
+      >
+        abc
+      </button>
+      <button
+        v-if="uppercase"
+        @click="toggle"
+        type="button"
+        class="mayus-button"
+      >
+        ABC
+      </button>
 
       <button type="submit" class="ready-button">¡Listo!</button>
-      <button @click= "deleteLetter" type="button" class="delete-button">
+      <button @click="deleteLetter" type="button" class="delete-button">
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
       </button>
     </div>

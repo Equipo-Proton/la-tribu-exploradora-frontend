@@ -10,6 +10,9 @@ export default {
   components: {
     draggable,
   },
+  updated(){
+    this.list1 = this.list1.sort((a, b) => a.id - b.id);
+  },
   data() {
     return {
       list1: [
