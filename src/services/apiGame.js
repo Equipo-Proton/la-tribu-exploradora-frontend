@@ -59,8 +59,8 @@ export const apiGame = {
     });
   },
 
-  correctionNull(jsonData) {
-    return axios.patch(baseUrl + `/game/correctionnull`, jsonData, {
+  correctionNull(data) {
+    return axios.patch(baseUrl + `/game/correctionnull`, data, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

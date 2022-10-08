@@ -18,7 +18,9 @@ export default {
   methods: {
     async correctLogin() {
       const response = await apiAuth.login(this.form);
-      console.log(response.data.data);
+      if (response === undefined) {
+        this.noRegister = true;
+      }
 
       if (response === "Incorrect password") {
         this.incorrect = true;

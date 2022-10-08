@@ -6,30 +6,34 @@ import { apiGame } from "../services/apiGame.js";
 
 const router = useRouter();
 
-const correctionData = {
+const data = {
   correction: null,
 };
 
 const intervalPlay = setInterval(checkRedirect, 5000);
-const intervalCorrection = setInterval(checkCorrection, 5000);
+const intervalCorrection = setInterval(checkCorrection, 4000);
 
 async function checkCorrection() {
   const response = await apiGame.getCorrection();
 
   const correction = response.data.data;
 
-  if (correction === 1) {
-    alert("GOOD CORRECTION");
+  if (correction === null) {
+    return;
+  }
 
-    await apiGame.correctionNull(correctionData);
+  if (correction === 1) {
+    await apiGame.correctionNull(data);
+
+    alert("GOOD CORRECTION");
 
     return;
   }
 
   if (correction === 0) {
-    alert("BAD CORRECTION");
+    await apiGame.correctionNull(data);
 
-    await apiGame.correctionNull(correctionData);
+    alert("BAD CORRECTION");
 
     return;
   }
@@ -59,6 +63,7 @@ async function callDatabase() {
 
   if (response.data.message === "Unauthenticated.") {
     clearInterval(intervalPlay);
+    clearInterval(intervalCorrection);
 
     router.push("/login");
   }

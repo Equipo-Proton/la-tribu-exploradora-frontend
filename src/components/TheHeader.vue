@@ -13,6 +13,9 @@ export default {
       wordData: {
         word: null,
       },
+      correctionData: {
+        correction: null,
+      },
     };
   },
 
