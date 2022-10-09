@@ -64,6 +64,10 @@ async function callDatabase() {
   if (response.data.message === "Unauthenticated.") {
     clearInterval(intervalPlay);
     clearInterval(intervalCorrection);
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("superAdmin");
 
     router.push("/login");
   }
