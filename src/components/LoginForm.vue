@@ -18,8 +18,12 @@ export default {
   methods: {
     async correctLogin() {
       const response = await apiAuth.login(this.form);
+
+      // bad response cases
       if (response === undefined) {
         this.noRegister = true;
+
+        return;
       }
 
       if (response === "Incorrect password") {
@@ -34,6 +38,8 @@ export default {
         return;
       }
 
+      // good response cases
+      // teacher cases
       if (
         response.data.data.isAdmin != undefined &&
         response.data.data.superAdmin != undefined
@@ -53,9 +59,14 @@ export default {
         return;
       }
 
+      // student cases
       const token = response.data.access_token;
+      const isAdmin = response.data.data.isAdmin;
+      const superAdmin = response.data.data.superAdmin;
 
       localStorage.setItem("token", token);
+      localStorage.setItem("isAdmin", isAdmin);
+      localStorage.setItem("superAdmin", superAdmin);
 
       this.$router.push("/waiting");
 
