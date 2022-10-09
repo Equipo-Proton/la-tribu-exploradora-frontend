@@ -1,5 +1,5 @@
 <script>
-import { apiUsers } from "../services/apiUsers.js";
+import { apiGame } from "../services/apiGame.js";
 
 export default {
   name: "StudentItem",
@@ -24,7 +24,7 @@ export default {
     async sendGoodCorrection() {
       this.jsonData.correct = true;
 
-      await apiUsers.sendCorrection(this.studentId, this.jsonData);
+      await apiGame.sendCorrection(this.studentId, this.jsonData);
 
       alert("Has enviado una buena corrección");
     },
@@ -32,7 +32,7 @@ export default {
     async sendBadCorrection() {
       this.jsonData.correct = false;
 
-      const response = await apiUsers.sendCorrection(
+      const response = await apiGame.sendCorrection(
         this.studentId,
         this.jsonData
       );
@@ -64,15 +64,15 @@ export default {
 </template>
 
 <style scoped>
-  button{
+button {
   background-color: transparent;
   border: none;
-  }
+}
 
-  img button{
-    width: 4vw;
-  }
-  .student-box {
+img button {
+  width: 4vw;
+}
+.student-box {
   display: flex;
   align-items: center;
   flex-direction: column;

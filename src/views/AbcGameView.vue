@@ -2,13 +2,44 @@
 import { RouterView, useRouter } from "vue-router";
 import AbcGameKeyboard from "../components/AbcGameKeyboard.vue";
 import AbcGameNumpad from "../components/AbcGameNumpad.vue";
-import { apiUsers } from "../services/apiUsers";
+import { apiGame } from "../services/apiGame.js";
 
 const router = useRouter();
 
-const interval = setInterval(checkRedirectToWaitingView, 5000);
+const data = {
+  correction: null,
+};
 
-async function checkRedirectToWaitingView() {
+const intervalPlay = setInterval(checkRedirect, 5000);
+const intervalCorrection = setInterval(checkCorrection, 4000);
+
+async function checkCorrection() {
+  const response = await apiGame.getCorrection();
+
+  const correction = response.data.data;
+
+  if (correction === null) {
+    return;
+  }
+
+  if (correction === 1) {
+    await apiGame.correctionNull(data);
+
+    alert("GOOD CORRECTION");
+
+    return;
+  }
+
+  if (correction === 0) {
+    await apiGame.correctionNull(data);
+
+    alert("BAD CORRECTION");
+
+    return;
+  }
+}
+
+async function checkRedirect() {
   const playValue = await callDatabase();
 
   checkPlayValue(playValue);
@@ -18,7 +49,8 @@ async function checkRedirectToWaitingView() {
 
 function checkPlayValue(playValue) {
   if (playValue === 0) {
-    clearInterval(interval);
+    clearInterval(intervalPlay);
+    clearInterval(intervalCorrection);
 
     router.push({ path: "/waiting" });
 
@@ -27,10 +59,15 @@ function checkPlayValue(playValue) {
 }
 
 async function callDatabase() {
-  const response = await apiUsers.getPlayValue();
+  const response = await apiGame.getPlayPermission();
 
   if (response.data.message === "Unauthenticated.") {
-    clearInterval(interval);
+    clearInterval(intervalPlay);
+    clearInterval(intervalCorrection);
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("superAdmin");
 
     router.push("/login");
   }

@@ -1,5 +1,5 @@
 <script>
-import { apiUsers } from "../services/apiUsers.js";
+import { apiGame } from "../services/apiGame.js";
 
 export default {
   name: "GameList",
@@ -21,7 +21,7 @@ export default {
       if (this.obj.play === false) {
         this.obj.play = true;
 
-        await apiUsers.play(this.obj);
+        await apiGame.changePlayPermission(this.obj);
 
         this.$router.push("/gamecontrol");
 

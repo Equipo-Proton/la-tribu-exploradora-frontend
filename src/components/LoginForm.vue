@@ -17,7 +17,14 @@ export default {
 
   methods: {
     async correctLogin() {
-      const response = await apiAuth.getLogin(this.form);
+      const response = await apiAuth.login(this.form);
+
+      // bad response cases
+      if (response === undefined) {
+        this.noRegister = true;
+
+        return;
+      }
 
       if (response === "Incorrect password") {
         this.incorrect = true;
@@ -31,21 +38,39 @@ export default {
         return;
       }
 
-      const token = response.data.access_token;
-      const isAdmin = response.data.user.isAdmin;
-      const superAdmin = response.data.user.superAdmin;
+      // good response cases
+      // teacher cases
+      if (
+        response.data.data.isAdmin != undefined &&
+        response.data.data.superAdmin != undefined
+      ) {
+        const token = response.data.access_token;
+        const name = response.data.data.name;
+        const isAdmin = response.data.data.isAdmin;
+        const superAdmin = response.data.data.superAdmin;
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("isAdmin", isAdmin);
-      localStorage.setItem("superAdmin", superAdmin);
+        localStorage.setItem("token", token);
+        localStorage.setItem("name", name);
+        localStorage.setItem("isAdmin", isAdmin);
+        localStorage.setItem("superAdmin", superAdmin);
 
-      if (isAdmin === 1 || superAdmin === 1) {
         this.$router.push("/panel");
 
         return;
       }
 
+      // student cases
+      const token = response.data.access_token;
+      const isAdmin = response.data.data.isAdmin;
+      const superAdmin = response.data.data.superAdmin;
+
+      localStorage.setItem("token", token);
+      localStorage.setItem("isAdmin", isAdmin);
+      localStorage.setItem("superAdmin", superAdmin);
+
       this.$router.push("/waiting");
+
+      return;
     },
 
     clearOnFocus() {

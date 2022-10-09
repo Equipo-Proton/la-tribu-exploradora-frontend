@@ -3,13 +3,13 @@ import axios from "axios";
 const baseUrl = "http://localhost:8000/api";
 
 export const apiAuth = {
-  getLogin(formData) {
+  login(formData) {
     return axios.post(baseUrl + "/login", formData).catch((error) => {
       return error.response.data.msg;
     });
   },
 
-  getLogout() {
+  logout() {
     return axios.get(baseUrl + "/logout", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -17,15 +17,23 @@ export const apiAuth = {
     });
   },
 
-  getAdminStatus() {
+  getIsAdmin() {
     const isAdmin = localStorage.getItem("isAdmin");
 
-    return isAdmin;
+    if (isAdmin === "1") {
+      return true;
+    }
+
+    return false;
   },
 
-  getSuperAdminStatus() {
+  getSuperAdmin() {
     const superAdmin = localStorage.getItem("superAdmin");
 
-    return superAdmin;
+    if (superAdmin === "1") {
+      return true;
+    }
+
+    return false;
   },
 };

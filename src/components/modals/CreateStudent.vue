@@ -19,7 +19,7 @@ export default {
 
   methods: {
     async register() {
-      await apiUsers.registerUser(this.form);
+      await apiUsers.registerStudents(this.form);
 
       alert("Creado con éxito");
 
@@ -63,6 +63,9 @@ export default {
         required
         v-model="form.password"
       />
+    </div>
+    <div class="form-camp">
+      <label for="psw-repeat"><b>Repetir contraseña</b></label>
       <input
         type="password"
         placeholder="Repeat Password"
