@@ -39,10 +39,12 @@ export default {
         response.data.data.superAdmin != undefined
       ) {
         const token = response.data.access_token;
+        const name = response.data.data.name;
         const isAdmin = response.data.data.isAdmin;
         const superAdmin = response.data.data.superAdmin;
 
         localStorage.setItem("token", token);
+        localStorage.setItem("name", name);
         localStorage.setItem("isAdmin", isAdmin);
         localStorage.setItem("superAdmin", superAdmin);
 

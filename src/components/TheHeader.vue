@@ -16,6 +16,7 @@ export default {
       correctionData: {
         correction: null,
       },
+      name: null,
     };
   },
 
@@ -31,11 +32,22 @@ export default {
       await apiAuth.logout();
 
       localStorage.removeItem("token");
+      localStorage.removeItem("name");
       localStorage.removeItem("isAdmin");
       localStorage.removeItem("superAdmin");
 
       this.$router.push("/");
     },
+
+    headerName() {
+      const name = localStorage.getItem("name");
+
+      this.name = name;
+    },
+  },
+
+  created() {
+    this.headerName();
   },
 };
 </script>
@@ -48,7 +60,8 @@ export default {
     <div class="appTitle">AÑA: añerando, la Tribu Exploradora</div>
     <div class="user">
       <div>
-        <p>¡Hola!</p>
+        <p v-if="name != undefined">{{ name }}</p>
+        <p v-if="name === null">¡Hola!</p>
       </div>
       <div><img src="../assets/icons/iconUser.svg" /></div>
       <div><button id="logout" v-on:click="logout">Salir</button></div>
