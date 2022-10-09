@@ -18,7 +18,7 @@ export default {
 
   methods: {
     async confirmDeleteTeacher() {
-      await apiTeachers.deleteTeacher(this.teacherId);
+      await apiTeachers.deleteTeachers(this.teacherId);
 
       alert(`${this.teacher.name} has been deleted`);
 

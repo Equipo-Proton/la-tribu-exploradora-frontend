@@ -1,6 +1,6 @@
 <script>
 import { apiAuth } from "../services/apiAuth.js";
-import { apiUsers } from "../services/apiUsers";
+import { apiGame } from "../services/apiGame";
 
 export default {
   name: "TheHeader",
@@ -10,9 +10,13 @@ export default {
       obj: {
         play: false,
       },
-      jsonData: {
+      wordData: {
         word: null,
       },
+      correctionData: {
+        correction: null,
+      },
+      name: null,
     };
   },
 
@@ -21,18 +25,29 @@ export default {
       const noSuperAdmin = localStorage.getItem("superAdmin");
 
       if (noSuperAdmin != "1") {
-        await apiUsers.play(this.obj);
-        await apiUsers.sendWord(this.jsonData);
+        await apiGame.changePlayPermission(this.obj);
+        await apiGame.wordNull(this.wordData);
       }
 
-      await apiAuth.getLogout();
+      await apiAuth.logout();
 
       localStorage.removeItem("token");
+      localStorage.removeItem("name");
       localStorage.removeItem("isAdmin");
       localStorage.removeItem("superAdmin");
 
       this.$router.push("/");
     },
+
+    headerName() {
+      const name = localStorage.getItem("name");
+
+      this.name = name;
+    },
+  },
+
+  created() {
+    this.headerName();
   },
 };
 </script>
@@ -45,7 +60,8 @@ export default {
     <div class="appTitle">AÑA: añerando, la Tribu Exploradora</div>
     <div class="user">
       <div>
-        <p>¡Hola!</p>
+        <p v-if="name != undefined">{{ name }}</p>
+        <p v-if="name === null">¡Hola!</p>
       </div>
       <div><img src="../assets/icons/iconUser.svg" /></div>
       <div><button id="logout" v-on:click="logout">Salir</button></div>

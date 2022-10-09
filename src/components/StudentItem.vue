@@ -1,5 +1,5 @@
 <script>
-import { apiUsers } from "../services/apiUsers.js";
+import { apiGame } from "../services/apiGame.js";
 
 export default {
   name: "StudentItem",
@@ -24,7 +24,7 @@ export default {
     async sendGoodCorrection() {
       this.jsonData.correct = true;
 
-      await apiUsers.sendCorrection(this.studentId, this.jsonData);
+      await apiGame.sendCorrection(this.studentId, this.jsonData);
 
       alert("Has enviado una buena corrección");
     },
@@ -32,7 +32,7 @@ export default {
     async sendBadCorrection() {
       this.jsonData.correct = false;
 
-      const response = await apiUsers.sendCorrection(
+      const response = await apiGame.sendCorrection(
         this.studentId,
         this.jsonData
       );
@@ -64,6 +64,14 @@ export default {
 </template>
 
 <style scoped>
+button {
+  background-color: transparent;
+  border: none;
+}
+
+img button {
+  width: 4vw;
+}
 .student-box {
   display: flex;
   align-items: center;
@@ -73,6 +81,8 @@ export default {
 }
 
 .word-container {
+  display: flex;
+  align-items: center;
   width: 20vw;
   height: 10vh;
   border-radius: 1vw;
@@ -82,7 +92,7 @@ export default {
 
 .studentIcons {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: calc(100% / 2);
   height: calc(100% / 6);
@@ -91,8 +101,8 @@ export default {
 img {
   display: inline-block;
   margin: 2vh;
-  width: calc(100% / 6);
-  height: calc(100% / 6);
+  width: 3vw;
+  height: 2vw;
   display: flex;
   align-content: center;
   align-items: center;
@@ -104,5 +114,9 @@ img {
   width: 300px;
   height: 60px;
   background-color: var(--base-color-white);
+}
+
+p {
+  margin: auto;
 }
 </style>

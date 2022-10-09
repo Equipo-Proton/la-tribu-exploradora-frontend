@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from "vue-router";
-import { apiUsers } from "../services/apiUsers.js";
+import { apiGame } from "../services/apiGame.js";
 
 const router = useRouter();
 
@@ -25,10 +25,15 @@ function checkPlayValue(playValue) {
 }
 
 async function callDatabase() {
-  const response = await apiUsers.getPlayValue();
+  const response = await apiGame.getPlayPermission();
 
   if (response.data.message === "Unauthenticated.") {
     clearInterval(interval);
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("superAdmin");
 
     router.push("/login");
   }

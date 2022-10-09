@@ -1,6 +1,6 @@
 <script>
 import draggable from "vuedraggable";
-import { apiUsers } from "../services/apiUsers.js";
+import { apiGame } from "../services/apiGame.js";
 
 let idGlobal = 8;
 export default {
@@ -10,6 +10,15 @@ export default {
   components: {
     draggable,
   },
+  mounted: function () {
+    this.timer = setInterval(() => {
+      this.sort();
+    }, 1000);
+  },
+  beforeUnmount() {
+    clearInterval(this.timer)
+  },
+  
   data() {
     return {
       list1: [
@@ -18,7 +27,7 @@ export default {
         { name: "2", id: 30 },
         { name: "3", id: 31 },
         { name: "4", id: 32 },
-        { name: "5", id: 33 },
+        { name: "5", id: 33 },  
         { name: "6", id: 34 },
         { name: "7", id: 35 },
         { name: "8", id: 36 },
@@ -55,11 +64,18 @@ export default {
         word: dataWord,
       };
 
-      await apiUsers.sendWord(jsonData);
+      await apiGame.sendWord(jsonData);
 
       alert("Has enviado el número");
     },
+    clearField() {
+      this.list2 = [];
+    },
+    sort(){
+      this.list1 = this.list1.sort((a, b) => a.id - b.id);
+    }
   },
+  
 };
 </script>
 
@@ -93,15 +109,18 @@ export default {
         </div>
       </template>
     </draggable>
+    <div class="bot-buttons">
+      <button type="submit" class="ready-button" @click="sendNumber">
+        <img src="../assets/img/submitIcon.png" alt="" />
+      </button>
+      <button @click="clearField" type="button" class="delete-button">
+        <img src="../assets/img/deleteIcon.png" alt="Borrar" />
+      </button>
+    </div>
 
     <rawDisplayer :value="list1" title="List 1" />
 
     <rawDisplayer :value="list2" title="List 2" />
-
-    <!-- botón provisonal -->
-    <button v-on:click="sendNumber" type="submit" class="ready-button">
-      ¡Listo!
-    </button>
   </div>
 </template>
 <style scoped>
@@ -116,11 +135,13 @@ export default {
   background-color: var(--base-color-white);
   font-family: var(--font-family-game);
   margin: 1vw auto;
+  cursor: grab;
 }
 .drag-zone {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1vw;
+  cursor: grab;
 }
 .drag-el {
   display: flex;
@@ -133,5 +154,31 @@ export default {
   font-family: var(--font-family-game);
   font-size: 2vw;
   margin: auto;
+  cursor: grab;
+}
+.bot-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1vw auto;
+}
+.ready-button,
+.delete-button {
+  border: none;
+  border-radius: 1vw;
+  padding: 1vw;
+  font-weight: bold;
+  font-family: var(--font-family-secondary);
+}
+.ready-button {
+  background-color: var(--base-color-green);
+  color: var(--base-color-white-2);
+}
+
+.delete-button {
+  background-color: var(--base-color-orange);
+}
+img {
+  height: 2vw;
 }
 </style>
