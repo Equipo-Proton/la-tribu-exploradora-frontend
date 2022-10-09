@@ -32,10 +32,11 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/AdminPanelView.vue"),
+
       async beforeEnter() {
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");
-        if (isAdmin === undefined && superAdmin === undefined) {
+        if (isAdmin === "undefined" && superAdmin === "undefined") {
           await router.push({
             path: "/",
             name: "home",
@@ -57,6 +58,7 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/WaitingView.vue"),
+
       async beforeEnter() {
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");
@@ -82,6 +84,7 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/ReadyToPlayView.vue"),
+
       async beforeEnter() {
         const response = await apiGame.getPlayPermission();
         const playValue = await response.data.data;
@@ -119,6 +122,7 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/AbcGameView.vue"),
+
       async beforeEnter() {
         const response = await apiGame.getPlayPermission();
         const playValue = await response.data.data;
@@ -156,11 +160,12 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/GameControlView.vue"),
+
       async beforeEnter() {
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");
         if (
-          (isAdmin === undefined && superAdmin === undefined) ||
+          (isAdmin === "undefined" && superAdmin === "undefined") ||
           (isAdmin === "0" && superAdmin === "1")
         ) {
           await router.push({
