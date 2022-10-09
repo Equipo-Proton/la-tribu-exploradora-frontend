@@ -63,6 +63,9 @@ export default {
         required
         v-model="form.password"
       />
+    </div>
+    <div class="form-camp">
+      <label for="psw-repeat"><b>Repetir contraseña</b></label>
       <input
         type="password"
         placeholder="Repeat Password"
