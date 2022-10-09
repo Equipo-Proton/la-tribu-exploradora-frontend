@@ -15,7 +15,7 @@ export default {
 
   methods: {
     async listStudents() {
-      const response = await apiUsers.listUsers();
+      const response = await apiUsers.listStudents();
 
       const studentsData = response.data.data;
 
@@ -54,8 +54,8 @@ export default {
         <StudentItem :student="student" />
       </div>
     </div>
+    <ButtonsForm></ButtonsForm>
   </main>
-  <ButtonsForm></ButtonsForm>
 </template>
 
 <style scoped>
@@ -65,6 +65,7 @@ main {
   align-items: center;
   flex-direction: column;
   row-gap: 1vw;
+  margin: 3vh 0 6vh 0;
 }
 .secret-word {
   display: flex;
@@ -72,6 +73,7 @@ main {
   align-items: center;
   justify-content: center;
   row-gap: 1vh;
+  margin-bottom: 3vh;
 }
 
 label {

@@ -25,7 +25,7 @@ export default {
 
   methods: {
     async editStudent() {
-      await apiUsers.updateUser(this.studentId, this.form);
+      await apiUsers.updateStudents(this.studentId, this.form);
 
       alert(`${this.student.name} has been updated`);
 
