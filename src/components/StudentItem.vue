@@ -51,14 +51,18 @@ export default {
       <p class="text-center">{{ student.word }}</p>
     </div>
     <div class="studentIcons">
-      <button v-on:click="sendGoodCorrection">
-        <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-      </button>
-      <button v-on:click="sendBadCorrection">
-        <img src="../assets/img/redFinger.svg" alt="red Finger" />
-      </button>
-      <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-      <img src="../assets/img/restartWord.svg" alt="restart Word" />
+      <div class="fingers">
+        <button v-on:click="sendGoodCorrection">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+        </button>
+        <button v-on:click="sendBadCorrection">
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+        </button>
+      </div>
+      <div class="options">
+        <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+        <img src="../assets/img/restartWord.svg" alt="restart Word" />
+      </div>
     </div>
   </div>
 </template>
@@ -92,10 +96,18 @@ img button {
 
 .studentIcons {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: calc(100% / 2);
-  height: calc(100% / 6);
+  width: 2vw;
+  height: 5vh;
+}
+.fingers {
+  display: flex;
+}
+
+.options {
+  display: flex;
 }
 
 img {
@@ -107,16 +119,39 @@ img {
   align-content: center;
   align-items: center;
 }
-.studentIcons div {
-  border-radius: 20px;
-  text-align: center;
-  border: 3px solid rgb(184, 184, 184);
-  width: 300px;
-  height: 60px;
-  background-color: var(--base-color-white);
-}
 
 p {
   margin: auto;
+}
+
+@media only screen and (orientation: portrait) {
+  .word-container {
+    width: 20vw;
+    height: 5vh;
+  }
+  .studentIcons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+  }
+
+  .fingers {
+    display: flex;
+    justify-content: center;
+  }
+  .fingers img {
+    height: 2vh;
+  }
+
+  .options {
+    display: flex;
+    margin-top: -2vh;
+  }
+  .options img {
+    display: flex;
+    height: 2vh;
+  }
 }
 </style>
