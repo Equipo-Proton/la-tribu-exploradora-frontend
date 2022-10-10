@@ -1,0 +1,80 @@
+<script type="text/javacript">
+/*
+$fuction(){
+    $('#login-show').click(function(){
+        $('#login-show').click().css("display","flex");
+    });
+    $('#register-show').click(function(){
+        $('#login-register').click().css("display","flex");
+    });
+}*/
+</script>
+
+<template>
+  <div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="card">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"></ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="pills-home"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+        >
+          <div class="form px-4 pt-5">
+            <a>¿Quién eres?</a>
+            <input
+              type="text"
+              name=""
+              class="form-control"
+              placeholder="Nombre"
+            />
+            <button class="btn btn-dark btn-block">Entrar</button>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="pills-profile"
+          role="tabpanel"
+          aria-labelledby="pills-profile-tab"
+        >
+          <div class="form px-4">
+            <input
+              type="text"
+              name=""
+              class="form-control"
+              placeholder="Name"
+            />
+
+            <input
+              type="text"
+              name=""
+              class="form-control"
+              placeholder="Email"
+            />
+
+            <input
+              type="text"
+              name=""
+              class="form-control"
+              placeholder="Phone"
+            />
+
+            <input
+              type="text"
+              name=""
+              class="form-control"
+              placeholder="Password"
+            />
+
+            <button class="btn btn-dark btn-block">Registro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+  @import "../assets/registerForm.css";
+</style>

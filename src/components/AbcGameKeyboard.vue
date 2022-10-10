@@ -229,6 +229,7 @@ export default {
 
 
 <style scoped>
+
 .drop-zone {
   display: flex;
   align-items: center;
