@@ -130,10 +130,18 @@ img button {
 
 .studentIcons {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: calc(100% / 2);
-  height: calc(100% / 6);
+  width: 2vw;
+  height: 5vh;
+}
+.fingers {
+  display: flex;
+}
+
+.options {
+  display: flex;
 }
 
 img {
@@ -145,16 +153,39 @@ img {
   align-content: center;
   align-items: center;
 }
-.studentIcons div {
-  border-radius: 20px;
-  text-align: center;
-  border: 3px solid rgb(184, 184, 184);
-  width: 300px;
-  height: 60px;
-  background-color: var(--base-color-white);
-}
 
 p {
   margin: auto;
+}
+
+@media only screen and (orientation: portrait) {
+  .word-container {
+    width: 20vw;
+    height: 5vh;
+  }
+  .studentIcons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+  }
+
+  .fingers {
+    display: flex;
+    justify-content: center;
+  }
+  .fingers img {
+    height: 2vh;
+  }
+
+  .options {
+    display: flex;
+    margin-top: -2vh;
+  }
+  .options img {
+    display: flex;
+    height: 2vh;
+  }
 }
 </style>

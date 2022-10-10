@@ -83,4 +83,12 @@ main {
   font-weight: bold;
   color: var(--font-color);
 }
+@media only screen and (orientation: portrait) {
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+}
 </style>
