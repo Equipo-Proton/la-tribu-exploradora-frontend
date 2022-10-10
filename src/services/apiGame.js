@@ -74,4 +74,20 @@ export const apiGame = {
       },
     });
   },
+
+  show(id, jsonData) {
+    return axios.patch(baseUrl + `/game/show/${id}`, jsonData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
+
+  getShow() {
+    return axios.get(baseUrl + `/game/getshow`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
 };

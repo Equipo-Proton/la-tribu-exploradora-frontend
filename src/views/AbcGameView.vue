@@ -12,6 +12,21 @@ const data = {
 
 const intervalPlay = setInterval(checkRedirect, 5000);
 const intervalCorrection = setInterval(checkCorrection, 4000);
+const intervalShow = setInterval(checkShowWord, 5000);
+
+async function checkShowWord() {
+  const response = await apiGame.getShow();
+
+  const show = response.data.data;
+
+  if (show === null) {
+    return;
+  }
+
+  if (show != null) {
+    alert(`This is the correct word... ${show}`);
+  }
+}
 
 async function checkCorrection() {
   const response = await apiGame.getCorrection();
