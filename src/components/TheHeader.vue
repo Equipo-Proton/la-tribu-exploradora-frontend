@@ -82,6 +82,12 @@ header {
 .logo img {
   height: 12vh;
 }
+.text{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
 header,
 .user {
   display: flex;
@@ -107,6 +113,9 @@ header,
 .user div {
   margin: 0 0.5vw 0 0.5vw;
 }
+.user img {
+    height: 3.5vh;
+  }
 
 #logout {
   border: none;
@@ -126,6 +135,10 @@ header,
   .logo img {
     height: 10vh;
   }
+
+  .user img {
+    height: 3vh;
+  }
   #logout {
   border: none;
   width: 9vw;
@@ -133,6 +146,10 @@ header,
   border-radius: 10vh;
   background-color: var(--purple-dark);
 }
-
+.text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 }
 </style>

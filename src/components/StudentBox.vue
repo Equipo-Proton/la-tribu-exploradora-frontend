@@ -54,7 +54,9 @@ export default {
         <StudentItem :student="student" />
       </div>
     </div>
+    <div class="buttons">
     <ButtonsForm></ButtonsForm>
+  </div>
   </main>
 </template>
 
@@ -95,5 +97,21 @@ input {
   flex-wrap: wrap;
   width: 90vw;
   height: 70vh;
+}
+.buttons {
+  margin-top: -10vh;
+  width: 80vw;
+  height: 20vh;
+}
+
+@media only screen and (orientation: portrait) {
+  input {
+  width: 60vw;
+  height: 6vh;
+  border: 0.2vw solid var(--base-color-orange);
+  border-radius: 0.8vw;
+  text-align: center;
+  font-size: 3.5vw;
+}
 }
 </style>
