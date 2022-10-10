@@ -80,19 +80,19 @@ main {
 }
 .sky {
   display: grid;
-  column-gap: 2vw;
+  column-gap: 10vw;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
   align-items: center;
-  justify-content: space-around;
-  padding: 5vh;
+  justify-content: center;
+  padding: 4vh;
 }
 .play {
   grid-column-start: 2;
   grid-row-start: 2;
 }
 .playLogo {
-  width: 25vw;
+  width: 20vw;
 }
 button {
   background-color: transparent;
@@ -121,7 +121,9 @@ button {
 }
 .bush {
   width: 100%;
-  margin-top: -10vh;
+  height: 100%;
+  margin-top: -5vh;
   position: relative;
+  margin-bottom: 0;
 }
 </style>
