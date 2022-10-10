@@ -118,5 +118,7 @@ img {
 
 p {
   margin: auto;
+  font-size: 1.5vw;
+  font-weight: bold;
 }
 </style>
