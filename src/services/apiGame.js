@@ -51,6 +51,14 @@ export const apiGame = {
     });
   },
 
+  wordStudentNull(jsonData, id) {
+    return axios.patch(baseUrl + `/game/wordnull/` + id, jsonData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
+
   sendCorrection(id, jsonData) {
     return axios.patch(baseUrl + `/game/sendcorrection/${id}`, jsonData, {
       headers: {

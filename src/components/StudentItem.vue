@@ -40,6 +40,12 @@ export default {
 
       alert("Has enviado una mala corrección");
     },
+
+    async resetWord() {
+      await apiGame.wordStudentNull(this.wordData, this.studentId);
+
+      alert("Has reseteado la palabra");
+    },
   },
 };
 </script>
@@ -58,7 +64,9 @@ export default {
         <img src="../assets/img/redFinger.svg" alt="red Finger" />
       </button>
       <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-      <img src="../assets/img/restartWord.svg" alt="restart Word" />
+      <button v-on:click="resetWord">
+        <img src="../assets/img/restartWord.svg" alt="restart Word" />
+      </button>
     </div>
   </div>
 </template>
