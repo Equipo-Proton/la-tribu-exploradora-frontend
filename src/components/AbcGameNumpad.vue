@@ -132,9 +132,11 @@ export default {
   border-radius: 1vw;
   border: 0.3vw solid var(--base-color-purple);
   background-color: var(--base-color-white);
-  font-family: var(--font-family-game);
+  font-family: var(--font-family-secondary);
   margin: 1vw auto;
   cursor: grab;
+  font-size: 2vw;
+  font-weight: bolder;
 }
 .drag-zone {
   display: grid;
@@ -150,7 +152,7 @@ export default {
   min-height: 4.5vw;
   border-radius: 50px;
   background-color: var(--base-color-orange);
-  font-family: var(--font-family-game);
+  font-family: var(--font-family-secondary);
   font-size: 2vw;
   margin: auto;
   cursor: grab;

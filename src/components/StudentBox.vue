@@ -87,7 +87,8 @@ input {
   border: 0.2vw solid var(--base-color-orange);
   border-radius: 0.8vw;
   text-align: center;
-  font-size: 1vw;
+  font-size: 1.5vw;
+  font-weight: bold;
 }
 
 .student-container {
