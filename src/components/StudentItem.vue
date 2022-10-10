@@ -85,18 +85,22 @@ export default {
       <p class="text-center">{{ student.word }}</p>
     </div>
     <div class="studentIcons">
+      <div class="fingers">
       <button v-on:click="sendGoodCorrection">
         <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
       </button>
       <button v-on:click="sendBadCorrection">
         <img src="../assets/img/redFinger.svg" alt="red Finger" />
       </button>
-      <!--  <button v-on:click="sendShow"> -->
-      <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-      <!--   </button> -->
-      <button v-on:click="resetWord">
-        <img src="../assets/img/restartWord.svg" alt="restart Word" />
-      </button>
+      </div>
+      <div class="options">
+        <!--  <button v-on:click="sendShow"> -->
+        <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+        <!--   </button> -->
+        <button v-on:click="resetWord">
+          <img src="../assets/img/restartWord.svg" alt="restart Word" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
