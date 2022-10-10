@@ -37,7 +37,6 @@ export default {
     </button>
   </div>
 </template>
-
 <style scoped>
 
 .buttons-game-control {
@@ -74,5 +73,20 @@ export default {
 .button-right:hover {
   background-color: #ae1302;
   border-color: #000000;
+}
+
+@media only screen and (orientation: portrait) {
+
+.button-left,
+.button-right {
+  border: 0px;
+  height: 6vh;
+  width: 15vw;
+  color: var(--base-color-white-2);
+  border-radius: 0.7vw;
+  font-size: 2.5vw;
+  text-align: center;
+  font-weight: bold;
+}
 }
 </style>
