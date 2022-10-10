@@ -23,11 +23,6 @@ export default {
       type: Object,
       required: true,
     },
-
-    value: {
-      type: String,
-      required: true,
-    },
   },
 
   methods: {
@@ -86,12 +81,12 @@ export default {
     </div>
     <div class="studentIcons">
       <div class="fingers">
-      <button v-on:click="sendGoodCorrection">
-        <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
-      </button>
-      <button v-on:click="sendBadCorrection">
-        <img src="../assets/img/redFinger.svg" alt="red Finger" />
-      </button>
+        <button v-on:click="sendGoodCorrection">
+          <img src="../assets/img/greenFinger.svg" alt="Green Finger" />
+        </button>
+        <button v-on:click="sendBadCorrection">
+          <img src="../assets/img/redFinger.svg" alt="red Finger" />
+        </button>
       </div>
       <div class="options">
         <!--  <button v-on:click="sendShow"> -->

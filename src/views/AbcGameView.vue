@@ -3,17 +3,25 @@ import { RouterView, useRouter } from "vue-router";
 import AbcGameKeyboard from "../components/AbcGameKeyboard.vue";
 import AbcGameNumpad from "../components/AbcGameNumpad.vue";
 import { apiGame } from "../services/apiGame.js";
+import OkAnimation from "../components/animations/OkAnimation.vue";
+import TryAgain from "../components/animations/TryAgain.vue";
+import { ref } from "vue";
 
 const router = useRouter();
 
+// view variables
 const data = {
   correction: null,
 };
+const ok = ref(false);
+const bad = ref(false);
 
-const intervalPlay = setInterval(checkRedirect, 5000);
+// view intervals
+/* const intervalPlay = setInterval(checkRedirect, 8000); */
 const intervalCorrection = setInterval(checkCorrection, 4000);
-const intervalShow = setInterval(checkShowWord, 5000);
+/* const intervalShow = setInterval(checkShowWord, 5000); */
 
+// view functions
 async function checkShowWord() {
   const response = await apiGame.getShow();
 
@@ -31,24 +39,28 @@ async function checkShowWord() {
 async function checkCorrection() {
   const response = await apiGame.getCorrection();
 
-  const correction = response.data.data;
+  const correction = await response.data.data;
 
   if (correction === null) {
     return;
   }
 
   if (correction === 1) {
+    ok.value = true;
+
     await apiGame.correctionNull(data);
 
-    alert("GOOD CORRECTION");
+    setTimeout(setTofalse, 3000);
 
     return;
   }
 
   if (correction === 0) {
+    bad.value = true;
+
     await apiGame.correctionNull(data);
 
-    alert("BAD CORRECTION");
+    setTimeout(setTofalse, 3000);
 
     return;
   }
@@ -89,11 +101,21 @@ async function callDatabase() {
 
   return response.data.data;
 }
+
+async function setTofalse() {
+  ok.value = false;
+  bad.value = false;
+}
 </script>
 
 <template>
   <main>
     <AbcGameKeyboard />
+
+    <OkAnimation v-if="ok === true" />
+
+    <TryAgain v-if="bad === true" />
+
     <AbcGameNumpad />
   </main>
   <RouterView />
@@ -120,6 +142,4 @@ main {
   grid-column: 11 / 12;
   grid-row: 1;
 }
-
-
 </style>
