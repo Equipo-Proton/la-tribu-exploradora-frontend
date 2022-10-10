@@ -16,9 +16,9 @@ export default {
     }, 1000);
   },
   beforeUnmount() {
-    clearInterval(this.timer)
+    clearInterval(this.timer);
   },
-  
+
   data() {
     return {
       list1: [
@@ -27,7 +27,7 @@ export default {
         { name: "2", id: 30 },
         { name: "3", id: 31 },
         { name: "4", id: 32 },
-        { name: "5", id: 33 },  
+        { name: "5", id: 33 },
         { name: "6", id: 34 },
         { name: "7", id: 35 },
         { name: "8", id: 36 },
@@ -71,11 +71,10 @@ export default {
     clearField() {
       this.list2 = [];
     },
-    sort(){
+    sort() {
       this.list1 = this.list1.sort((a, b) => a.id - b.id);
-    }
+    },
   },
-  
 };
 </script>
 
