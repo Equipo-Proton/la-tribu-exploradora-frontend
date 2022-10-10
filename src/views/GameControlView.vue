@@ -9,7 +9,7 @@ import StudentBox from "../components/StudentBox.vue";
 </template>
 <style scoped>
 main {
-  background-color: var(--base-color-white-2);
+  background-color: var(--background-color-blue);
   font-family: var(--font-family-secondary);
 }
 </style>

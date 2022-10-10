@@ -83,6 +83,7 @@ main {
   column-gap: 10vw;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
+  row-gap: 0;
   align-items: center;
   justify-content: center;
   padding: 4vh;
@@ -125,5 +126,12 @@ button {
   margin-top: -5vh;
   position: relative;
   margin-bottom: 0;
+}
+
+@media only screen and (orientation: portrait) {
+
+  .bird {
+  width: 6vw;
+}
 }
 </style>
