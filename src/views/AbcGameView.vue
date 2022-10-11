@@ -51,7 +51,7 @@ async function checkCorrection() {
     await apiGame.correctionNull(data);
 
     // modal disappears after 3s
-    setTimeout(setTofalse, 3000);
+    setTimeout(setToFalseGood, 3000);
 
     return;
   }
@@ -62,7 +62,7 @@ async function checkCorrection() {
     await apiGame.correctionNull(data);
 
     // modal disappears after 3s
-    setTimeout(setTofalse, 3000);
+    setTimeout(setToFalseBad, 3000);
 
     return;
   }
@@ -107,10 +107,12 @@ async function callDatabase() {
 }
 
 // function disappear modals
-async function setTofalse() {
-  ok.value = false;
+async function setToFalseBad() {
   bad.value = false;
   location.reload();
+}
+async function setToFalseGood() {
+  ok.value = false;
 }
 </script>
 
@@ -147,5 +149,27 @@ main {
 .num-pad {
   grid-column: 11 / 12;
   grid-row: 1;
+}
+@media only screen and (orientation: portrait) {
+  main {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color-blue);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 2vw;
+    align-items: center;
+    font-weight: bold;
+    color: var(--font-color);
+  }
+  .keyboard {
+    grid-column: 2 / 12;
+    grid-row: 1;
+  }
+  .num-pad {
+    grid-column: 6 / 9;
+    grid-row: 2;
+  }
 }
 </style>
