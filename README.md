@@ -1,28 +1,73 @@
-<img src="src/assets/img/HeaderLogo.png"/>
+<p align="center"> <img src="src/assets/img/HeaderLogo.png"/> </p>
 
-## Project Name: Aña añerando la tribu exploradora
+## Project's name: Aña añerando la tribu exploradora
 
-## Description
+## Table of contents
 
-This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNALÓN). A Web Application as a Game to help kids between 3 to 6 six years old to learn words and vocabulary while they are playing a game.
-As a software team we have to build an app that allows children learn by doing through techonology.
+- [General info](#general-info)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Versions](#versions)
+## General info
+
+This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNALÓN). A Web Application as a Game to help kids between 3 to 6 six years old to learn words and vocabulary while they are playing a game. As a software team we have to build an app that allows children learn by doing through techonology.
+
+## Technologies
+
+|                                                                                                                                       Front End                                                                                                                                       |                                                                Back End                                                                 |                                                                                             Diseño y organización                                                                                              |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/Yelose/Yelose/blob/main/img/vscode.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/html.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/bootstrap.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/css.png"> | <img src="https://github.com/Yelose/Yelose/blob/main/img/php.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/mysql.png"> | <img src="https://github.com/Yelose/Yelose/blob/main/img/figma.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/jira.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/google.png"> |
+
+## Setup
+
+To run this project, install it locally using npm.
+
+
+Clone the project
+
+```bash
+  git clone https://github.com/Equipo-Proton/la-tribu-exploradora-frontend.git
+```
+
+Go to the project directory
+
+```bash
+  cd la-tribu-exploradora-frontend
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+   npm run dev
+```
+## Versions
+<p align="center"> <img src="src/assets/img/Versions.png"/> </p>
+Our workflow in git was as follows, we all started from the Main branch with the same base, implementations, changes and features were made in the Develop branch, they were tested in the Release branch and from Release versions with checkpoints were released and updated the Develop branch to continue development with all the features tested and thus not generate a cycle of bugs.
+
+- v1.0.
+- v1.1.
+- v1.2.
 
 ## Visual Design
 
-## Requirementes
+## Requirements
 
-<ul>
-<li>App will have some administrators (teachers) and some users (classes). One user is a class.</li>
-<li>Teachers can choose what games are active.</li>
-<li>Users only can play to active games.</li>
-<li>We will build a game.</li>
-<li>Plain design. Adaptative design (children).</li>
-<li>Responsive design (tablet, computer and digital board.</li>
-<li>Project will be 100% scalable and we will can add more games.</li>
-<li>Project will be 100% tested.</li>
-</ul>
+- [x] App will have some administrators (teachers) and some users (classes). One user is a class.
+- [x] Teachers can choose what games are active.
+- [x] Users only can play to active games.
+- [x] We will build a game.
+- [x] Plain design. Adaptative design (children).
+- [x] Responsive design (tablet, computer and digital board.
+- [x] Project will be 100% scalable and we will can add more games.
+- [x] Project will be 100% tested.
 
-## The Game
+## Game description
 
 <ul>
 <li>Game consists of numbers and letters.</li>
@@ -34,7 +79,6 @@ As a software team we have to build an app that allows children learn by doing t
 ## Presentation:
 
 <ul>
-<li>GitHub link.</li>
 <li>Readme with:</li>
     <ul>
         <li>Briefing and project explanation.</li>
@@ -46,22 +90,12 @@ As a software team we have to build an app that allows children learn by doing t
 
 </ul>
 
----
-
----
-
 ## Work methodology
 
 - TDD
 - Agile
 - Scrum
 - Pair programming
-
-## Tools and technologies used
-
-|                                                                                                                                                                                                                                                                                                                                           Front End                                                                                                                                                                                                                                                                                                                                           |                                                                Back End                                                                 |                                                                                             Diseño y organización                                                                                              |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://github.com/Yelose/Yelose/blob/main/img/vscode.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/html.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/bootstrap.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/css.png">  | <img src="https://github.com/Yelose/Yelose/blob/main/img/php.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/mysql.png"> | <img src="https://github.com/Yelose/Yelose/blob/main/img/figma.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/jira.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/google.png"> |
 
 ## Documentation
 
