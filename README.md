@@ -8,20 +8,20 @@
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Versions](#versions)
+
 ## General info
 
 This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNALÓN). A Web Application as a Game to help kids between 3 to 6 six years old to learn words and vocabulary while they are playing a game. As a software team we have to build an app that allows children learn by doing through techonology.
 
 ## Technologies
 
-|                                                                                                                                       Front End                                                                                                                                       |                                                                Back End                                                                 |                                                                                             Diseño y organización                                                                                              |
+<p align="center">|                                                                                                                                       Front End                                                                                                                                       |                                                                Back End                                                                 |                                                                                             Diseño y organización                                                                                              |
 | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://github.com/Yelose/Yelose/blob/main/img/vscode.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/html.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/bootstrap.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/css.png"> | <img src="https://github.com/Yelose/Yelose/blob/main/img/php.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/mysql.png"> | <img src="https://github.com/Yelose/Yelose/blob/main/img/figma.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/jira.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/google.png"> |
+| <img src="https://github.com/Yelose/Yelose/blob/main/img/vscode.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/html.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/bootstrap.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/css.png"> | <img src="https://github.com/Yelose/Yelose/blob/main/img/php.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/mysql.png"> | <img src="https://github.com/Yelose/Yelose/blob/main/img/figma.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/jira.png"> <img src="https://github.com/Yelose/Yelose/blob/main/img/google.png"> |</p>
 
 ## Setup
 
 To run this project, install it locally using npm.
-
 
 Clone the project
 
@@ -46,7 +46,9 @@ Start the server
 ```bash
    npm run dev
 ```
+
 ## Versions
+
 <p align="center"> <img src="src/assets/img/Versions.png"/> </p>
 Our workflow in git was as follows, we all started from the Main branch with the same base, implementations, changes and features were made in the Develop branch, they were tested in the Release branch and from Release versions with checkpoints were released and updated the Develop branch to continue development with all the features tested and thus not generate a cycle of bugs.
 
