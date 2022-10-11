@@ -51,7 +51,7 @@ async function checkCorrection() {
     await apiGame.correctionNull(data);
 
     // modal disappears after 3s
-    setTimeout(setTofalse, 3000);
+    setTimeout(setToFalseGood, 3000);
 
     return;
   }
@@ -62,7 +62,7 @@ async function checkCorrection() {
     await apiGame.correctionNull(data);
 
     // modal disappears after 3s
-    setTimeout(setTofalse, 3000);
+    setTimeout(setToFalseBad, 3000);
 
     return;
   }
@@ -107,10 +107,12 @@ async function callDatabase() {
 }
 
 // function disappear modals
-async function setTofalse() {
-  ok.value = false;
+async function setToFalseBad() {
   bad.value = false;
   location.reload();
+}
+async function setToFalseGood() {
+  ok.value = false;
 }
 </script>
 
