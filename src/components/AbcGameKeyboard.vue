@@ -288,7 +288,7 @@ export default {
 
 .mayus-button {
   background-color: var(--base-color-blue);
-  font-size: 150%;
+  font-size: 3vh;
 }
 
 .ready-button {
@@ -301,5 +301,37 @@ export default {
 }
 img {
   height: 2vw;
+}
+
+@media only screen and (orientation: portrait) {
+  .drag-el {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5vw;
+    min-height: 4vh;
+    border-radius: 1vw;
+    background-color: var(--base-color-purple);
+    font-family: var(--font-family-game);
+    font-size: 2vw;
+    margin: auto;
+    cursor: grab;
+  }
+  .drop-el {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 7vw;
+    min-height: 5vh;
+    border-radius: 1vw;
+    background-color: var(--base-color-purple);
+    font-family: var(--font-family-game);
+    font-size: 2vw;
+    cursor: grab;
+  }
+  .mayus-button {
+    background-color: var(--base-color-blue);
+    font-size: 2vh;
+  }
 }
 </style>

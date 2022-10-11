@@ -68,8 +68,8 @@ export default {
 
   <main>
     <div class="secret-word">
+      <label for="name"><b>PALABRA SECRETA</b></label>
       <form @submit.prevent="sendShow">
-        <label for="name"><b>PALABRA SECRETA</b></label>
         <input
           type="text"
           placeholder="Introduce la palabra secreta"
@@ -77,10 +77,10 @@ export default {
           id="name"
           v-model="showData.show"
         />
-        <button type="submit">
-          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-        </button>
       </form>
+      <button class="eye" type="submit">
+        <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+      </button>
     </div>
     <div class="student-container">
       <div v-for="(student, index) in students" :key="index">
@@ -110,7 +110,9 @@ main {
   row-gap: 1vh;
   margin-bottom: 3vh;
 }
-
+.eye {
+  background-color: transparent;
+}
 label {
   font-size: 1.5vw;
 }
