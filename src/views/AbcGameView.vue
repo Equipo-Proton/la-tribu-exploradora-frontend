@@ -150,4 +150,26 @@ main {
   grid-column: 11 / 12;
   grid-row: 1;
 }
+@media only screen and (orientation: portrait) {
+  main {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color-blue);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 2vw;
+    align-items: center;
+    font-weight: bold;
+    color: var(--font-color);
+  }
+  .keyboard {
+    grid-column: 2 / 12;
+    grid-row: 1;
+  }
+  .num-pad {
+    grid-column: 6 / 9;
+    grid-row: 2;
+  }
+}
 </style>
