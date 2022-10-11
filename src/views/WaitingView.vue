@@ -4,7 +4,7 @@ import { apiGame } from "../services/apiGame.js";
 
 const router = useRouter();
 
-const interval = setInterval(checkToPlayView, 5000);
+const interval = setInterval(checkToPlayView, 1000);
 
 async function checkToPlayView() {
   const playValue = await callDatabase();

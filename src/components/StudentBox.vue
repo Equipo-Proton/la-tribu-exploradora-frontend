@@ -14,9 +14,6 @@ export default {
       showData: {
         show: null,
       },
-      nullData: {
-        show: null,
-      },
     };
   },
 
@@ -30,7 +27,7 @@ export default {
     },
 
     interval() {
-      setInterval(this.listStudents, 5000);
+      setInterval(this.listStudents, 1000);
     },
 
     // send correct word to the students
@@ -42,14 +39,18 @@ export default {
       if (verify === true) {
         await apiGame.show(this.showData);
 
-       /*  setTimeout(apiGame.show(this.nullData), 7000); */
-
-        alert("Has enviado la palabra correcta");
+        setTimeout(this.timeOutShow, 100);
 
         return;
       }
 
       return;
+    },
+
+    async timeOutShow() {
+      this.showData.show = null;
+
+      await apiGame.show(this.showData);
     },
   },
 

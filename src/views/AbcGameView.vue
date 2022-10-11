@@ -16,9 +16,9 @@ const ok = ref(false);
 const bad = ref(false);
 
 // intervals for database data
-const intervalPlay = setInterval(checkRedirect, 8000);
-const intervalCorrection = setInterval(checkCorrection, 4000);
-const intervalShow = setInterval(checkShowWord, 4000);
+const intervalPlay = setInterval(checkRedirect, 1000);
+const intervalCorrection = setInterval(checkCorrection, 1000);
+const intervalShow = setInterval(checkShowWord, 1000);
 
 // correct word is shown to the students
 async function checkShowWord() {

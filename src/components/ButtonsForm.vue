@@ -9,6 +9,9 @@ export default {
       obj: {
         play: true,
       },
+      data: {
+        word: null,
+      },
     };
   },
 
@@ -24,12 +27,22 @@ export default {
         return;
       }
     },
+
+    async load() {
+      const verify = confirm(
+        "¿Estás seguro de que quieres reiniciar el juego?"
+      );
+
+      if (verify === true) {
+        await apiGame.wordNull(this.data);
+      }
+    },
   },
 };
 </script>
 <template>
   <div class="buttons-game-control">
-    <button v-on:click="play" type="button" class="button-left">
+    <button v-on:click="load" type="button" class="button-left">
       Reiniciar Juego
     </button>
     <button v-on:click="play" type="button" class="button-right">
@@ -38,7 +51,6 @@ export default {
   </div>
 </template>
 <style scoped>
-
 .buttons-game-control {
   display: flex;
   width: 50vw;
@@ -76,17 +88,16 @@ export default {
 }
 
 @media only screen and (orientation: portrait) {
-
-.button-left,
-.button-right {
-  border: 0px;
-  height: 6vh;
-  width: 15vw;
-  color: var(--base-color-white-2);
-  border-radius: 0.7vw;
-  font-size: 2.5vw;
-  text-align: center;
-  font-weight: bold;
-}
+  .button-left,
+  .button-right {
+    border: 0px;
+    height: 6vh;
+    width: 15vw;
+    color: var(--base-color-white-2);
+    border-radius: 0.7vw;
+    font-size: 2.5vw;
+    text-align: center;
+    font-weight: bold;
+  }
 }
 </style>
