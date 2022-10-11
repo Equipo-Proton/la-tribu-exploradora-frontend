@@ -26,6 +26,7 @@ export default {
   },
 
   methods: {
+    // good correction to the student
     async sendGoodCorrection() {
       this.jsonData.correct = true;
 
@@ -34,6 +35,7 @@ export default {
       alert("Has enviado una buena corrección");
     },
 
+    // bad correction to the student
     async sendBadCorrection() {
       this.jsonData.correct = false;
 
@@ -46,24 +48,7 @@ export default {
       alert("Has enviado una mala corrección");
     },
 
-    /*  async sendShow() {
-      const verify = confirm(
-        "Estás seguro/a de que quieres enviar la palabra correcta"
-      );
-
-      if (verify === true) {
-        await apiGame.show(this.studentId, this.showData);
-
-        console.log(this.showValue);
-
-        alert("Has enviado la palabra correcta");
-
-        return;
-      }
-
-      return;
-    }, */
-
+    // reset the word student
     async resetWord() {
       await apiGame.wordStudentNull(this.wordData, this.studentId);
 
@@ -89,9 +74,7 @@ export default {
         </button>
       </div>
       <div class="options">
-        <!--  <button v-on:click="sendShow"> -->
-        <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-        <!--   </button> -->
+        <!--    <img src="../assets/img/orangeEye.svg" alt="orange Eye" /> -->
         <button v-on:click="resetWord">
           <img src="../assets/img/restartWord.svg" alt="restart Word" />
         </button>

@@ -75,8 +75,8 @@ export const apiGame = {
     });
   },
 
-  show(id, jsonData) {
-    return axios.patch(baseUrl + `/game/show/${id}`, jsonData, {
+  show(jsonData) {
+    return axios.patch(baseUrl + `/game/show`, jsonData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

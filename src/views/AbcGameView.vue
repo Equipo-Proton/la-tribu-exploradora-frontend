@@ -7,21 +7,20 @@ import OkAnimation from "../components/animations/OkAnimation.vue";
 import TryAgain from "../components/animations/TryAgain.vue";
 import { ref } from "vue";
 
+// variables
 const router = useRouter();
-
-// view variables
 const data = {
   correction: null,
 };
 const ok = ref(false);
 const bad = ref(false);
 
-// view intervals
-/* const intervalPlay = setInterval(checkRedirect, 8000); */
+// intervals for database data
+const intervalPlay = setInterval(checkRedirect, 8000);
 const intervalCorrection = setInterval(checkCorrection, 4000);
-/* const intervalShow = setInterval(checkShowWord, 5000); */
+const intervalShow = setInterval(checkShowWord, 4000);
 
-// view functions
+// correct word is shown to the students
 async function checkShowWord() {
   const response = await apiGame.getShow();
 
@@ -36,6 +35,7 @@ async function checkShowWord() {
   }
 }
 
+// correction is sent to the student
 async function checkCorrection() {
   const response = await apiGame.getCorrection();
 
@@ -50,6 +50,7 @@ async function checkCorrection() {
 
     await apiGame.correctionNull(data);
 
+    // modal disappears after 3s
     setTimeout(setTofalse, 3000);
 
     return;
@@ -60,12 +61,14 @@ async function checkCorrection() {
 
     await apiGame.correctionNull(data);
 
+    // modal disappears after 3s
     setTimeout(setTofalse, 3000);
 
     return;
   }
 }
 
+// check if student has permission to play
 async function checkRedirect() {
   const playValue = await callDatabase();
 
@@ -78,6 +81,7 @@ function checkPlayValue(playValue) {
   if (playValue === 0) {
     clearInterval(intervalPlay);
     clearInterval(intervalCorrection);
+    clearInterval(intervalShow);
 
     router.push({ path: "/waiting" });
 
@@ -102,9 +106,11 @@ async function callDatabase() {
   return response.data.data;
 }
 
+// function disappear modals
 async function setTofalse() {
   ok.value = false;
   bad.value = false;
+  location.reload();
 }
 </script>
 

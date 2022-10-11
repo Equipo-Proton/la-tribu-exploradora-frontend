@@ -2,6 +2,7 @@
 import TheHeader from "./TheHeader.vue";
 import ButtonsForm from "./ButtonsForm.vue";
 import { apiUsers } from "../services/apiUsers.js";
+import { apiGame } from "../services/apiGame.js";
 import StudentItem from "./StudentItem.vue";
 
 export default {
@@ -10,6 +11,12 @@ export default {
   data() {
     return {
       students: [],
+      showData: {
+        show: null,
+      },
+      nullData: {
+        show: null,
+      },
     };
   },
 
@@ -24,6 +31,25 @@ export default {
 
     interval() {
       setInterval(this.listStudents, 5000);
+    },
+
+    // send correct word to the students
+    async sendShow() {
+      const verify = confirm(
+        "Estás seguro/a de que quieres enviar la palabra correcta"
+      );
+
+      if (verify === true) {
+        await apiGame.show(this.showData);
+
+       /*  setTimeout(apiGame.show(this.nullData), 7000); */
+
+        alert("Has enviado la palabra correcta");
+
+        return;
+      }
+
+      return;
     },
   },
 
@@ -41,13 +67,19 @@ export default {
 
   <main>
     <div class="secret-word">
-      <label for="name"><b>PALABRA SECRETA</b></label>
-      <input
-        type="text"
-        placeholder="Introduce la palabra secreta"
-        name=""
-        id="name"
-      />
+      <form @submit.prevent="sendShow">
+        <label for="name"><b>PALABRA SECRETA</b></label>
+        <input
+          type="text"
+          placeholder="Introduce la palabra secreta"
+          name=""
+          id="name"
+          v-model="showData.show"
+        />
+        <button type="submit">
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+        </button>
+      </form>
     </div>
     <div class="student-container">
       <div v-for="(student, index) in students" :key="index">
@@ -55,8 +87,8 @@ export default {
       </div>
     </div>
     <div class="buttons">
-    <ButtonsForm></ButtonsForm>
-  </div>
+      <ButtonsForm></ButtonsForm>
+    </div>
   </main>
 </template>
 
@@ -107,12 +139,12 @@ input {
 
 @media only screen and (orientation: portrait) {
   input {
-  width: 60vw;
-  height: 6vh;
-  border: 0.2vw solid var(--base-color-orange);
-  border-radius: 0.8vw;
-  text-align: center;
-  font-size: 3.5vw;
-}
+    width: 60vw;
+    height: 6vh;
+    border: 0.2vw solid var(--base-color-orange);
+    border-radius: 0.8vw;
+    text-align: center;
+    font-size: 3.5vw;
+  }
 }
 </style>
