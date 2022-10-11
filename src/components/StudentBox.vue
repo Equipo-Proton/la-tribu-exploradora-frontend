@@ -39,7 +39,7 @@ export default {
       if (verify === true) {
         await apiGame.show(this.showData);
 
-        setTimeout(this.timeOutShow, 100);
+        setTimeout(this.timeOutShow, 1000);
 
         return;
       }
@@ -69,7 +69,10 @@ export default {
   <main>
     <div class="secret-word">
       <label for="name"><b>PALABRA SECRETA</b></label>
-      <form @submit.prevent="sendShow">
+      <form
+        @submit.prevent="sendShow"
+        class="d-flex flex-column justify-content-center align-items-center"
+      >
         <input
           type="text"
           placeholder="Introduce la palabra secreta"
@@ -77,10 +80,10 @@ export default {
           id="name"
           v-model="showData.show"
         />
+        <button class="eye" type="submit">
+          <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
+        </button>
       </form>
-      <button class="eye" type="submit">
-        <img src="../assets/img/orangeEye.svg" alt="orange Eye" />
-      </button>
     </div>
     <div class="student-container">
       <div v-for="(student, index) in students" :key="index">
