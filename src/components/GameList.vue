@@ -86,4 +86,29 @@ button {
 .stop {
   background-color: var(--color-warning);
 }
+@media only screen and (orientation: portrait) {
+  .gamesBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    height: auto;
+    background: #ffffff;
+    border: 1px solid #a5a2a9;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 3vh;
+    margin-bottom: 4vh;
+    padding: 2vh;
+  }
+  .game {
+    width: 50vw;
+    height: 25vh;
+    border: solid 0.5vh var(--base-color-green);
+    border-radius: 3vh;
+    margin: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 </style>

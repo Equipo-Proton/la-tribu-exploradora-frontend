@@ -59,13 +59,13 @@ export default {
     </div>
     <div class="appTitle">AÑA: añerando, la Tribu Exploradora</div>
     <div class="user">
-      <div>
+      <div class="text">
+        <div><img src="../assets/icons/iconUser.svg" /></div>
         <p v-if="name != undefined">{{ name }}</p>
         <p v-if="name === null">¡Hola!</p>
       </div>
-      <div><img src="../assets/icons/iconUser.svg" /></div>
-      <div><button id="logout" v-on:click="logout">Salir</button></div>
-    </div>
+        <div><button id="logout" v-on:click="logout">Salir</button></div>
+      </div>
   </header>
 </template>
 
@@ -79,10 +79,15 @@ header {
   justify-content: space-around;
 }
 
-img #logo {
-  width: 100%;
-  height: 95%;
+.logo img {
+  height: 12vh;
 }
+.text{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
 header,
 .user {
   display: flex;
@@ -108,6 +113,9 @@ header,
 .user div {
   margin: 0 0.5vw 0 0.5vw;
 }
+.user img {
+    height: 3.5vh;
+  }
 
 #logout {
   border: none;
@@ -115,5 +123,33 @@ header,
   height: 4vh;
   border-radius: 10vh;
   background-color: var(--purple-dark);
+}
+
+@media only screen and (orientation: portrait) {
+  .appTitle {
+    font-weight: 700;
+    font-size: 1.75vh;
+    color: var(--base-color-orange);
+    width: 40vw;
+  }
+  .logo img {
+    height: 10vh;
+  }
+
+  .user img {
+    height: 3vh;
+  }
+  #logout {
+  border: none;
+  width: 9vw;
+  height: 4vh;
+  border-radius: 10vh;
+  background-color: var(--purple-dark);
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 }
 </style>
