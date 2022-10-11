@@ -1,21 +1,15 @@
 <script>
 export default {
   name: "OkAnimation",
-  data() {
-    return {
-      showModal: false,
-    };
-  },
 };
 </script>
 
 <template>
-  <div class="modal-overlay" v-if="showModal" @click="showModal = false">
+  <div class="modal-overlay">
     <div class="modal-body zoomIn">
       <img src="../../assets/img/ok.png" alt="" />
     </div>
   </div>
-  <button @click="showModal = true">Test Ok</button>
 </template>
 
 <style scoped>

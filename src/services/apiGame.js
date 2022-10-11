@@ -51,6 +51,14 @@ export const apiGame = {
     });
   },
 
+  wordStudentNull(jsonData, id) {
+    return axios.patch(baseUrl + `/game/wordnull/` + id, jsonData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
+
   sendCorrection(id, jsonData) {
     return axios.patch(baseUrl + `/game/sendcorrection/${id}`, jsonData, {
       headers: {
@@ -61,6 +69,22 @@ export const apiGame = {
 
   correctionNull(data) {
     return axios.patch(baseUrl + `/game/correctionnull`, data, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
+
+  show(jsonData) {
+    return axios.patch(baseUrl + `/game/show`, jsonData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
+
+  getShow() {
+    return axios.get(baseUrl + `/game/getshow`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

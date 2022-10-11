@@ -12,12 +12,11 @@ export default {
     draggable,
   },
   mounted: function () {
-  this.timer = setInterval(() => {
-    this.sort()
-  }, 1000)
-},
+    this.timer = setInterval(() => {
+      this.sort();
+    }, 1000);
+  },
 
- 
   data() {
     return {
       timer: null,
@@ -54,13 +53,13 @@ export default {
       ],
       list2: [],
       list3: [
-        { name: "A", id: 39},
+        { name: "A", id: 39 },
         { name: "B", id: 40 },
         { name: "C", id: 41 },
         { name: "D", id: 42 },
         { name: "E", id: 43 },
         { name: "F", id: 44 },
-        { name: "G", id: 45},
+        { name: "G", id: 45 },
         { name: "H", id: 46 },
         { name: "I", id: 47 },
         { name: "J", id: 48 },
@@ -85,8 +84,8 @@ export default {
     };
   },
   beforeUnmount() {
-  clearInterval(this.timer)
-},
+    clearInterval(this.timer);
+  },
   methods: {
     log: function (evt) {
       window.console.log(evt);
@@ -122,32 +121,26 @@ export default {
     deleteLetter() {
       this.list2.pop();
     },
-    
-    toggle(){
-      if (this.lowercase && !this.uppercase){
+
+    toggle() {
+      if (this.lowercase && !this.uppercase) {
         this.lowercase = false;
         this.uppercase = true;
-      }
-
-      else{
+      } else {
         this.lowercase = true;
         this.uppercase = false;
       }
-
     },
 
-    sort(){
+    sort() {
       this.list3 = this.list3.sort((a, b) => a.id - b.id);
       this.list1 = this.list1.sort((a, b) => a.id - b.id);
-    }
+    },
   },
-   
 };
 </script>
 
 <template>
-
-
   <div class="keyboard">
     <draggable
       class="drop-zone"
@@ -180,7 +173,6 @@ export default {
       </draggable>
     </div>
 
-    
     <div v-if="uppercase">
       <draggable
         class="drag-zone"
@@ -197,7 +189,7 @@ export default {
         </template>
       </draggable>
     </div>
-        
+
     <rawDisplayer :value="list1" title="List 1" />
 
     <rawDisplayer :value="list2" title="List 2" />
@@ -219,7 +211,9 @@ export default {
         ABC
       </button>
 
-      <button @click="sendWord" type="submit" class="ready-button">¡Listo!</button>
+      <button @click="sendWord" type="submit" class="ready-button">
+        <img src="../assets/img/submitIcon.png" />
+      </button>
       <button @click="deleteLetter" type="button" class="delete-button">
         <img src="../assets/img/deleteIcon.png" alt="Borrar" />
       </button>
@@ -227,7 +221,9 @@ export default {
   </div>
 </template>
 
+
 <style scoped>
+
 .drop-zone {
   display: flex;
   align-items: center;

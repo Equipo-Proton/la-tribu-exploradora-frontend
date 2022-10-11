@@ -16,6 +16,10 @@ export default {
   },
 
   methods: {
+    clearStorage() {
+      localStorage.clear();
+    },
+
     async correctLogin() {
       const response = await apiAuth.login(this.form);
 
@@ -77,6 +81,10 @@ export default {
       this.incorrect = false;
       this.noRegister = false;
     },
+  },
+
+  created() {
+    this.clearStorage();
   },
 };
 </script>

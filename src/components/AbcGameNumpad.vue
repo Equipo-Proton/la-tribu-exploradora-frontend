@@ -16,9 +16,9 @@ export default {
     }, 1000);
   },
   beforeUnmount() {
-    clearInterval(this.timer)
+    clearInterval(this.timer);
   },
-  
+
   data() {
     return {
       list1: [
@@ -27,7 +27,7 @@ export default {
         { name: "2", id: 30 },
         { name: "3", id: 31 },
         { name: "4", id: 32 },
-        { name: "5", id: 33 },  
+        { name: "5", id: 33 },
         { name: "6", id: 34 },
         { name: "7", id: 35 },
         { name: "8", id: 36 },
@@ -71,11 +71,10 @@ export default {
     clearField() {
       this.list2 = [];
     },
-    sort(){
+    sort() {
       this.list1 = this.list1.sort((a, b) => a.id - b.id);
-    }
+    },
   },
-  
 };
 </script>
 
@@ -133,9 +132,11 @@ export default {
   border-radius: 1vw;
   border: 0.3vw solid var(--base-color-purple);
   background-color: var(--base-color-white);
-  font-family: var(--font-family-game);
+  font-family: var(--font-family-secondary);
   margin: 1vw auto;
   cursor: grab;
+  font-size: 2vw;
+  font-weight: bolder;
 }
 .drag-zone {
   display: grid;
@@ -151,7 +152,7 @@ export default {
   min-height: 4.5vw;
   border-radius: 50px;
   background-color: var(--base-color-orange);
-  font-family: var(--font-family-game);
+  font-family: var(--font-family-secondary);
   font-size: 2vw;
   margin: auto;
   cursor: grab;

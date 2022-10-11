@@ -3,42 +3,72 @@ import { RouterView, useRouter } from "vue-router";
 import AbcGameKeyboard from "../components/AbcGameKeyboard.vue";
 import AbcGameNumpad from "../components/AbcGameNumpad.vue";
 import { apiGame } from "../services/apiGame.js";
+import OkAnimation from "../components/animations/OkAnimation.vue";
+import TryAgain from "../components/animations/TryAgain.vue";
+import { ref } from "vue";
 
+// variables
 const router = useRouter();
-
 const data = {
   correction: null,
 };
+const ok = ref(false);
+const bad = ref(false);
 
-const intervalPlay = setInterval(checkRedirect, 5000);
-const intervalCorrection = setInterval(checkCorrection, 4000);
+// intervals for database data
+const intervalPlay = setInterval(checkRedirect, 1000);
+const intervalCorrection = setInterval(checkCorrection, 1000);
+const intervalShow = setInterval(checkShowWord, 1000);
 
+// correct word is shown to the students
+async function checkShowWord() {
+  const response = await apiGame.getShow();
+
+  const show = response.data.data;
+
+  if (show === null) {
+    return;
+  }
+
+  if (show != null) {
+    alert(`This is the correct word... ${show}`);
+  }
+}
+
+// correction is sent to the student
 async function checkCorrection() {
   const response = await apiGame.getCorrection();
 
-  const correction = response.data.data;
+  const correction = await response.data.data;
 
   if (correction === null) {
     return;
   }
 
   if (correction === 1) {
+    ok.value = true;
+
     await apiGame.correctionNull(data);
 
-    alert("GOOD CORRECTION");
+    // modal disappears after 3s
+    setTimeout(setTofalse, 3000);
 
     return;
   }
 
   if (correction === 0) {
+    bad.value = true;
+
     await apiGame.correctionNull(data);
 
-    alert("BAD CORRECTION");
+    // modal disappears after 3s
+    setTimeout(setTofalse, 3000);
 
     return;
   }
 }
 
+// check if student has permission to play
 async function checkRedirect() {
   const playValue = await callDatabase();
 
@@ -51,6 +81,7 @@ function checkPlayValue(playValue) {
   if (playValue === 0) {
     clearInterval(intervalPlay);
     clearInterval(intervalCorrection);
+    clearInterval(intervalShow);
 
     router.push({ path: "/waiting" });
 
@@ -74,11 +105,23 @@ async function callDatabase() {
 
   return response.data.data;
 }
+
+// function disappear modals
+async function setTofalse() {
+  ok.value = false;
+  bad.value = false;
+  location.reload();
+}
 </script>
 
 <template>
   <main>
     <AbcGameKeyboard />
+
+    <OkAnimation v-if="ok === true" />
+
+    <TryAgain v-if="bad === true" />
+
     <AbcGameNumpad />
   </main>
   <RouterView />

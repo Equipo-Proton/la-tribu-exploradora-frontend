@@ -1,21 +1,15 @@
 <script>
 export default {
   name: "TryAgain",
-  data() {
-    return {
-      showModal: false,
-    };
-  },
 };
 </script>
 
 <template>
-  <div class="modal-overlay" v-if="showModal" @click="showModal = false">
+  <div class="modal-overlay">
     <div class="modal-body zoomIn">
       <img src="../../assets/img/TryAgain.png" alt="" />
     </div>
   </div>
-  <button @click="showModal = true">Test TryAgain</button>
 </template>
 
 <style scoped>

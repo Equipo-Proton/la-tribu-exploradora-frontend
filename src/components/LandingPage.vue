@@ -1,4 +1,18 @@
-<script></script>
+<script>
+export default {
+  name: "LandingPage",
+
+  methods: {
+    clearStorage() {
+      localStorage.clear();
+    },
+  },
+
+  created() {
+    this.clearStorage();
+  },
+};
+</script>
 
 <template>
   <div>
