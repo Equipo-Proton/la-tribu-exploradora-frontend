@@ -142,3 +142,5 @@ Our workflow in git was as follows, we all started from the Main branch with the
 - [Factoria F5](https://factoriaf5.org/?gclid=Cj0KCQjwy5maBhDdARIsAMxrkw0EF7pGqIr-Pip3eRLWDJxu5McgIqrV4kG3QZg4Z3u8YLn7CBHj-PkaAgfXEALw_wcB)
 - [Awesome README](https://github.com/matiassingers/awesome-readme)
 - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+
+<p align="center"> <img src="https://github.com/Equipo-Proton/la-tribu-exploradora-frontend/blob/main/src/assets/img/ProtonTmLogo.png"/> </p>
