@@ -1,17 +1,32 @@
-<p align="center"> <img src="src/assets/img/HeaderLogo.png"/> </p>
-
 ## Project's name: Aña añerando la tribu exploradora
+
+<p align="center"> <img src="src/assets/img/HeaderLogo.png"/> </p>
 
 ## Table of contents
 
 - [General info](#general-info)
+- [Visual design](#visual-design)
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Versions](#versions)
+- [Requirements](#requirements)
+- [Game description](#game-description)
+- [General characteristics](#general-characteristics)
+- [Work methodology](#work-methodology)
 
 ## General info
 
 This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNALÓN). A Web Application as a Game to help kids between 3 to 6 six years old to learn words and vocabulary while they are playing a game. As a software team we have to build an app that allows children learn by doing through techonology.
+
+## Visual Design
+
+<img src="src/assets/gifs/Desktop-APP.gif"/>
+
+<details><summary>Game</summary>
+
+<img src="src/assets/gifs/Desktop-Game.gif"/>
+
+</details>
 
 ## Technologies
 
@@ -47,16 +62,14 @@ Start the server
    npm run dev
 ```
 
+## Running Tests
+
+`php artisan test` o `vendor/bin/phpunit`
+
 ## Versions
 
 <p align="center"> <img src="src/assets/img/Versions.png"/> </p>
 Our workflow in git was as follows, we all started from the Main branch with the same base, implementations, changes and features were made in the Develop branch, they were tested in the Release branch and from Release versions with checkpoints were released and updated the Develop branch to continue development with all the features tested and thus not generate a cycle of bugs.
-
-- v1.0.
-- v1.1.
-- v1.2.
-
-## Visual Design
 
 ## Requirements
 
@@ -75,50 +88,60 @@ Our workflow in git was as follows, we all started from the Main branch with the
 <li>Game consists of numbers and letters.</li>
 <li>Numbers available (0-9). Letters available (A-Z).</li>
 <li>Admin's screen will start the game and users will have to guess the word, moving the letters.</li>
-<li>Admin on his screen will decide correct or wrong and the result will be visual and sound.</li>
+<li>Admin on his screen will decide correct or wrong and the result will be visual.</li>
 </ul>
 
-## Presentation:
+# General characteristics
 
-<ul>
-<li>Readme with:</li>
-    <ul>
-        <li>Briefing and project explanation.</li>
-        <li>Diagrams.</li>
-        <li>Sketch - Mockup - Prototype.</li>
-    </ul>
-<li>Google Slides presentation.</li>
-<li>Demo and code review</li>
+### Student Users
 
-</ul>
+- They should be registered by a teacher user
+- Your registration will have name, email and password
+- Once registered they will be able to access the waiting screen until the teacher starts the game
 
-## Work methodology
+### Teacher Users
 
-- TDD
-- Agile
-- Scrum
-- Pair programming
+- Teacher users can register students
+- When you log in you will have access to your student panel
+- They will be able to edit, register and delete students from their panel
+- They may give way to the game to the students who have registered
+- You will have access to a game panel where you will receive the answers of the students
+- When a student finishes, the teacher can send a validation from his game panel
+- The teacher can restart or end the game
 
-## Documentation
+### Admin
+
+- Admin can register teachers
+- The administrator will have a panel with all teachers
+- The administrator can edit, register and delete teachers from his panel
+- When a teacher is deleted, the students registered by this teacher will also be deleted
+
+# Work methodology
+
+- TDD, software test-driven development.
+- We use Agile methodology in a Scrum framework.
+- We separated the team into departments with front or back tasks, and we did pair programming to connect the two parts of the project
+
+# Documentation
 
 - [Dailys](https://docs.google.com/document/d/1gGHcJYTPoZo_kbkBN_cQCpXgPu5JvurKWr8xd1vH7Lo/edit)
 - [Presentation PPTX](https://docs.google.com/presentation/d/1TiQ86Y-N194oHaoAA1V5erXUQw2_3wZ_YzafjYdXoQs/edit?usp=sharing)
 - [Prototype](https://www.figma.com/file/HCGDAXOHXuOM567hPHBryR/Proyecto-Pedag%C3%B3gico?node-id=111%3A3)
 - [UserFlow](https://www.figma.com/file/R3aFH6bPeETNHazU5k2zO4/Valnal%C3%B3n-User-Flow?node-id=0%3A1)
 
-## Authors
+# Authors
 
 | Nombre                 |     Roll      | <img src="https://github.com/Yelose/Yelose/blob/main/img/github.png" width="30px" height="30px"> |
 | :--------------------- | :-----------: | :----------------------------------------------------------------------------------------------: |
-| Kerim Ozkan            | Web Developer |                                    https://github.com/ozknkrm                                    |
-| Miguel Salvador        | Web Developer |                             https://github.com/miguelsalvadorrguez85                             |
-| Inma González          | Scrum Master  |                                   https://github.com/mimateach                                   |
 | Guillermo García       | Web Developer |                                 https://github.com/guillerdev97                                  |
+| Inma González          | Scrum Master  |                                   https://github.com/mimateach                                   |
 | Juan Francisco Balseca | Product Owner |                                   https://github.com/sudobuda                                    |
+| Kerim Ozkan            | Web Developer |                                      https://github.ozknkrm                                      |
+| Miguel Salvador        | Web Developer |                             https://github.com/miguelsalvadorrguez85                             |
 | Mario Jiménez          | Web Developer |                                    https://github.com/majifer                                    |
 
 ## Acknowledgements
 
-- [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+- [Factoria F5](https://factoriaf5.org/?gclid=Cj0KCQjwy5maBhDdARIsAMxrkw0EF7pGqIr-Pip3eRLWDJxu5McgIqrV4kG3QZg4Z3u8YLn7CBHj-PkaAgfXEALw_wcB)
 - [Awesome README](https://github.com/matiassingers/awesome-readme)
 - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
