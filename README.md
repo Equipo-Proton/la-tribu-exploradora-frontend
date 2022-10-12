@@ -14,11 +14,11 @@
 - [General characteristics](#general-characteristics)
 - [Work methodology](#work-methodology)
 
-## General info
+# General info
 
 This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNALÓN). A Web Application as a Game to help kids between 3 to 6 six years old to learn words and vocabulary while they are playing a game. As a software team we have to build an app that allows children learn by doing through techonology.
 
-## Visual Design
+# Visual Design
 
 <img src="src/assets/gifs/Desktop-APP.gif"/>
 
@@ -28,7 +28,7 @@ This is a project make for Ciudad Industrial del Valle del Nalón, S.A.U. (VALNA
 
 </details>
 
-## Technologies
+# Technologies
 
 |                                                                                                                                       Front End                                                                                                                                       |                                                                Back End                                                                 |                                                                                             Diseño y organización                                                                                              |
 | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -63,12 +63,12 @@ Start the server
    npm run dev
 ```
 
-## Versions
+# Versions
 
 <p align="center"> <img src="src/assets/img/Versions.png"/> </p>
 Our workflow in git was as follows, we all started from the Main branch with the same base, implementations, changes and features were made in the Develop branch, they were tested in the Release branch and from Release versions with checkpoints were released and updated the Develop branch to continue development with all the features tested and thus not generate a cycle of bugs.
 
-## Requirements
+# Requirements
 
 - [x] App will have some administrators (teachers) and some users (classes). One user is a class.
 - [x] Teachers can choose what games are active.
