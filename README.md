@@ -7,7 +7,7 @@
 - [General info](#general-info)
 - [Visual design](#visual-design)
 - [Technologies](#technologies)
-- [Setup](#setup)
+- [Setup frontend](#setup)
 - [Versions](#versions)
 - [Requirements](#requirements)
 - [Game description](#game-description)
@@ -42,6 +42,7 @@ Clone the project
 
 ```bash
   git clone https://github.com/Equipo-Proton/la-tribu-exploradora-frontend.git
+  git clone https://github.com/Equipo-Proton/la-tribu-exploradora-backend.git
 ```
 
 Go to the project directory
@@ -54,6 +55,8 @@ Install dependencies
 
 ```bash
   npm install
+  
+  compooser update
 ```
 
 Start the server
@@ -61,10 +64,6 @@ Start the server
 ```bash
    npm run dev
 ```
-
-## Running Tests
-
-`php artisan test` o `vendor/bin/phpunit`
 
 ## Versions
 
