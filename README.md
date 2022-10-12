@@ -55,8 +55,6 @@ Install dependencies
 
 ```bash
   npm install
-  
-  compooser update
 ```
 
 Start the server
