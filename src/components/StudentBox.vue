@@ -26,6 +26,7 @@ export default {
       this.students = studentsData;
     },
 
+    // call database to update data
     interval() {
       setInterval(this.listStudents, 1000);
     },
