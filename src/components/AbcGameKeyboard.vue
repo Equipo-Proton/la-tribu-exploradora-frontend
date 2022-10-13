@@ -120,7 +120,7 @@ export default {
       alert("Has enviado la palabra");
     },
 
-    // delete letter function 
+    // delete letter function
     deleteLetter() {
       this.list2.pop();
     },
