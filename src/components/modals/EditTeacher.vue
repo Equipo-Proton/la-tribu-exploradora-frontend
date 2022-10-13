@@ -123,8 +123,14 @@ export default {
 .form-camp {
   display: flex;
   flex-direction: column;
+  width: 35vw;
+  height: 4vh;
 }
 
+input,
+label {
+  font-size: 1vw;
+}
 #editTeacher {
   background-color: var(--base-color-blue);
 }
@@ -135,6 +141,7 @@ button,
   border-radius: 2vh;
   height: 7vh;
   padding: 2vw;
+  margin: 1vw auto;
   display: flex;
   align-items: center;
   color: white;
