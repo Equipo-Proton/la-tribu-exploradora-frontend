@@ -181,6 +181,7 @@ const router = createRouter({
   ],
 });
 
+// before each route check authentication
 router.beforeEach((to) => {
   if (to.meta.requiresAuth && !localStorage.getItem("token")) {
     router.push({
