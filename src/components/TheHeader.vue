@@ -21,9 +21,21 @@ export default {
   },
 
   methods: {
-    // only teachers and directos can logout
+    // only teachers and directors can logout
     async logout() {
       const noSuperAdmin = localStorage.getItem("superAdmin");
+
+      if (noSuperAdmin === "1") {
+        await apiAuth.logoutDirector();
+
+        localStorage.removeItem("token");
+        localStorage.removeItem("name");
+        localStorage.removeItem("isAdmin");
+        localStorage.removeItem("superAdmin");
+
+        this.$router.push("/");
+        return;
+      }
 
       // only teacher can logout and reset play values to default
       if (noSuperAdmin != "1") {
@@ -33,7 +45,7 @@ export default {
 
       await apiAuth.logout();
 
-      // remove data of local storage
+      // remove teacher or director data of local storage
       localStorage.removeItem("token");
       localStorage.removeItem("name");
       localStorage.removeItem("isAdmin");

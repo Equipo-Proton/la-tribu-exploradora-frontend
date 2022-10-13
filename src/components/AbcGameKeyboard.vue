@@ -99,8 +99,10 @@ export default {
 
     // getting the input value and sent to database
     async sendWord() {
+      // object with letters
       const dataObject = this.list2;
 
+      // letters 
       let dataLetters = [];
       dataObject.forEach((letterObj) => {
         const letter = letterObj.name;
@@ -108,9 +110,11 @@ export default {
         dataLetters.push(letter);
       });
 
+      // array to string
       let dataWord = dataLetters.toString("");
       dataWord = dataWord.replace(/, /g, "");
 
+      // data sent to database
       const jsonData = {
         word: dataWord,
       };

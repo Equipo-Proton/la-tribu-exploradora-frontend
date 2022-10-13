@@ -18,6 +18,14 @@ export const apiAuth = {
     });
   },
 
+  logoutDirector() {
+    return axios.get(baseUrl + "/logoutdirector", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  },
+
   getIsAdmin() {
     const isAdmin = localStorage.getItem("isAdmin");
 
