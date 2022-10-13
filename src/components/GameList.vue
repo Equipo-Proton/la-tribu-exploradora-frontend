@@ -86,6 +86,9 @@ button {
 .stop {
   background-color: var(--color-warning);
 }
+img {
+  width: 10vw;
+}
 @media only screen and (orientation: portrait) {
   .gamesBox {
     display: flex;
