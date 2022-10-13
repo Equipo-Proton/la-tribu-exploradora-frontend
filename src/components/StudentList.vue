@@ -91,9 +91,10 @@ button,
 
 #deleteTeacher {
   background-color: var(--color-warning);
+
 }
 
-#newTeacher {
+#newStudent {
   background-color: var(--base-color-green);
   color: var(--font-color);
   margin: auto;
