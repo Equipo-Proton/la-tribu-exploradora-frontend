@@ -42,7 +42,7 @@ export default {
         return;
       }
 
-      // good response cases
+      // good response cases response not undefined
       // teacher cases
       if (
         response.data.data.isAdmin != undefined &&

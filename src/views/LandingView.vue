@@ -5,6 +5,7 @@ export default {
   name: "LandingVIew",
 
   methods: {
+    // 1s duration of landing animation
     load() {
       setTimeout(this.toLocation, 1000);
     },
