@@ -47,6 +47,8 @@ export default {
         name: ` ${name}`,
       };
     },
+
+    // getting the input value and sent to database
     async sendNumber() {
       const dataObject = this.list2;
 

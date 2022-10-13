@@ -2,6 +2,7 @@ import axios from "axios";
 
 const baseUrl = "http://localhost:8000/api";
 
+// http requests for authentication
 export const apiAuth = {
   login(formData) {
     return axios.post(baseUrl + "/login", formData).catch((error) => {

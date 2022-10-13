@@ -97,6 +97,7 @@ export default {
       };
     },
 
+    // getting the input value and sent to database
     async sendWord() {
       const dataObject = this.list2;
 
@@ -118,6 +119,8 @@ export default {
 
       alert("Has enviado la palabra");
     },
+
+    // delete letter function 
     deleteLetter() {
       this.list2.pop();
     },

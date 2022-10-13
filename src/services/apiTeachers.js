@@ -2,6 +2,7 @@ import axios from "axios";
 
 const baseUrl = "http://localhost:8000/api";
 
+// http requests for teachers crud
 export const apiTeachers = {
   listTeachers() {
     return axios.get(baseUrl + "/teacher/list", {
