@@ -10,7 +10,6 @@ import ButtonsForm from "../components/ButtonsForm.vue";
     <RegisterForm />
     <ButtonsForm />
   </main>
-
   <RouterView />
 </template>
 

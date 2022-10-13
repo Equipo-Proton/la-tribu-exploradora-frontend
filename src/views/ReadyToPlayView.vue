@@ -69,14 +69,17 @@ main {
   height: 100%;
   background-color: var(--background-color-blue);
 }
+
 .sky {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .chick {
   height: 15vh;
 }
+
 .chicks {
   width: 100%;
   height: 35vh;
@@ -85,6 +88,7 @@ main {
   justify-content: space-around;
   padding: 5vh;
 }
+
 .play {
   position: relative;
   padding: 0;
@@ -94,6 +98,7 @@ main {
 .playLogo {
   width: 30vw;
 }
+
 button {
   background-color: transparent;
   border: none;
@@ -109,14 +114,14 @@ button {
   align-self: center;
   transform: rotate(15deg);
 }
+
 .blue {
   align-self: flex-start;
   transform: rotate(-35deg);
 }
+
 .bush {
   width: 100%;
   margin-top: -10vh;
-  /*   position: relative;
- */
 }
 </style>

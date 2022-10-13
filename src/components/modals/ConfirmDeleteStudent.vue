@@ -31,27 +31,47 @@ export default {
 </script>
 
 <template>
-  <div class="modal-overlay" v-if="showModal">
-    <div class="logo">
-      <img src="../../assets/logo.svg" />
-    </div>
-    <h3>¿Seguro que quieres eliminar a este estudiante?</h3>
-    <div class="modal-buttons">
-      <button
-        v-on:click="deleteStudent"
-        class="accept-button"
-        @click="showModal = false"
-      >
-        Aceptar
-      </button>
-      <button class="cancel-button" @click="showModal = false">Cancelar</button>
+  <div class="modal-overlay-close" v-if="showModal">
+    <div class="modal-overlay">
+      <div class="logo">
+        <img src="../../assets/logo.svg" />
+      </div>
+      <h3>¿Seguro que quieres eliminar a este estudiante?</h3>
+      <div class="modal-buttons">
+        <button
+          v-on:click="deleteStudent"
+          class="accept-button"
+          @click="showModal = false"
+        >
+          Aceptar
+        </button>
+        <button class="cancel-button" @click="showModal = false">
+          Cancelar
+        </button>
+      </div>
     </div>
   </div>
-
   <button id="deleteStudent" @click="showModal = true">Eliminar</button>
 </template>
 
 <style scoped>
+.modal-overlay-close {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  row-gap: 2vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  bottom: 0;
+  right: 10%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.188);
+  padding: 5vh;
+  z-index: 100;
+}
 .modal-overlay {
   display: flex;
   flex-direction: column;
@@ -73,7 +93,11 @@ export default {
 .logo {
   align-self: center;
 }
+img {
+  width: 20vw;
+}
 h3 {
+  font-size: 1.5vw;
   text-align: center;
   font-weight: bold;
 }
@@ -86,8 +110,9 @@ button,
 .StudentName {
   border: none;
   border-radius: 2vh;
-  height: 7vh;
+  height: 6vh;
   padding: 2vw;
+  margin: 1vw auto;
   display: flex;
   align-items: center;
   color: white;
@@ -106,5 +131,6 @@ button,
 .modal-buttons {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 </style>

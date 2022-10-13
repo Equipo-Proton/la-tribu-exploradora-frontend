@@ -67,8 +67,8 @@ export default {
         <p v-if="name != undefined">{{ name }}</p>
         <p v-if="name === null">¡Hola!</p>
       </div>
-        <div><button id="logout" v-on:click="logout">Salir</button></div>
-      </div>
+      <div><button id="logout" v-on:click="logout">Salir</button></div>
+    </div>
   </header>
 </template>
 
@@ -85,7 +85,7 @@ header {
 .logo img {
   height: 12vh;
 }
-.text{
+.text {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -117,8 +117,8 @@ header,
   margin: 0 0.5vw 0 0.5vw;
 }
 .user img {
-    height: 3.5vh;
-  }
+  height: 3.5vh;
+}
 
 #logout {
   border: none;
@@ -143,16 +143,16 @@ header,
     height: 3vh;
   }
   #logout {
-  border: none;
-  width: 9vw;
-  height: 4vh;
-  border-radius: 10vh;
-  background-color: var(--purple-dark);
-}
-.text{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    border: none;
+    width: 9vw;
+    height: 4vh;
+    border-radius: 10vh;
+    background-color: var(--purple-dark);
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>

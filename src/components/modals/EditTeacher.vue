@@ -36,7 +36,7 @@ export default {
 </script>
 
 <template>
-  <div class="modal-overlay-close" v-if="showModal" @click="showModal = false">
+  <div class="modal-overlay-close" v-if="showModal">
     <div class="modal-overlay" v-if="showModal">
       <div class="form-camp">
         <label for="name"><b>Nombre</b></label>

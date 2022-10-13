@@ -129,9 +129,8 @@ button {
 }
 
 @media only screen and (orientation: portrait) {
-
   .bird {
-  width: 6vw;
-}
+    width: 6vw;
+  }
 }
 </style>

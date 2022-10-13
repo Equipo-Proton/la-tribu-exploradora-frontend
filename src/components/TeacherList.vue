@@ -39,7 +39,6 @@ export default {
   <RouterView />
 </template>
 <style scoped>
-
 .teachersBox {
   width: 55vw;
   height: 70vh;
@@ -70,7 +69,6 @@ export default {
   justify-content: space-around;
   align-items: center;
 }
-
 
 button,
 .teacherName {
@@ -107,14 +105,14 @@ button,
 }
 @media only screen and (orientation: portrait) {
   .teachersBox {
-  width: 55vw;
-  height: 20vh;
-  background: #ffffff;
-  border: 1px solid #a5a2a9;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 3vh;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-}
+    width: 55vw;
+    height: 20vh;
+    background: #ffffff;
+    border: 1px solid #a5a2a9;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 3vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
 }
 </style>
