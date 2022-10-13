@@ -47,6 +47,7 @@ export default {
       return;
     },
 
+    // set show to null to show one time only the correct word
     async timeOutShow() {
       this.showData.show = null;
 

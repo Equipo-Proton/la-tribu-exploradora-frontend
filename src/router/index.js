@@ -32,7 +32,7 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/AdminPanelView.vue"),
-
+      // only access for teachers and directors
       async beforeEnter() {
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");
@@ -58,7 +58,7 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/WaitingView.vue"),
-
+      // only access for students
       async beforeEnter() {
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");
@@ -84,7 +84,7 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/ReadyToPlayView.vue"),
-
+      // only access for students
       async beforeEnter() {
         const response = await apiGame.getPlayPermission();
         const playValue = await response.data.data;
@@ -122,7 +122,7 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/AbcGameView.vue"),
-
+      // only access for students
       async beforeEnter() {
         const response = await apiGame.getPlayPermission();
         const playValue = await response.data.data;
@@ -160,7 +160,7 @@ const router = createRouter({
         requiresAuth: true,
       },
       component: () => import("../views/GameControlView.vue"),
-
+      // only access for teachers and directors
       async beforeEnter() {
         const isAdmin = localStorage.getItem("isAdmin");
         const superAdmin = localStorage.getItem("superAdmin");

@@ -5,6 +5,7 @@ export default {
   name: "ReadyToPlayView",
 
   methods: {
+    // if play true goes to next view
     async letsPlay() {
       const question = confirm("¿Quieres jugar?");
 
@@ -15,6 +16,7 @@ export default {
       return;
     },
 
+    // get play permission
     async getPlayPermission() {
       const response = await apiGame.getPlayPermission();
 

@@ -76,7 +76,6 @@ async function checkRedirect() {
 
   return;
 }
-
 function checkPlayValue(playValue) {
   if (playValue === 0) {
     clearInterval(intervalPlay);
@@ -88,10 +87,10 @@ function checkPlayValue(playValue) {
     return;
   }
 }
-
 async function callDatabase() {
   const response = await apiGame.getPlayPermission();
 
+  // clear storage of the student and goes to login
   if (response.data.message === "Unauthenticated.") {
     clearInterval(intervalPlay);
     clearInterval(intervalCorrection);
