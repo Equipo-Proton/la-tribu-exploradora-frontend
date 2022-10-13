@@ -21,9 +21,11 @@ export default {
   },
 
   methods: {
+    // only teachers and directos can logout
     async logout() {
       const noSuperAdmin = localStorage.getItem("superAdmin");
 
+      // only teacher can logout and reset play values to default
       if (noSuperAdmin != "1") {
         await apiGame.changePlayPermission(this.obj);
         await apiGame.wordNull(this.wordData);
@@ -31,6 +33,7 @@ export default {
 
       await apiAuth.logout();
 
+      // remove data of local storage
       localStorage.removeItem("token");
       localStorage.removeItem("name");
       localStorage.removeItem("isAdmin");

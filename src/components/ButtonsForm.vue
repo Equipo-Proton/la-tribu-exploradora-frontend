@@ -16,6 +16,7 @@ export default {
   },
 
   methods: {
+    // play boolean to false no permission to play
     async play() {
       if (this.obj.play === true) {
         this.obj.play = false;
@@ -28,6 +29,7 @@ export default {
       }
     },
 
+    // word to null and restart game
     async load() {
       const verify = confirm(
         "¿Estás seguro de que quieres reiniciar el juego?"

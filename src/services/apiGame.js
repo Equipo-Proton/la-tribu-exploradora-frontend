@@ -2,6 +2,7 @@ import axios from "axios";
 
 const baseUrl = "http://localhost:8000/api";
 
+// http requests for game implementations
 export const apiGame = {
   changePlayPermission(jsonData) {
     return axios.patch(baseUrl + "/game/changepermission", jsonData, {
